@@ -1,8 +1,8 @@
 import Sidebar from "@/components/layout/Sidebar"
 import "../globals.css"
-import { Hanken_Grotesk } from "next/font/google"
+import { Inter } from "next/font/google"
 
-const grotesk = Hanken_Grotesk({ subsets: ["latin"] })
+const grotesk = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "mcan's blog",

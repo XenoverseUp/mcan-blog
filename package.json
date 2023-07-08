@@ -2,6 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-accessible-icon": "^1.0.3",
     "autoprefixer": "10.4.14",
     "clsx": "^1.2.1",
     "next": "13.4.9",

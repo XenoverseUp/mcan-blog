@@ -2,6 +2,7 @@ import Github from "@/assets/svg/social/github"
 import In from "@/assets/svg/social/in"
 import Medium from "@/assets/svg/social/medium"
 import Spotify from "@/assets/svg/social/spotify"
+import IconLink from "../ui/IconLink"
 
 const MainFooter = () => (
   <footer className="w-full h-10 flex bg-white border-t border-neutral-300 justify-between items-center px-4">
@@ -9,10 +10,27 @@ const MainFooter = () => (
       Copyright 2023 © Muhammed Can Durmus
     </p>
     <div className="flex gap-3">
-      <Spotify className="w-5 aspect-square fill-accent" />
-      <Medium className="w-5 aspect-square fill-accent" />
-      <In className="w-5 aspect-square fill-accent" />
-      <Github className="w-5 aspect-square fill-accent" />
+      <IconLink
+        href="https://open.spotify.com/user/m2x5rzs90t2cgiw6406qnw9vm?si=6bc0ba63c5204048"
+        label="Spotify Profile"
+      >
+        <Spotify className="w-5 aspect-square fill-accent" />
+      </IconLink>
+
+      <IconLink href="https://medium.com/@candurmuss" label="My Medium Blog">
+        <Medium className="w-5 aspect-square fill-accent" />
+      </IconLink>
+
+      <IconLink
+        href="https://www.linkedin.com/in/can-durmuss/"
+        label="My LinkedIn Profile"
+      >
+        <In className="w-5 aspect-square fill-accent" />
+      </IconLink>
+
+      <IconLink href="https://github.com/XenoverseUp" label="My Github Profile">
+        <Github className="w-5 aspect-square fill-accent" />
+      </IconLink>
     </div>
   </footer>
 )
