@@ -17,7 +17,7 @@ const Button = ({
     element={href ? Link : "button"}
     {...(label && { "aria-label": label })}
     {...(href && { href })}
-    {...{ className }}
+    {...{ className: className + " select-none" }}
     {...rest}
   >
     {PrependIcon && (

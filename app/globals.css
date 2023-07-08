@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::selection {
+  background-color: theme(colors.accent);
+  color: theme(backgroundColor.primary-400);
+}
