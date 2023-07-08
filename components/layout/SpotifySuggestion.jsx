@@ -23,7 +23,7 @@ const SpotifySuggestion = async () => {
           <Sine width={600} height={200} className="w-full h-full" />
         </div>
         <div className="h-full space-x-3 flex items-center">
-          <div className="relative h-full aspect-square overflow-hidden rounded-xl shadow-2xl flex-shrink-0 border border-white">
+          <div className="relative h-full aspect-square overflow-hidden rounded-xl shadow-2xl flex-shrink-0 ">
             <Image
               src={track.coverImage.url}
               alt={track.title}

@@ -6,7 +6,7 @@ export const red_hat_display = Red_Hat_Display({ subsets: ["latin"] })
 export const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Can Durmus' Blog",
+  title: "Can Durmus | Blog",
   description: "Hello my bud!",
 }
 
