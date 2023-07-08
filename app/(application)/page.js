@@ -1,7 +1,9 @@
 export default function Home() {
   return (
-    <main className="grid place-items-center flex-grow h-full w-full">
-      posts
+    <main className="grid place-items-center flex-grow h-full w-full overflow-auto overscroll-contain">
+      {new Array(100).fill("").map(() => (
+        <p>posts</p>
+      ))}
     </main>
   )
 }

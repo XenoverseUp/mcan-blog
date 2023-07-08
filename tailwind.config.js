@@ -10,8 +10,6 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       backgroundColor: {
         "primary-400": "#f4f4f4",
@@ -20,7 +18,32 @@ module.exports = {
         accent: "#280719",
         "accent-slight": "#6b5064",
       },
+      fontFamily: {
+        "red-hat": [
+          "__Red_Hat_Display_59990b",
+          "__Red_Hat_Display_Fallback_59990b",
+          "__Inter_20951f",
+          "__Inter_Fallback_20951f",
+          "sans-serif",
+        ],
+        inter: [
+          "__Inter_20951f",
+          "__Inter_Fallback_20951f",
+          "__Red_Hat_Display_59990b",
+          "__Red_Hat_Display_Fallback_59990b",
+          "sans-serif",
+        ],
+      },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { height: 0 },
+          "50%": { height: 15 },
+        },
+      },
+      animation: {
+        wiggle: "wiggle 1s ease infinite",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animation-delay")],
 }
