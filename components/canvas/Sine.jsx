@@ -1,9 +1,10 @@
 "use client"
 
-import { useLayoutEffect, useRef } from "react"
+import cx from "@/utils/cx"
+import { useLayoutEffect, useRef, useState } from "react"
 
 class Wave {
-  constructor(canvas, maxAmplitude = 5, length = 20, frequency = 50, y) {
+  constructor(canvas, maxAmplitude = 7, length = 40, frequency = 50, y) {
     this.canvas = canvas
     this.ctx = this.canvas.getContext("2d")
     this.maxAmplitude = maxAmplitude
@@ -23,7 +24,8 @@ class Wave {
 
   draw(c) {
     c.beginPath()
-    this.ctx.strokeStyle = `hsl(0, 100%, 100%)`
+    this.ctx.strokeStyle = `rgba(255, 255, 255, .4)`
+    this.ctx.lineWidth = 2
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
     c.moveTo(0, this.canvas.height / 2)
 
@@ -55,13 +57,23 @@ class Wave {
 
 const Sine = ({ width, height, className }) => {
   const ref = useRef(null)
+  const [loading, setLoading] = useState(true)
 
   useLayoutEffect(() => {
     const wave = new Wave(ref.current)
     wave.animate()
+    setLoading(false)
   }, [])
 
-  return <canvas {...{ width, height, ref, className }} />
+  return (
+    <canvas
+      {...{ width, height, ref }}
+      className={cx(className, {
+        "opacity-0": loading,
+        "opacity-1": !loading,
+      })}
+    />
+  )
 }
 
 export default Sine

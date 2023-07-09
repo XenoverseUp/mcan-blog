@@ -17,6 +17,7 @@ module.exports = {
       colors: {
         accent: "#280719",
         "accent-slight": "#6b5064",
+        "accent-saturation": "#68072a",
       },
       fontFamily: {
         "red-hat": [

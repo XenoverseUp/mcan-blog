@@ -3,7 +3,6 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useMemo } from "react"
-import important from "@/utils/important"
 import cx from "@/utils/cx"
 
 const NavLink = ({
