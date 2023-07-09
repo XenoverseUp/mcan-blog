@@ -37,12 +37,12 @@ module.exports = {
       },
       keyframes: {
         wiggle: {
-          "0%, 100%": { height: 0 },
-          "50%": { height: 15 },
+          "0%, 100%": { transform: "rotate(0)" },
+          "50%": { transform: "rotate(45deg)" },
         },
       },
       animation: {
-        wiggle: "wiggle 1s ease infinite",
+        wiggle: "wiggle .5s ease-out",
       },
     },
   },

@@ -24,9 +24,9 @@ class Wave {
 
   draw(c) {
     c.beginPath()
-    this.ctx.strokeStyle = `rgba(255, 255, 255, .4)`
-    this.ctx.lineWidth = 2
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+    c.strokeStyle = `rgba(255, 255, 255, .4)`
+    c.lineWidth = 3
+    c.clearRect(0, 0, this.canvas.width, this.canvas.height)
     c.moveTo(0, this.canvas.height / 2)
 
     for (let i = 0; i < this.canvas.width; i += 1) {
@@ -68,7 +68,7 @@ const Sine = ({ width, height, className }) => {
   return (
     <canvas
       {...{ width, height, ref }}
-      className={cx(className, {
+      className={cx(className, "transition-opacity", {
         "opacity-0": loading,
         "opacity-1": !loading,
       })}

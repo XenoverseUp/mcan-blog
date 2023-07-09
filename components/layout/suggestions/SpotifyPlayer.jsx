@@ -35,7 +35,7 @@ const SpotifyPlayer = async ({ className }) => {
           <Sine
             width={600}
             height={400}
-            className="w-full h-full transition-opacity duration-1000"
+            className="w-full h-full duration-[3s]"
           />
         </div>
         <div className="h-full space-x-3 flex items-center">
