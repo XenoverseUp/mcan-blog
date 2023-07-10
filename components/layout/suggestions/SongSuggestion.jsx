@@ -2,10 +2,9 @@ import { getTopTrack, getTrack } from "@/lib/spotify"
 import Image from "next/image"
 import Button from "../../ui/Button"
 import Spotify from "@/assets/svg/social/spotify"
-import Sine from "../../canvas/Sine"
 import cx from "@/utils/cx"
 import { PlayerType, spotifyTrackId } from "@/config"
-import SpotifyPlayer from "./SpotifyPlayer"
+import Visualizer from "./Visualizer"
 
 const SongSuggestion = async ({ className }) => {
   const track = await (PlayerType == "track"
@@ -32,13 +31,6 @@ const SongSuggestion = async ({ className }) => {
         can's pick
       </span>
       <main className="p-4 w-full h-full z-20 text-white absolute inset-0 flex justify-between font-red-hat">
-        <div className="absolute inset-0 pointer-events-none">
-          <Sine
-            width={600}
-            height={400}
-            className="w-full h-full duration-[3s]"
-          />
-        </div>
         <div className="h-full space-x-3 flex items-center">
           <div className="grid place-items-center relative bg-black bg-opacity-10 h-full aspect-square overflow-hidden rounded-xl shadow-2xl flex-shrink-0 select-none">
             <Image
@@ -62,8 +54,8 @@ const SongSuggestion = async ({ className }) => {
             </p>
           </div>
         </div>
+        <Visualizer preview={track.preview} />
         <div className="flex flex-col justify-end">
-          <SpotifyPlayer src={track.preview} />
           <Button
             className="flex whitespace-nowrap items-center gap-2 px-5 py-[6px] bg-white text-black text-opacity-80 font-bold text-sm rounded-xl hover:scale-[1.025] shadow-xl transition-transform z-10"
             appendIcon={Spotify}

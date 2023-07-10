@@ -11,6 +11,7 @@ const useAudio = ({
   src,
   paused = true,
   fade = true,
+  fadeDuration = 4,
   restartOnPause = true,
 }) => {
   const [playing, setPlaying] = useState(!paused)
@@ -23,13 +24,37 @@ const useAudio = ({
   )
 
   useEffect(() => {
-    console.log(playing)
-    if (playing) audio.current.play()
-    else {
+    if (playing) {
+      audio.current.volume = 0
+      audio.current.play()
+    } else {
       if (restartOnPause) audio.current.currentTime = 0
       audio.current.pause()
     }
   }, [playing])
+
+  useEventListener({
+    event: "timeupdate",
+    element: audio.current,
+    handler: e => {
+      const { currentTime, volume, duration } = e.target
+      console.log({ currentTime, volume })
+
+      if (currentTime < fadeDuration && e.target.volume < 1)
+        e.target.volume += 0.06
+      else if (
+        currentTime >= fadeDuration &&
+        currentTime < duration - fadeDuration - 1
+      )
+        e.target.volume = 1
+      else if (
+        currentTime >= duration - fadeDuration - 1 &&
+        e.target.volume > 0.05
+      )
+        e.target.volume -= 0.06
+      else e.target.volume = 0
+    },
+  })
 
   useEventListener({
     event: "ended",
