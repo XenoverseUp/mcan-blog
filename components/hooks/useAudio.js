@@ -1,10 +1,7 @@
-import {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react"
+"use client"
+// !TODO: Reimplement using setInterval rather than `timeupdate` evet.
+
+import { useCallback, useEffect, useRef, useState } from "react"
 import useEventListener from "./useEventListener"
 
 const useAudio = ({
@@ -15,8 +12,9 @@ const useAudio = ({
   restartOnPause = true,
 }) => {
   const [playing, setPlaying] = useState(!paused)
-  const audio = useRef(new Audio(src))
-  const duration = useRef(0)
+  const audio = useRef(null)
+
+  useEffect(() => (audio.current = new Audio(src)), [])
 
   const togglePlaying = useCallback(
     () => setPlaying(state => !state),
@@ -37,8 +35,7 @@ const useAudio = ({
     event: "timeupdate",
     element: audio.current,
     handler: e => {
-      const { currentTime, volume, duration } = e.target
-      console.log({ currentTime, volume })
+      const { currentTime, duration } = e.target
 
       if (currentTime < fadeDuration && e.target.volume < 1)
         e.target.volume += 0.06
