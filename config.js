@@ -1,4 +1,4 @@
 /** @type {"top"|"track"} */
-export const PlayerType = "top"
+export const PlayerType = "track"
 
-export const spotifyTrackId = "3nsfB1vus2qaloUdcBZvDu"
+export const spotifyTrackId = "5TMj9sVkboOwxLhoeEq2k6"

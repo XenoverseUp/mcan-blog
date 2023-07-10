@@ -47,7 +47,7 @@ class Aaa {
       const x = this.lerp(margin, this.width - margin, u)
       const y = this.lerp(margin, this.height - margin, v)
 
-      const color = "rgba(255 255 255 / 0.25)"
+      const color = "rgba(255 255 255 / 0.1)"
 
       this.context.beginPath()
       this.context.moveTo(this.width / 2, this.height / 2)

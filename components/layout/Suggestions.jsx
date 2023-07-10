@@ -1,5 +1,5 @@
 import CanvasShowcase from "./suggestions/CanvasShowcase"
-import SpotifyPlayer from "./suggestions/SpotifyPlayer"
+import SpotifyPlayer from "./suggestions/SongSuggestion"
 import StoryStatistics from "./suggestions/StoryStatistics"
 
 const Suggestions = () => (
