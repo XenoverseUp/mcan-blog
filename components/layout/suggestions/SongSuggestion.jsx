@@ -28,7 +28,7 @@ const SongSuggestion = async ({ className }) => {
         quality={0}
         className="object-cover transition-all pointer-events-none"
       />
-      <span className="absolute hover:opacity-0 transition-opacity select-none duration-300 px-3 pt-1 pb-[6px] bg-black text-white top-0 right-4 rounded-b-xl z-30 font-red-hat text-xs">
+      <span className="absolute w-fit hover:opacity-0 transition-opacity select-none duration-300 px-3 pt-1 pb-[6px] bg-black text-white top-0 m-auto left-0 right-0 rounded-b-xl z-30 font-red-hat text-xs">
         can's pick
       </span>
       <main className="p-4 w-full h-full z-20 text-white absolute inset-0 flex justify-between font-red-hat">
