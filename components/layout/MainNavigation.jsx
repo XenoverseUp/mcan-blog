@@ -1,11 +1,14 @@
 import Logo from "@/assets/svg/logo"
 import NavLink from "../ui/NavLink"
 import Link from "next/link"
+import AccessibleIcon from "../ui/AcessibleIcon"
 
 const MainNavigation = () => (
   <nav className="px-10 py-4 flex justify-between items-center w-full">
-    <Link href="/">
-      <Logo className="w-10 aspect-square" />
+    <Link href="/" aria-label="Home">
+      <AccessibleIcon label="Can Durmus Home">
+        <Logo className="w-10 aspect-square" />
+      </AccessibleIcon>
     </Link>
     <div className="space-x-2">
       <NavLink

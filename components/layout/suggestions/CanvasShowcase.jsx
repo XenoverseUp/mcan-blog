@@ -3,6 +3,7 @@
 import Reload from "@/assets/svg/reload"
 import Aa from "@/components/canvas/Aa"
 import cx from "@/utils/cx"
+import { AccessibleIcon } from "@radix-ui/react-accessible-icon"
 import { useRef } from "react"
 
 const CanvasShowcase = ({ className }) => {
@@ -26,6 +27,7 @@ const CanvasShowcase = ({ className }) => {
         className="absolute bottom-0 top-0 h-full w-full duration-1000"
       />
       <button
+        aria-label="Reload"
         className="focus:ring-2 transition-colors group hover:bg-white bg-black/50 w-7 aspect-square grid place-items-center rounded-xl absolute top-4 right-4"
         onClick={() => {
           art.current.refresh()
@@ -39,10 +41,12 @@ const CanvasShowcase = ({ className }) => {
           )
         }}
       >
-        <Reload
-          ref={reload}
-          className="w-4 aspect-square fill-white group-hover:fill-black transition-colors"
-        />
+        <AccessibleIcon label="Reload">
+          <Reload
+            ref={reload}
+            className="w-4 aspect-square fill-white group-hover:fill-black transition-colors"
+          />
+        </AccessibleIcon>
       </button>
     </div>
   )
