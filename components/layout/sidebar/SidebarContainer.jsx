@@ -8,10 +8,11 @@ const SidebarContainer = ({ children }) => {
   let resizable = useRef(null)
 
   const [initialPos, setInitialPos] = useState(null)
-  const [initialSize, setInitialSize] = useLocalStorage(
-    "xenoverse-sidebar-size",
-    764,
-  )
+  const [initialSize, setInitialSize] = useState(764)
+  //  useLocalStorage(
+  //   "xenoverse-sidebar-size",
+  //   764,
+  // )
 
   useEffect(() => {
     resizable.style.width = `${initialSize}px`
