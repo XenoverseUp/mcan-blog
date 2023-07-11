@@ -1,16 +1,17 @@
-import MainNavigation from "@/components/layout/MainNavigation"
-import Introduction from "@/components/layout/Introduction"
-import Suggestions from "@/components/layout/Suggestions"
-import MainFooter from "@/components/layout/MainFooter"
+import MainNavigation from "@/components/layout/sidebar/MainNavigation"
+import Introduction from "@/components/layout/sidebar/Introduction"
+import Suggestions from "@/components/layout/sidebar/Suggestions"
+import MainFooter from "@/components/layout/sidebar/MainFooter"
+import SidebarContainer from "@/components/layout/sidebar/SidebarContainer"
 
 const Sidebar = () => {
   return (
-    <header className="w-[764px] flex-shrink-0 border-r border-neutral-300 flex flex-col justify-between">
+    <SidebarContainer>
       <MainNavigation />
       <Introduction />
       <Suggestions />
       <MainFooter />
-    </header>
+    </SidebarContainer>
   )
 }
 

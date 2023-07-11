@@ -1,6 +1,6 @@
-import CanvasShowcase from "./suggestions/CanvasShowcase"
-import SpotifyPlayer from "./suggestions/Song/SongSuggestion"
-import StoryStatistics from "./suggestions/StoryStatistics"
+import CanvasShowcase from "@/components/layout/suggestions/CanvasShowcase"
+import SpotifyPlayer from "@/components/layout/suggestions/Song/SongSuggestion"
+import StoryStatistics from "@/components/layout/suggestions/StoryStatistics"
 
 const Suggestions = () => (
   <section className="px-10 mb-6 w-full box-border grid grid-cols-12 grid-rows-2 gap-2">

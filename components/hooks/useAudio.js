@@ -14,11 +14,13 @@ const useAudio = ({
   const [playing, setPlaying] = useState(!paused)
   const audio = useRef(null)
 
-  useEffect(() => (audio.current = new Audio(src)), [])
+  useEffect(() => {
+    audio.current = new Audio(src)
+  }, [])
 
   const togglePlaying = useCallback(
     () => setPlaying(state => !state),
-    [setPlaying]
+    [setPlaying],
   )
 
   useEffect(() => {
@@ -37,18 +39,18 @@ const useAudio = ({
     handler: e => {
       const { currentTime, duration } = e.target
 
-      if (currentTime < fadeDuration && e.target.volume < 1)
-        e.target.volume += 0.06
+      if (currentTime < fadeDuration && e.target.volume < 0.5)
+        e.target.volume += 0.03
       else if (
         currentTime >= fadeDuration &&
         currentTime < duration - fadeDuration - 1
       )
-        e.target.volume = 1
+        e.target.volume = 0.5
       else if (
         currentTime >= duration - fadeDuration - 1 &&
-        e.target.volume > 0.05
+        e.target.volume > 0.02
       )
-        e.target.volume -= 0.06
+        e.target.volume -= 0.03
       else e.target.volume = 0
     },
   })

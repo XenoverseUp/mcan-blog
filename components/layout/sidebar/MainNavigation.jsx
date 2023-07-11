@@ -1,7 +1,7 @@
 import Logo from "@/assets/svg/logo"
-import NavLink from "../ui/NavLink"
+import NavLink from "@/components/ui/NavLink"
 import Link from "next/link"
-import AccessibleIcon from "../ui/AcessibleIcon"
+import AccessibleIcon from "@/components/ui/AcessibleIcon"
 
 const MainNavigation = () => (
   <nav className="px-10 py-4 flex justify-between items-center w-full">
@@ -10,11 +10,11 @@ const MainNavigation = () => (
         <Logo className="w-10 aspect-square" />
       </AccessibleIcon>
     </Link>
-    <div className="space-x-2">
+    <div className="space-x-1 text-xs @lg:text-sm @lg:space-x-2 text-accent-slight">
       <NavLink
         href="/snippets"
-        className="text-sm transition-colors hover:bg-neutral-200 text-accent font-medium px-2 py-1 rounded"
-        activeClassName="!bg-orange-200"
+        className="transition-colors hover:bg-neutral-200 font-medium px-2 py-1 rounded"
+        activeClassName="!text-accent !bg-orange-200"
         tailwind
         exact
       >
@@ -22,16 +22,16 @@ const MainNavigation = () => (
       </NavLink>
       <NavLink
         href="/tutorials"
-        className="text-sm transition-colors hover:bg-neutral-200 text-accent font-medium px-2 py-1 rounded"
-        activeClassName="!bg-orange-200"
+        className="transition-colors hover:bg-neutral-200 font-medium px-2 py-1 rounded"
+        activeClassName="!text-accent !bg-orange-200"
         tailwind
       >
         Tutorials
       </NavLink>
       <NavLink
         href="/opinions"
-        className="text-sm transition-colors hover:bg-neutral-200 text-accent font-medium px-2 py-1 rounded"
-        activeClassName="!bg-orange-200"
+        className="transition-colors hover:bg-neutral-200 font-medium px-2 py-1 rounded"
+        activeClassName="!text-accent !bg-orange-200"
         tailwind
       >
         Opinions
@@ -41,8 +41,8 @@ const MainNavigation = () => (
       </span>
       <NavLink
         href="/about"
-        className="text-sm transition-colors hover:bg-neutral-200 text-accent font-medium px-2 py-1 rounded"
-        activeClassName="!bg-orange-200"
+        className="transition-colors hover:bg-neutral-200 font-medium px-2 py-1 rounded"
+        activeClassName="!text-accent !bg-orange-200"
         tailwind
       >
         About

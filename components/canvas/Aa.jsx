@@ -47,7 +47,7 @@ class Aaa {
       const x = this.lerp(margin, this.width - margin, u)
       const y = this.lerp(margin, this.height - margin, v)
 
-      const color = "rgba(255 255 255 / 0.1)"
+      const color = "rgba(255 255 255 / 0.4)"
 
       this.context.beginPath()
       this.context.moveTo(this.width / 2, this.height / 2)
@@ -63,7 +63,7 @@ class Aaa {
         (this.radius * this.width) / 4,
         0,
         Math.PI * 2,
-        false
+        false,
       )
     })
 
@@ -74,7 +74,7 @@ class Aaa {
       const x = this.lerp(margin, this.width - margin, u)
       const y = this.lerp(margin, this.height - margin, v)
 
-      const color = "rgba(0 0 0 / 0.8)"
+      const color = "#660728" // "rgba(0 0 0 / 0.8)"
 
       this.context.beginPath()
       this.context.arc(
@@ -83,7 +83,7 @@ class Aaa {
         (this.radius * this.width) / 4,
         0,
         Math.PI * 2,
-        false
+        false,
       )
       this.context.fillStyle = color
       this.context.fill()
@@ -123,10 +123,7 @@ class Aaa {
 }
 
 const Aa = forwardRef(
-  (
-    { width, height, className, colors, background, radius, count, gridSize },
-    ref
-  ) => {
+  ({ width, height, className, radius, count, gridSize }, ref) => {
     let canvas = useRef(null)
     let aa = useRef(null)
     const [loading, setLoading] = useState(true)
@@ -163,7 +160,7 @@ const Aa = forwardRef(
         })}
       />
     )
-  }
+  },
 )
 
 export default Aa
