@@ -6,7 +6,7 @@ import useUpdateEffect from "@/components/hooks/useUpdateEffect"
 import AccessibleIcon from "@/components/ui/AcessibleIcon"
 import AudioPlayer from "@/components/ui/AudioPlayer"
 
-const SpotifyPlayer = ({ src, onChange }) => (
+const MusicPlayer = ({ src, onChange }) => (
   <AudioPlayer {...{ src }}>
     {({ playing, togglePlaying }) => {
       useUpdateEffect(() => onChange(), [playing])
@@ -28,4 +28,4 @@ const SpotifyPlayer = ({ src, onChange }) => (
   </AudioPlayer>
 )
 
-export default SpotifyPlayer
+export default MusicPlayer

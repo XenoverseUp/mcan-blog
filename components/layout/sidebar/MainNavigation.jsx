@@ -10,7 +10,7 @@ const MainNavigation = () => (
         <Logo className="w-10 aspect-square" />
       </AccessibleIcon>
     </Link>
-    <div className="space-x-1 text-xs @lg:text-sm @lg:space-x-2 text-accent-slight">
+    <div className="space-x-1 text-[2.45cqw] @xl:text-sm text-accent-slight">
       <NavLink
         href="/snippets"
         className="transition-colors hover:bg-neutral-200 font-medium px-2 py-1 rounded"

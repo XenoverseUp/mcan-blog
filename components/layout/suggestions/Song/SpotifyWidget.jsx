@@ -6,7 +6,7 @@ import cx from "@/utils/cx"
 import { PlayerType, spotifyTrackId } from "@/config"
 import Visualizer from "./Visualizer"
 
-const SongSuggestion = async ({ className }) => {
+const SpotifyWidget = async ({ className }) => {
   const track = await (PlayerType == "track"
     ? getTrack(spotifyTrackId)
     : getTopTrack())
@@ -16,7 +16,7 @@ const SongSuggestion = async ({ className }) => {
       role="presentation"
       className={cx(
         className,
-        "w-full shadow-xl bg-neutral-400 rounded-3xl relative overflow-hidden before:absolute before:inset-0 before:bg-black before:z-10 before:bg-opacity-30 before:backdrop-blur-xl"
+        "w-full shadow-xl @container/spotify-widget bg-neutral-400 rounded-3xl relative overflow-hidden before:absolute before:inset-0 before:bg-black before:z-10 before:bg-opacity-30 before:backdrop-blur-xl",
       )}
     >
       <Image
@@ -30,7 +30,7 @@ const SongSuggestion = async ({ className }) => {
       <span className="opacity-0 absolute w-fit hover:opacity-0 transition-opacity select-none duration-300 px-3 pt-1 pb-[6px] bg-black text-white top-0 m-auto left-0 right-0 rounded-b-xl z-30 font-red-hat text-xs">
         can's pick
       </span>
-      <main className="p-4 w-full h-full z-20 text-white absolute inset-0 flex justify-between font-red-hat">
+      <main className="p-4 w-full h-full z-20 text-white absolute inset-0 flex gap-4 justify-between font-red-hat">
         <div className="h-full space-x-3 flex items-center">
           <div className="grid place-items-center relative bg-black bg-opacity-10 h-full aspect-square overflow-hidden rounded-xl shadow-2xl flex-shrink-0 select-none">
             <Image
@@ -45,10 +45,22 @@ const SongSuggestion = async ({ className }) => {
             <span className="text-sm opacity-75">Loading...</span>
           </div>
           <div className="content">
-            <h2 className="text-xl font-semibold mb-3">{track.title}</h2>
-            <p className="text-sm opacity-90 mb-1">{track.artist}</p>
+            <h2 className="text-[1.1rem] @xl:text-xl font-semibold mb-3 line-clamp-2">
+              {track.title
+                .split("-")
+                .join("@")
+                .split("(")
+                .join("@")
+                .split("@")
+                .at(0)}
+            </h2>
+            <p className="text-sm opacity-90 mb-1 whitespace-nowrap text-ellipsis">
+              {track.artist}
+            </p>
             <p className="flex items-center gap-2 text-sm">
-              <span className="opacity-90">{track.albumName}</span>
+              <span className="opacity-90 whitespace-nowrap text-ellipsis">
+                {track.albumName}
+              </span>
               <span className="aspect-square w-[4px] flex-shrink-0 bg-white rounded-full" />
               <span className="font-semibold">{track.year}</span>
             </p>
@@ -57,13 +69,15 @@ const SongSuggestion = async ({ className }) => {
         <Visualizer preview={track.preview} />
         <div className="flex flex-col justify-end">
           <Button
-            className="flex whitespace-nowrap items-center gap-2 px-5 py-[6px] bg-white text-black text-opacity-80 font-bold text-sm rounded-xl hover:scale-[1.025] shadow-xl transition-transform z-10"
+            className="flex whitespace-nowrap items-center gap-2 px-3 @xl/spotify-widget:px-5 py-[6px] bg-white text-black text-opacity-80 font-bold text-sm rounded-xl hover:scale-[1.025] shadow-xl transition-transform z-10"
             appendIcon={Spotify}
             iconClassName="aspect-square w-8 fill-green-500"
             href={track.url}
             target="_blank"
           >
-            Play on Spotify
+            <span className="hidden @xl/spotify-widget:block">
+              Play on Spotify
+            </span>
           </Button>
         </div>
       </main>
@@ -71,4 +85,4 @@ const SongSuggestion = async ({ className }) => {
   )
 }
 
-export default SongSuggestion
+export default SpotifyWidget
