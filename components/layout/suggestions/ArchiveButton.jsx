@@ -6,7 +6,7 @@ const ArchiveButton = ({ className }) => (
   <Button
     className={cx(
       className,
-      "flex group font-red-hat items-end flex-grow w-full p-6 bg-white rounded-3xl shadow-xl relative before:absolute before:inset-2 before:rounded-2xl before:border before:border-dashed before:border-accent ",
+      "flex group font-red-hat items-end flex-grow w-full p-6 bg-white rounded-3xl shadow-xl relative outline-dashed -outline-offset-8 outline-accent",
     )}
     label="Archive"
     href="/archive"

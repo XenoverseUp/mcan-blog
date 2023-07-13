@@ -15,6 +15,7 @@ const SidebarContainer = ({ children }) => {
 
   useEffect(() => {
     resizable.style.width = `${initialSize}px`
+    document.body.style.opacity = "1"
   }, [])
 
   const start = e => {

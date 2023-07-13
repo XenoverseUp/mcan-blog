@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${red_hat_display.className} ${inter.className} w-full h-screen flex bg-primary-400 overflow-hidden`}
+        className={`${red_hat_display.className} ${inter.className} w-full h-screen flex bg-primary-400 overflow-hidden opacity-0 transition-opacity`}
       >
         <Sidebar />
         {children}
