@@ -14,7 +14,7 @@ const CanvasShowcase = ({ className }) => {
     <div
       className={cx(
         className,
-        "grid place-items-center shadow-xl bg-red-400 rounded-3xl overflow-hidden relative"
+        "relative grid place-items-center overflow-hidden rounded-3xl bg-red-400 shadow-xl"
       )}
     >
       <Aa
@@ -28,7 +28,7 @@ const CanvasShowcase = ({ className }) => {
       />
       <button
         aria-label="Reload"
-        className="focus:ring-2 transition-colors group hover:bg-white bg-black/50 w-7 aspect-square grid place-items-center rounded-xl absolute top-4 right-4"
+        className="group absolute right-4 top-4 grid aspect-square w-7 place-items-center rounded-xl bg-black/50 transition-colors hover:bg-white focus:ring-2"
         onClick={() => {
           art.current.refresh()
           reload.current.animate(
@@ -44,7 +44,7 @@ const CanvasShowcase = ({ className }) => {
         <AccessibleIcon label="Reload">
           <Reload
             ref={reload}
-            className="w-4 aspect-square fill-white group-hover:fill-black transition-colors"
+            className="aspect-square w-4 fill-white transition-colors group-hover:fill-black"
           />
         </AccessibleIcon>
       </button>

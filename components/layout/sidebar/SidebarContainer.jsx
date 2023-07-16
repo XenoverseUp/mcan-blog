@@ -10,7 +10,7 @@ const SidebarContainer = ({ children }) => {
   const [initialPos, setInitialPos] = useState(null)
   const [initialSize, setInitialSize] = useLocalStorage(
     "xenoverse-sidebar-size",
-    764,
+    764
   )
 
   useEffect(() => {
@@ -38,16 +38,16 @@ const SidebarContainer = ({ children }) => {
       ref={instance => {
         resizable = instance
       }}
-      className="min-[1240px]:max-w-[764px] relative @container w-full flex-shrink-0 border-r border-neutral-300 md:flex md:max-w-[468px] lg:max-w-[568px] flex-col justify-between resize-x hidden"
+      className="relative hidden w-full flex-shrink-0 resize-x flex-col justify-between border-r border-neutral-300 @container md:flex md:max-w-[468px] lg:max-w-[568px] min-[1240px]:max-w-[764px]"
     >
       <span
         draggable
         onDragStart={start}
         onDrag={resize}
         onDragEnd={end}
-        className="absolute right-0 top-0 translate-x-1/2 bottom-0 w-2 cursor-ew-resize peer"
+        className="peer absolute bottom-0 right-0 top-0 w-2 translate-x-1/2 cursor-ew-resize"
       />
-      <span className="absolute top-1/2 -translate-y-1/2 translate-x-1/2 right-0 w-4 h-6 pointer-events-none rounded-full border border-neutral-300 bg-white before:absolute before:top-2 before:left-1/2 before:-translate-x-1/2 before:w-1/2 before:h-[1.5px] before:bg-orange-500 before:rounded-full after:rounded-full after:absolute after:bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1/2 after:h-[1.5px] after:bg-orange-500"></span>
+      <span className="pointer-events-none absolute right-0 top-1/2 h-6 w-4 -translate-y-1/2 translate-x-1/2 rounded-full border border-neutral-300 bg-white before:absolute before:left-1/2 before:top-2 before:h-[1.5px] before:w-1/2 before:-translate-x-1/2 before:rounded-full before:bg-orange-500 after:absolute after:bottom-2 after:left-1/2 after:h-[1.5px] after:w-1/2 after:-translate-x-1/2 after:rounded-full after:bg-orange-500"></span>
       {children}
     </header>
   )

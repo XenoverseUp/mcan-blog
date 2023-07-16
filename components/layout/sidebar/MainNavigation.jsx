@@ -1,19 +1,19 @@
 import Logo from "@/assets/svg/logo"
+import AccessibleIcon from "@/components/ui/AcessibleIcon"
 import NavLink from "@/components/ui/NavLink"
 import Link from "next/link"
-import AccessibleIcon from "@/components/ui/AcessibleIcon"
 
 const MainNavigation = () => (
-  <nav className="px-10 py-4 flex justify-between items-center w-full">
+  <nav className="flex w-full items-center justify-between px-10 py-4">
     <Link href="/" aria-label="Home">
       <AccessibleIcon label="Can Durmus Home">
-        <Logo className="w-10 aspect-square" />
+        <Logo className="aspect-square w-10" />
       </AccessibleIcon>
     </Link>
-    <div className="space-x-1 text-[2.45cqw] @xl:text-sm text-accent-slight">
+    <div className="space-x-1 text-[2.45cqw] text-accent-slight @xl:text-sm">
       <NavLink
         href="/snippets"
-        className="transition-colors hover:bg-neutral-200 font-medium px-2 py-1 rounded"
+        className="rounded px-2 py-1 font-medium transition-colors hover:bg-neutral-200"
         activeClassName="!text-accent !bg-orange-200"
         tailwind
         exact
@@ -22,7 +22,7 @@ const MainNavigation = () => (
       </NavLink>
       <NavLink
         href="/tutorials"
-        className="transition-colors hover:bg-neutral-200 font-medium px-2 py-1 rounded"
+        className="rounded px-2 py-1 font-medium transition-colors hover:bg-neutral-200"
         activeClassName="!text-accent !bg-orange-200"
         tailwind
       >
@@ -30,18 +30,18 @@ const MainNavigation = () => (
       </NavLink>
       <NavLink
         href="/opinions"
-        className="transition-colors hover:bg-neutral-200 font-medium px-2 py-1 rounded"
+        className="rounded px-2 py-1 font-medium transition-colors hover:bg-neutral-200"
         activeClassName="!text-accent !bg-orange-200"
         tailwind
       >
         Opinions
       </NavLink>
-      <span aria-hidden className="opacity-25 px-2">
+      <span aria-hidden className="px-2 opacity-25">
         /
       </span>
       <NavLink
         href="/about"
-        className="transition-colors hover:bg-neutral-200 font-medium px-2 py-1 rounded"
+        className="rounded px-2 py-1 font-medium transition-colors hover:bg-neutral-200"
         activeClassName="!text-accent !bg-orange-200"
         tailwind
       >

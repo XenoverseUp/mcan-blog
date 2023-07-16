@@ -1,6 +1,5 @@
 "use client"
 
-import colors from "tailwindcss/colors"
 import cx from "@/utils/cx"
 import {
   forwardRef,
@@ -9,6 +8,7 @@ import {
   useRef,
   useState,
 } from "react"
+import colors from "tailwindcss/colors"
 
 class Aaa {
   #targets = []
@@ -63,7 +63,7 @@ class Aaa {
         (this.radius * this.width) / 4,
         0,
         Math.PI * 2,
-        false,
+        false
       )
     })
 
@@ -83,7 +83,7 @@ class Aaa {
         (this.radius * this.width) / 4,
         0,
         Math.PI * 2,
-        false,
+        false
       )
       this.context.fillStyle = color
       this.context.fill()
@@ -160,7 +160,7 @@ const Aa = forwardRef(
         })}
       />
     )
-  },
+  }
 )
 
 export default Aa

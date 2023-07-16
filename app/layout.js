@@ -1,6 +1,6 @@
 import Sidebar from "@/components/layout/Sidebar"
-import "./globals.css"
 import { Inter, Red_Hat_Display } from "next/font/google"
+import "./globals.css"
 
 export const red_hat_display = Red_Hat_Display({ subsets: ["latin"] })
 export const inter = Inter({ subsets: ["latin"] })
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${red_hat_display.className} ${inter.className} w-full h-screen flex bg-primary-400 overflow-hidden opacity-0 transition-opacity`}
+        className={`${red_hat_display.className} ${inter.className} flex h-screen w-full overflow-hidden bg-primary-400 opacity-0 transition-opacity`}
       >
         <Sidebar />
         {children}

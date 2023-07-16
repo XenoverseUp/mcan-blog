@@ -1,8 +1,8 @@
-import MainNavigation from "@/components/layout/sidebar/MainNavigation"
 import Introduction from "@/components/layout/sidebar/Introduction"
-import Suggestions from "@/components/layout/sidebar/Suggestions"
 import MainFooter from "@/components/layout/sidebar/MainFooter"
+import MainNavigation from "@/components/layout/sidebar/MainNavigation"
 import SidebarContainer from "@/components/layout/sidebar/SidebarContainer"
+import Suggestions from "@/components/layout/sidebar/Suggestions"
 
 const Sidebar = () => {
   return (

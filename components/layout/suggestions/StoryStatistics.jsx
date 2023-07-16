@@ -1,6 +1,4 @@
-import PixelatedArrow from "@/assets/svg/pixelated-arrow"
 import Post from "@/assets/svg/post"
-import Button from "@/components/ui/Button"
 import cx from "@/utils/cx"
 
 const StoryStatistics = ({ className }) => {
@@ -10,10 +8,10 @@ const StoryStatistics = ({ className }) => {
     <div
       className={cx(
         className,
-        "text-xs w-full h-10 flex-shrink-0 flex justify-between text-white px-4 items-center bg-accent-saturation rounded-full shadow-xl",
+        "flex h-10 w-full flex-shrink-0 items-center justify-between rounded-full bg-accent-saturation px-4 text-xs text-white shadow-xl"
       )}
     >
-      <p className="font-inter font-medium text-white/80 select-none">
+      <p className="select-none font-inter font-medium text-white/80">
         {count
           ? `In total, ${count} posts published.`
           : `No posts published, yet.`}

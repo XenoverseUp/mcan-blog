@@ -44,11 +44,11 @@ class Wave {
         (this.y / this.multiplier +
           Math.sin(
             Math.cos(i / this.length + this.increment) * this.amplitude +
-              Math.sin(i / this.length + this.incrementSine) * this.amplitude,
+              Math.sin(i / this.length + this.incrementSine) * this.amplitude
           ) *
             this.amplitude +
           Math.cos(i / this.length + this.increment) * this.amplitude) *
-          this.multiplier,
+          this.multiplier
       )
     }
 
@@ -93,7 +93,7 @@ const Sine = forwardRef(({ width, height, className }, ref) => {
         wave.current.toggleExcitement()
       },
     }),
-    [],
+    []
   )
 
   return (

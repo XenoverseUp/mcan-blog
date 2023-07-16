@@ -6,14 +6,14 @@ const ArchiveButton = ({ className }) => (
   <Button
     className={cx(
       className,
-      "flex group font-red-hat items-end flex-grow w-full p-6 bg-white rounded-3xl shadow-xl relative outline-dashed -outline-offset-8 outline-accent",
+      "group relative flex w-full flex-grow items-end rounded-3xl bg-white p-6 font-red-hat shadow-xl outline-dashed -outline-offset-8 outline-accent"
     )}
     label="Archive"
     href="/archive"
   >
-    <div className="flex justify-between items-center border-b border-accent w-full pb-1">
+    <div className="flex w-full items-center justify-between border-b border-accent pb-1">
       <p className="font-medium">archive</p>
-      <PixelatedArrow className="w-6 aspect-square fill-black group-hover:translate-x-1 transition-transform" />
+      <PixelatedArrow className="aspect-square w-6 fill-black transition-transform group-hover:translate-x-1" />
     </div>
   </Button>
 )
