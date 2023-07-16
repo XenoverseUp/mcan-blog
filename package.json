@@ -23,10 +23,10 @@
   },
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/typography": "^0.5.9",
     "inquirer": "^9.2.7",
     "prettier": "^2.8.8",
     "prettier-plugin-organize-imports": "^3.2.3",
-    "prettier-plugin-tailwindcss": "^0.3.0",
-    "tailwindcss-animation-delay": "^1.0.7"
+    "prettier-plugin-tailwindcss": "^0.3.0"
   }
 }
