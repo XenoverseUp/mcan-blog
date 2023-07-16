@@ -20,34 +20,16 @@ module.exports = {
         "accent-saturation": "#68072a",
       },
       fontFamily: {
-        "red-hat": [
-          "__Red_Hat_Display_59990b",
-          "__Red_Hat_Display_Fallback_59990b",
-          "__Inter_20951f",
-          "__Inter_Fallback_20951f",
-          "sans-serif",
-        ],
-        inter: [
-          "__Inter_20951f",
-          "__Inter_Fallback_20951f",
-          "__Red_Hat_Display_59990b",
-          "__Red_Hat_Display_Fallback_59990b",
-          "sans-serif",
-        ],
-      },
-      keyframes: {
-        wiggle: {
-          "0%, 100%": { transform: "rotate(0)" },
-          "50%": { transform: "rotate(45deg)" },
-        },
-      },
-      animation: {
-        wiggle: "wiggle .5s ease-out",
+        "red-hat": ["var(--font-red-hat)"],
+        inter: [["var(--font-inter)"]],
+        apercu: [["var(--font-apercu)"]],
       },
     },
   },
   plugins: [
     require("@tailwindcss/container-queries"),
-    require("@tailwindcss/typography"),
+    require("@tailwindcss/typography")({
+      className: "typography",
+    }),
   ],
 }

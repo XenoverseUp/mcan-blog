@@ -1,3 +1,3 @@
 const Typography = ({ children }) => (
-  <article className="prose">{children}</article>
+  <article className="typography">{children}</article>
 )

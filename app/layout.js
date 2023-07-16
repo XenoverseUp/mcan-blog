@@ -1,9 +1,7 @@
+import { apercu, inter, red_hat_display } from "@/app/style/font"
+import "@/app/style/globals.css"
+import ConditionalLayout from "@/components/layout/ContentLayout"
 import Sidebar from "@/components/layout/Sidebar"
-import { Inter, Red_Hat_Display } from "next/font/google"
-import "./globals.css"
-
-export const red_hat_display = Red_Hat_Display({ subsets: ["latin"] })
-export const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Can Durmus | Blog",
@@ -14,10 +12,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${red_hat_display.className} ${inter.className} flex h-screen w-full overflow-hidden bg-primary-400 opacity-0 transition-opacity`}
+        className={`${red_hat_display.variable} ${inter.variable} ${apercu.variable} flex h-screen w-full overflow-hidden bg-primary-400 font-apercu opacity-0 transition-opacity`}
       >
         <Sidebar />
-        {children}
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   )

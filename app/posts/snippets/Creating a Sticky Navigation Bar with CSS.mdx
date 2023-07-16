@@ -1,0 +1,34 @@
+---
+title: Creating a Sticky Navigation Bar with CSS
+cover_image: /images/sticky-navigation-bar.jpg
+---
+
+# Creating a Sticky Navigation Bar with CSS
+
+A sticky navigation bar can greatly enhance the user experience, ensuring that important navigation elements are always accessible. Here's a simple CSS snippet to create a sticky navigation bar:
+
+```css
+/* HTML */
+<nav class="sticky-nav">
+  <!-- Navigation items go here -->
+</nav>
+
+/* CSS */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 100;
+}
+
+/* Additional styling */
+.sticky-nav a {
+  /* Customize your navigation links */
+}
+
+/* Add appropriate margin or padding to the page content to prevent overlap */
+```
+
+By applying the position: sticky property to the navigation element, you can make it stick to the top of the viewport as the user scrolls. Adjust the top value as needed to control the position. Additionally, you can customize the background color, add effects to the links, and modify other properties to match your website's design.
+
+Remember to add appropriate margin or padding to your page content to prevent it from overlapping with the sticky navigation bar. With this simple CSS snippet, you can quickly create a sticky navigation bar that improves the usability and navigation experience on your website.
