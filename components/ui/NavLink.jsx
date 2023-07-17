@@ -1,17 +1,14 @@
 "use client"
 
+import cx from "@/utils/cx"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useMemo } from "react"
-import cx from "@/utils/cx"
+import { forwardRef, useMemo } from "react"
 
-const NavLink = ({
-  className,
-  activeClassName,
-  href,
-  exact = false,
-  children,
-}) => {
+const NavLink = (
+  { className, activeClassName, href, exact = false, children, ...rest },
+  ref
+) => {
   const pathname = usePathname()
   const isActive = useMemo(
     () => (exact ? pathname === href : pathname.startsWith(href)),
@@ -20,7 +17,8 @@ const NavLink = ({
 
   return (
     <Link
-      {...{ href }}
+      {...{ href, ref }}
+      {...rest}
       className={cx(
         {
           [activeClassName]: isActive,
@@ -33,4 +31,4 @@ const NavLink = ({
   )
 }
 
-export default NavLink
+export default forwardRef(NavLink)

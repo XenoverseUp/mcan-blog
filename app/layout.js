@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${red_hat_display.variable} ${inter.variable} ${apercu.variable} flex h-screen w-full overflow-hidden bg-primary-400 font-apercu opacity-0 transition-opacity`}
+        className={`${red_hat_display.variable} ${inter.variable} ${apercu.variable} bg-calm flex h-screen w-full overflow-hidden font-primary opacity-0 transition-opacity`}
       >
         <Sidebar />
         <ConditionalLayout>{children}</ConditionalLayout>

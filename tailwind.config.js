@@ -12,17 +12,22 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       backgroundColor: {
-        "primary-400": "#f4f4f4",
+        calm: "#f4f4f4",
+        "calm-shade": "#f2f3f5",
+        blue: "#ebeff8",
+        purple: "#ecebf9",
       },
       colors: {
-        accent: "#280719",
-        "accent-slight": "#6b5064",
-        "accent-saturation": "#68072a",
+        primary: "#070b28",
+        secondary: "#4f576c",
+        link: "#4479e2",
+        "link-shade": "#4654a5",
+        border: "#e8e8e8",
       },
       fontFamily: {
-        "red-hat": ["var(--font-red-hat)"],
-        inter: [["var(--font-inter)"]],
-        apercu: [["var(--font-apercu)"]],
+        primary: ["var(--font-inter)"],
+        secondary: ["var(--font-red-hat)"],
+        apercu: ["var(--font-apercu)"],
       },
     },
   },
@@ -31,5 +36,6 @@ module.exports = {
     require("@tailwindcss/typography")({
       className: "typography",
     }),
+    require("@headlessui/tailwindcss")({ prefix: "ui" }),
   ],
 }

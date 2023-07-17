@@ -1,16 +1,18 @@
 import Logo from "@/assets/svg/logo"
+import Menu from "@/components/layout/sidebar/Menu"
 import AccessibleIcon from "@/components/ui/AcessibleIcon"
-import NavLink from "@/components/ui/NavLink"
 import Link from "next/link"
 
 const MainNavigation = () => (
-  <nav className="flex w-full items-center justify-between px-10 py-4">
-    <Link href="/" aria-label="Home">
+  <nav className="flex h-16 w-full items-center px-10">
+    <Link href="/" aria-label="Home" className="z-20 mr-auto">
       <AccessibleIcon label="Can Durmus Home">
-        <Logo className="aspect-square w-10" />
+        <Logo className="aspect-square w-8" />
       </AccessibleIcon>
     </Link>
-    <div className="space-x-1 text-[2.45cqw] text-accent-slight @xl:text-sm">
+    <Menu />
+
+    {/* <div className="space-x-1 text-[2.45cqw] text-accent-slight @xl:text-sm">
       <NavLink
         href="/snippets"
         className="rounded px-2 py-1 font-medium transition-colors hover:bg-neutral-200"
@@ -47,7 +49,7 @@ const MainNavigation = () => (
       >
         About
       </NavLink>
-    </div>
+    </div> */}
   </nav>
 )
 

@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 ::selection {
-  background-color: theme(colors.accent);
-  color: theme(backgroundColor.primary-400);
+  color: theme(backgroundColor.blue);
+  background-color: theme(colors.primary);
 }

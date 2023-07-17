@@ -8,10 +8,10 @@ const StoryStatistics = ({ className }) => {
     <div
       className={cx(
         className,
-        "flex h-10 w-full flex-shrink-0 items-center justify-between rounded-full bg-accent-saturation px-4 text-xs text-white shadow-xl"
+        "z-20 flex h-10 w-full flex-shrink-0 items-center justify-between rounded-full bg-primary px-4 text-xs text-white shadow-xl"
       )}
     >
-      <p className="select-none font-inter font-medium text-white/80">
+      <p className="select-none font-primary font-medium text-white/80">
         {count
           ? `In total, ${count} posts published.`
           : `No posts published, yet.`}

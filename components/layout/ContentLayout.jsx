@@ -13,8 +13,10 @@ export default function ConditionalLayout({ children }) {
 }
 
 const ContentLayout = ({ children }) => (
-  <div>
-    <p>Content Layout</p>
+  <div className="h-full w-full overflow-y-auto overflow-x-hidden">
+    <nav className="flex h-16 w-full items-center justify-between border-b border-border px-10">
+      amk
+    </nav>
     {children}
   </div>
 )
