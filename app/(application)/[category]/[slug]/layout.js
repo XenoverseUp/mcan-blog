@@ -1,8 +1,8 @@
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className="flex w-full flex-grow flex-col items-center overflow-auto">
       <p>Slug Layout</p>
-      {children}
+      <article className="typography">{children}</article>
     </div>
   )
 }

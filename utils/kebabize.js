@@ -5,9 +5,10 @@
  */
 
 const kebabize = string =>
-  string.replace(
-    /[A-Z]+(?![a-z])|[A-Z]/g,
-    ($, ofs) => (ofs ? "-" : "") + $.toLowerCase()
-  )
+  string
+    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+    .split(" ")
+    .map(word => word.toLowerCase())
+    .join("-")
 
 export default kebabize

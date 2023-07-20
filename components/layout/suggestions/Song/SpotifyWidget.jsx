@@ -27,9 +27,6 @@ const SpotifyWidget = async ({ className }) => {
         quality={0}
         className="pointer-events-none object-cover transition-all"
       />
-      <span className="absolute left-0 right-0 top-0 z-30 m-auto w-fit select-none rounded-b-xl bg-black px-3 pb-[6px] pt-1 font-secondary text-xs text-white opacity-0 transition-opacity duration-300 hover:opacity-0">
-        can's pick
-      </span>
       <main className="absolute inset-0 z-20 flex h-full w-full justify-between gap-4 p-4 font-secondary text-white">
         <div className="flex h-full items-center space-x-3">
           <div className="relative grid aspect-square h-full flex-shrink-0 select-none place-items-center overflow-hidden rounded-xl bg-black bg-opacity-10 shadow-2xl">

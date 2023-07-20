@@ -30,7 +30,7 @@ const Menu = () => {
           leaveTo="opacity-0"
         >
           <div
-            className={`scale absolute inset-0 bg-white/80 backdrop-blur-md transition-all`}
+            className={`scale absolute inset-0 bg-white/75 backdrop-blur-sm transition-all`}
           />
         </Transition.Child>
         <DropdownMenu.Portal forceMount>

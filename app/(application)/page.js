@@ -1,4 +1,5 @@
 import { getAllPostsMeta } from "@/lib/mdx"
+import Link from "next/link"
 
 export default async function Home() {
   const data = await getAllPostsMeta()
@@ -9,7 +10,9 @@ export default async function Home() {
 
       {data.map(post => (
         <div>
-          <h1>{post.frontmatter.title}</h1>
+          <Link href={`/${post.type}/${post.slug}`}>
+            {post.frontmatter.title}
+          </Link>
         </div>
       ))}
     </main>
