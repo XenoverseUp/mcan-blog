@@ -1,6 +1,7 @@
 import { apercu, inter, red_hat_display } from "@/app/style/font"
 import "@/app/style/globals.css"
-import Sidebar from "@/components/layout/Sidebar"
+import MainFooter from "@/components/layout/MainFooter"
+import MainNavigation from "@/components/layout/MainNavigation"
 
 export const metadata = {
   title: "Can Durmus | Blog",
@@ -11,10 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${red_hat_display.variable} ${inter.variable} ${apercu.variable} flex h-screen w-full overflow-hidden bg-calm font-primary opacity-0 transition-opacity`}
+        className={`${red_hat_display.variable} ${inter.variable} ${apercu.variable} flex h-screen w-full flex-col justify-between overflow-hidden bg-calm font-primary`}
       >
-        <Sidebar />
+        <MainNavigation />
         {children}
+        <MainFooter />
       </body>
     </html>
   )

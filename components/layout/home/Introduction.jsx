@@ -1,8 +1,8 @@
 import GradientText from "../../ui/GradientText"
 
 const Introduction = () => (
-  <section className="mb-auto px-10">
-    <h1 className="mt-12 text-[6.25cqw] font-semibold leading-normal tracking-tight text-primary @2xl:text-[42px]">
+  <section>
+    <h1 className="text-[46px] font-semibold leading-normal tracking-tight text-primary">
       Welcome to my blog.{" "}
       <span className="text-secondary">
         I'm <GradientText>Can</GradientText> and in this place, I share my

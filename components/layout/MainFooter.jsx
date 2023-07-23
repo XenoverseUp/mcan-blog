@@ -5,7 +5,7 @@ import Spotify from "@/assets/svg/social/spotify"
 import IconLink from "@/components/ui/IconLink"
 
 const MainFooter = () => (
-  <footer className="flex h-10 w-full items-center justify-between border-t border-border bg-white px-4">
+  <footer className="flex h-10 w-full flex-shrink-0 items-center justify-between border-t border-border bg-white px-4">
     <p className="text-xs text-secondary">
       Copyright 2023 © Muhammed Can Durmus
     </p>
