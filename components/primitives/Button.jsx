@@ -5,7 +5,7 @@ import Link from "next/link"
 import { cva } from "class-variance-authority"
 
 const ButtonVariants = cva(
-  "rounded-full py-1 border border-accent font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
+  "rounded-full flex items-center gap-3 py-1 border border-accent font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
   {
     variants: {
       size: {
@@ -36,7 +36,6 @@ const Button = ({
   href,
   leftIcon,
   rightIcon,
-  animateIconOnHover = { left: false, right: true },
   ...rest
 }) => {
   return (

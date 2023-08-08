@@ -11,7 +11,7 @@ export default async function Home() {
       <main className="w-full">
         <Container>
           <div className="mt-10 flex w-full flex-col xs:mt-12">
-            <div id="intro" className="flex w-full flex-col gap-9 md:max-w-lg">
+            <div id="intro" className="flex w-full flex-col gap-9 lg:max-w-lg">
               <h1 className="font-staff-wide text-2xl uppercase leading-[0.9] xs:text-3xl xs:leading-[0.9] sm:text-4xl sm:leading-[0.9]">
                 <Balancer>
                   More like a <br />{" "}
