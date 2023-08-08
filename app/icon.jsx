@@ -1,13 +1,12 @@
-import Logo from "@/assets/svg/logo"
+import Logo from "@/components/primitives/Logo"
 import { ImageResponse } from "next/server"
 
 export const size = {
-  width: 48,
-  height: 48,
+  width: 27,
+  height: 32,
 }
 export const contentType = "image/png"
 
-// Image generation
 export default function Icon() {
   return new ImageResponse(<Logo />, {
     ...size,

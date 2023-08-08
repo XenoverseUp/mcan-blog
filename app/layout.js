@@ -1,7 +1,12 @@
-import { red_hat_display } from "@/app/style/font"
+import {
+  space_mono,
+  staff,
+  staff_condensed,
+  staff_wide,
+} from "@/app/style/font"
 import "@/app/style/globals.css"
-import MainFooter from "@/components/layout/MainFooter"
-import MainNavigation from "@/components/layout/MainNavigation"
+import MainFooter from "@/components/composed/MainFooter"
+import MainNavigation from "@/components/composed/MainNavigation"
 
 export const metadata = {
   title: "Can Durmus | Blog",
@@ -11,7 +16,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${red_hat_display.variable}`}>
+      <body
+        className={`${space_mono.variable} ${staff.variable} ${staff_condensed.variable} ${staff_wide.variable} bg-background font-staff text-white`}
+      >
         <MainNavigation />
         {children}
         <MainFooter />

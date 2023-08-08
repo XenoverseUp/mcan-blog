@@ -1,33 +1,32 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./assets/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "475px",
+      ...defaultTheme.screens,
+    },
+    fontFamily: {
+      mono: ["var(--font-space-mono)", "mono"],
+      staff: ["var(--font-staff)", "sans-serif"],
+      "staff-wide": ["var(--font-staff-wide)", "sans-serif"],
+      "staff-condensed": ["var(--font-staff-condensed)", "sans-serif"],
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
-      backgroundColor: {
-        calm: "#f4f4f4",
-        "calm-shade": "#f2f3f5",
-        blue: "#ebeff8",
-        purple: "#ecebf9",
-      },
       colors: {
-        primary: "#070b28",
-        secondary: "#4f576c",
-        link: "#4479e2",
-        "link-shade": "#4654a5",
-        border: "#e8e8e8",
-      },
-      fontFamily: {
-        primary: ["var(--font-inter)"],
-        secondary: ["var(--font-red-hat)"],
-        apercu: ["var(--font-apercu)"],
+        accent: "#CEFF9D",
+        background: "#000",
       },
     },
   },

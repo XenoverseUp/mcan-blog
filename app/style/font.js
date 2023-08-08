@@ -1,35 +1,55 @@
-import { Inter, Red_Hat_Display } from "next/font/google"
+import { Space_Mono } from "next/font/google"
 import localFont from "next/font/local"
 
-export const red_hat_display = Red_Hat_Display({
+export const space_mono = Space_Mono({
   subsets: ["latin"],
-  variable: "--font-red-hat",
-  display: "swap",
-})
-export const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
   display: "swap",
 })
 
-export const apercu = localFont({
+export const staff = localFont({
   src: [
     {
-      path: "../../assets/font/apercu/Apercu Regular.otf",
+      path: "../../assets/font/Staff/Staff-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../assets/font/apercu/Apercu Medium.otf",
-      weight: "500",
-      style: "normal",
+      path: "../../assets/font/Staff/Staff-Italic.woff2",
+      weight: "400",
+      style: "italic",
     },
     {
-      path: "../../assets/font/apercu/Apercu Bold.otf",
-      weight: "700",
+      path: "../../assets/font/Staff/Staff-Bold.woff2",
+      weight: "bold",
       style: "normal",
     },
   ],
   display: "swap",
-  variable: "--font-apercu",
+  variable: "--font-staff",
+})
+
+export const staff_wide = localFont({
+  src: [
+    {
+      path: "../../assets/font/Staff Wide/StaffWide-Bold.woff2",
+      weight: "bold",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+  variable: "--font-staff-wide",
+})
+
+export const staff_condensed = localFont({
+  src: [
+    {
+      path: "../../assets/font/Staff Condensed/StaffCondensed-Bold.woff2",
+      weight: "bold",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+  variable: "--font-staff-condensed",
 })

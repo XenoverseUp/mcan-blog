@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  outline: none;
+}
+
 ::selection {
-  color: theme(backgroundColor.blue);
-  background-color: theme(colors.primary);
 }
