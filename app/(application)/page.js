@@ -1,4 +1,5 @@
 import FadedPattern from "@/components/composed/FadedPattern"
+import ChipSlider from "@/components/composed/Home/ChipSlider"
 import LandingButtons from "@/components/composed/Home/LandingButtons"
 import Container from "@/components/primitives/Container"
 import ParagraphWrapper from "@/components/primitives/ParagraphWrapper"
@@ -39,6 +40,7 @@ export default async function Home() {
                   I write about them, as well.
                 </p>
               </ParagraphWrapper>
+              <ChipSlider {...{ chips }} />
             </div>
             <div id="suggestion"></div>
           </div>
@@ -47,3 +49,5 @@ export default async function Home() {
     </>
   )
 }
+
+const chips = [{ name: "JavaScript", color: "yellow" }]

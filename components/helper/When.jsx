@@ -1,6 +1,6 @@
 import ConditionalWrapper from "@/components/helper/ConditionalWrapper"
 
-const When = ({ children, condition, asChild, element }) =>
+const When = ({ children, condition, asChild, element = "div" }) =>
   condition ? (
     <ConditionalWrapper condition={!asChild} {...{ element }}>
       {children}
