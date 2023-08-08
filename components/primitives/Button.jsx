@@ -1,11 +1,38 @@
 import ConditionalWrapper from "@/components/helper/ConditionalWrapper"
 import When from "@/components/helper/When"
-import cx from "@/utils/cx"
 import Link from "next/link"
+
+import { cva } from "class-variance-authority"
+
+const ButtonVariants = cva(
+  "rounded-full py-1 border border-accent font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
+  {
+    variants: {
+      size: {
+        small: ["px-4", "text-sm"],
+        normal: ["px-5", "text-lg"],
+      },
+      variant: {
+        border: [
+          "text-accent",
+          "bg-accent/10",
+          "hover:bg-accent",
+          "hover:text-background",
+        ],
+        filled: ["text-background", "bg-accent", "hover:brightness-90"],
+      },
+    },
+    defaultVariants: {
+      size: "normal",
+      variant: "border",
+    },
+  }
+)
 
 const Button = ({
   children,
-  small,
+  variant,
+  size,
   href,
   leftIcon,
   rightIcon,
@@ -18,12 +45,7 @@ const Button = ({
       condition={true}
       {...(href && { href })}
       {...rest}
-      className={cx(
-        "rounded-full border border-accent bg-accent/10 px-5 py-1 font-staff-condensed text-lg uppercase text-accent transition-colors hover:bg-accent hover:text-background motion-reduce:transition-none",
-        {
-          "px-4 text-sm": small,
-        }
-      )}
+      className={ButtonVariants({ size, variant })}
     >
       <When condition={!!leftIcon}>{leftIcon}</When>
       {children}

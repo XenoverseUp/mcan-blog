@@ -8,12 +8,10 @@ const LandingButtons = () => {
 
   return (
     <div className="flex flex-wrap gap-[10px]">
-      <Button leftIcon={<h1>Hello</h1>} small={!isDesktop}>
-        Snippets
-      </Button>
-      <Button small={!isDesktop}>Tutorials</Button>
-      <Button small={!isDesktop}>Opinions</Button>
-      <Button small={!isDesktop}>About Me</Button>
+      <Button>Snippets</Button>
+      <Button>Tutorials</Button>
+      <Button>Opinions</Button>
+      <Button>About Me</Button>
     </div>
   )
 }

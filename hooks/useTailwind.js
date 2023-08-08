@@ -5,6 +5,8 @@ import tailwindConfig from "@/tailwind.config.js"
 
 const config = resolveConfig(tailwindConfig)
 
-export const { useBreakpoint: useTailwindBreakpoint } = create(
-  config.theme.screens
-)
+export const {
+  useBreakpoint: useTailwindBreakpoint,
+  useBreakpointEffect: useTailwindBreakpointEffect,
+  useBreakpointValue: useTailwindBreakpointValue,
+} = create(config.theme.screens)

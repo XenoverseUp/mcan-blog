@@ -35,6 +35,8 @@ module.exports = {
     require("@tailwindcss/typography")({
       className: "typography",
     }),
-    require("@headlessui/tailwindcss")({ prefix: "ui" }),
   ],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 }
