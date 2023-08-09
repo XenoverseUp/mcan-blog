@@ -63,6 +63,7 @@ async function getParams() {
 
 async function process({ type, message }) {
   const commitMessage = `${type}: ${message}`
+  console.log("\n")
 
   await execute("git add .")
 
@@ -73,5 +74,10 @@ async function process({ type, message }) {
     console.log("Nothing to commit.")
   }
 
-  const {} = await execute(`git push -u origin ${branch}`)
+  try {
+    const { stdout } = await execute(`git push -u origin ${branch}`)
+    console.log(stdout)
+  } catch (error) {
+    console.error(error)
+  }
 }
