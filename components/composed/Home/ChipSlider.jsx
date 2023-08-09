@@ -9,18 +9,22 @@ import { useLayoutEffect, useMemo, useRef } from "react"
 const ChipSlider = ({ chips }) => {
   const divisions = useMemo(() => subdivide(chips, 3), [])
   const refs = useRef([])
-  const timelines = [gsap.timeline(), gsap.timeline(), gsap.timeline()]
+  const animations = []
 
   useLayoutEffect(() => {
-    gsap.fromTo("#co", { opacity: 0 }, { opacity: 1, delay: 0.1 })
+    gsap.fromTo(
+      "#marquee-container",
+      { opacity: 0 },
+      { opacity: 1, delay: 0.1 }
+    )
 
-    timelines[0].to(refs.current.at(0), {
+    animations[0] = gsap.to(refs.current.at(0), {
       duration: 30,
       xPercent: -50,
       repeat: -1,
       ease: "none",
     })
-    timelines[1].fromTo(
+    animations[1] = gsap.fromTo(
       refs.current.at(1),
       { xPercent: -50 },
       {
@@ -30,7 +34,7 @@ const ChipSlider = ({ chips }) => {
         repeat: -1,
       }
     )
-    timelines[2].to(refs.current.at(2), {
+    animations[2] = gsap.to(refs.current.at(2), {
       duration: 25,
       xPercent: -50,
       repeat: -1,
@@ -40,7 +44,7 @@ const ChipSlider = ({ chips }) => {
 
   return (
     <div
-      id="co"
+      id="marquee-container"
       className="relative flex flex-col gap-[6px] overflow-hidden opacity-0 before:pointer-events-none before:absolute before:bottom-0 before:left-0 before:top-0 before:z-10 before:w-16 before:bg-gradient-to-r before:from-background before:to-transparent after:pointer-events-none after:absolute after:bottom-0 after:right-0 after:top-0 after:z-10 after:w-16 after:bg-gradient-to-l after:from-background after:to-transparent"
     >
       {divisions.map((chipset, i) => (
@@ -48,10 +52,20 @@ const ChipSlider = ({ chips }) => {
           ref={instance => refs.current.push(instance)}
           key={`chipset-${i}`}
           className={clsx("relative flex h-auto w-fit gap-1", {
-            "-left-1/2": i % 2,
+            "-left-1/4": i % 2,
           })}
-          onMouseOver={() => timelines.at(i).pause()}
-          onMouseLeave={() => timelines.at(i).resume()}
+          onMouseOver={() =>
+            gsap.to(animations.at(i), {
+              timeScale: 0.2,
+              duration: 0.5,
+            })
+          }
+          onMouseLeave={() =>
+            gsap.to(animations.at(i), {
+              timeScale: 1,
+              duration: 1,
+            })
+          }
         >
           {chipset.map(({ name, color }, j) => (
             <Chip key={name + i + j} {...{ color }}>
