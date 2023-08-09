@@ -5,12 +5,17 @@ import Link from "next/link"
 import { cva } from "class-variance-authority"
 
 const ButtonVariants = cva(
-  "rounded-full flex items-center gap-3 py-1 border border-accent font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
+  "rounded-full w-fit h-fit flex items-center py-1 font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
   {
     variants: {
       size: {
-        small: ["px-4", "text-sm"],
-        normal: ["px-5", "text-lg"],
+        small: ["px-4", "text-sm", "gap-2"],
+        normal: ["px-5", "text-lg", "gap-3"],
+      },
+      textCase: {
+        capitalize: ["capitalize"],
+        uppercase: ["uppercase"],
+        lowercase: ["lowercase"],
       },
       variant: {
         border: [
@@ -18,13 +23,23 @@ const ButtonVariants = cva(
           "bg-accent/10",
           "hover:bg-accent",
           "hover:text-background",
+          "border",
+          "border-accent",
         ],
-        filled: ["text-background", "bg-accent", "hover:brightness-90"],
+        solid: ["text-background", "bg-accent", "hover:brightness-90"],
+        soft: [
+          "text-accent",
+          "bg-accent/20",
+          "border-transparent",
+          "hover:bg-accent/30",
+        ],
+        ghost: ["px-2", "py-0", "rounded-none", "text-accent"],
       },
     },
     defaultVariants: {
       size: "normal",
       variant: "border",
+      textCase: "uppercase",
     },
   }
 )
@@ -33,6 +48,7 @@ const Button = ({
   children,
   variant,
   size,
+  textCase,
   href,
   leftIcon,
   rightIcon,
@@ -44,7 +60,7 @@ const Button = ({
       condition={true}
       {...(href && { href })}
       {...rest}
-      className={ButtonVariants({ size, variant })}
+      className={ButtonVariants({ size, variant, textCase })}
     >
       <When condition={!!leftIcon}>{leftIcon}</When>
       {children}
