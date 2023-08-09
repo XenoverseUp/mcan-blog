@@ -5,7 +5,7 @@ import Link from "next/link"
 import { cva } from "class-variance-authority"
 
 const ButtonVariants = cva(
-  "rounded-full w-fit h-fit flex items-center py-[3px] font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
+  "rounded-full select-none w-fit h-fit flex items-center py-[3px] font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
   {
     variants: {
       size: {

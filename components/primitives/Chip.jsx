@@ -10,7 +10,7 @@ const Chip = ({ children, className, color, border = false }) => (
     }}
     className={cx(
       className,
-      "h-fit rounded-full px-4 pb-[5px] pt-[3px] font-mono text-xs font-bold",
+      "h-fit select-none rounded-full px-4 pb-[5px] pt-[3px] font-mono text-xs font-bold",
       {
         border,
       }
