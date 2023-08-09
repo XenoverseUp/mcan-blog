@@ -6,7 +6,7 @@ const FadedPattern = () => (
     aria-hidden
   >
     <span className="absolute h-full w-full bg-[radial-gradient(400px_400px_at_top_center,_var(--tw-gradient-stops))] from-background/50 to-background md:bg-[radial-gradient(122.38%_122.38%_at_-0.00%_-0.00%,_rgba(0,_0,_0,_0.40)_0%,rgba(0,_0,_0,_0.80)_50%,_#000_76.56%)]" />
-    <Pattern className="w-full stroke-0" />
+    <Pattern className="w-full fill-accent stroke-0" />
   </div>
 )
 

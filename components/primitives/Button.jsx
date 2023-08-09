@@ -5,7 +5,7 @@ import Link from "next/link"
 import { cva } from "class-variance-authority"
 
 const ButtonVariants = cva(
-  "rounded-full w-fit h-fit flex items-center py-1 font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
+  "rounded-full w-fit h-fit flex items-center py-[3px] font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
   {
     variants: {
       size: {
@@ -21,24 +21,31 @@ const ButtonVariants = cva(
         border: [
           "text-accent",
           "bg-accent/10",
-          "hover:bg-accent",
-          "hover:text-background",
           "border",
           "border-accent",
+          "hover:bg-accent",
+          "hover:text-background",
+          "active:bg-accent/90",
         ],
-        solid: ["text-background", "bg-accent", "hover:brightness-90"],
+        solid: [
+          "text-background",
+          "bg-accent",
+          "hover:bg-accent/90",
+          "active:bg-accent",
+        ],
         soft: [
           "text-accent",
           "bg-accent/20",
           "border-transparent",
           "hover:bg-accent/30",
+          "active:bg-accent/40",
         ],
         ghost: ["px-2", "py-0", "rounded-none", "text-accent"],
       },
     },
     defaultVariants: {
       size: "normal",
-      variant: "border",
+      variant: "soft",
       textCase: "uppercase",
     },
   }

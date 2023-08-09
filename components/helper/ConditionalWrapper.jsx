@@ -2,7 +2,7 @@ import { Fragment } from "react"
 
 const ConditionalWrapper = ({
   children,
-  wrapper: Wrapper = Fragment,
+  wrapper: Wrapper = "div",
   condition,
   ...rest
 }) =>

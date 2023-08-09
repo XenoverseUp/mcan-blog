@@ -42,7 +42,7 @@ export default async function Home() {
               </ParagraphWrapper>
               <ChipSlider {...{ chips }} />
             </div>
-            <div id="suggestion"></div>
+            <div id="suggestion" className="h-16"></div>
           </div>
         </Container>
       </main>
@@ -50,4 +50,33 @@ export default async function Home() {
   )
 }
 
-const chips = [{ name: "JavaScript", color: "yellow" }]
+const chips = [
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+  { name: "JavaScript", color: "yellow" },
+]
