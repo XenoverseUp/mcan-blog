@@ -21,7 +21,7 @@ export default async function Home() {
                   </span>
                 </Balancer>
               </h1>
-              <ParagraphWrapper className="text-sm xs:text-base md:text-xl">
+              <ParagraphWrapper className="text-base md:text-xl">
                 <p>
                   Today, technology thrives in a way never seen before. The
                   capabilities of human-made machines mesmerizes me. And here I
@@ -29,7 +29,7 @@ export default async function Home() {
                 </p>
               </ParagraphWrapper>
               <LandingButtons />
-              <ParagraphWrapper className="text-sm xs:text-base md:text-xl">
+              <ParagraphWrapper className="text-base md:text-xl">
                 <p>
                   Today, technology thrives in a way never seen before. The
                   capabilities of human-made machines mesmerizes me. And here I
