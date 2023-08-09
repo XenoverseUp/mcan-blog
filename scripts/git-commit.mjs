@@ -65,6 +65,10 @@ async function process({ type, message }) {
   const commitMessage = `${type}: ${message}`
 
   await execute("git add .")
-  console.log((await execute(`git commit -m "${commitMessage}"`)).stdout)
-  console.log((await execute(`git push -u origin ${branch}`)).stdout)
+  const { code, stdout } = await execute(`git commit -m "${commitMessage}"`)
+
+  if (code === 1) return console.log("Nothing to commit.")
+  console.log(stdout)
+
+  const {} = await execute(`git push -u origin ${branch}`)
 }
