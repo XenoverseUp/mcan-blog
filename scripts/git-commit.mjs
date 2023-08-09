@@ -53,9 +53,8 @@ async function getParams() {
         return true
       },
       filter: message => {
-        if (message.at(-1) === ".")
-          return message.slice(0, message.length - 1).trim()
-        return message.trim()
+        if (message.at(-1) === ".") return message.slice(0, message.length - 1)
+        return message
       },
     },
   ])
