@@ -14,4 +14,6 @@
 }
 
 ::selection {
+  background-color: theme(colors.accent);
+  color: theme(colors.background);
 }
