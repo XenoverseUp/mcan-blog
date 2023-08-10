@@ -40,7 +40,7 @@ const ButtonVariants = cva(
           "hover:bg-accent/30",
           "active:bg-accent/40",
         ],
-        ghost: ["px-2", "py-0", "rounded-none", "text-accent"],
+        ghost: ["!px-2", "py-0", "rounded-none", "text-accent"],
       },
     },
     defaultVariants: {

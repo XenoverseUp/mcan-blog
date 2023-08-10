@@ -5,9 +5,10 @@ import {
   staff_wide,
 } from "@/app/style/font"
 import "@/app/style/globals.css"
-import MainFooter from "@/components/composed/MainFooter"
-import MainNavigation from "@/components/composed/MainNavigation"
+import MainFooter from "@/components/composed/Layout/MainFooter"
+import MainNavigation from "@/components/composed/Layout/MainNavigation"
 
+/** @type {import("next").Metadata} */
 export const metadata = {
   title: "Can Durmus | Blog",
   description: "Hello my bud!",

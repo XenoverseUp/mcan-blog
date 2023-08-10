@@ -1,8 +1,12 @@
-import FadedPattern from "@/components/composed/FadedPattern"
+import CanvasArt from "@/components/composed/Home/CanvasArt"
 import ChipSlider from "@/components/composed/Home/ChipSlider"
-import LandingButtons from "@/components/composed/Home/LandingButtons"
+import SpotifyPlayer from "@/components/composed/Home/SpotifyPlayer"
+import FadedPattern from "@/components/composed/Layout/FadedPattern"
+import Button from "@/components/primitives/Button"
 import Container from "@/components/primitives/Container"
+import Divider from "@/components/primitives/Divider"
 import ParagraphWrapper from "@/components/primitives/ParagraphWrapper"
+import { ArrowRightIcon } from "@radix-ui/react-icons"
 import { Balancer } from "react-wrap-balancer"
 
 export default async function Home() {
@@ -11,11 +15,14 @@ export default async function Home() {
       <FadedPattern />
       <main className="w-full">
         <Container>
-          <div className="mt-10 flex w-full flex-col xs:mt-12">
-            <div id="intro" className="flex w-full flex-col gap-9 lg:max-w-lg">
+          <div className="mt-10 flex w-full flex-col gap-9 xs:mt-12">
+            <div
+              name="intro"
+              className="flex w-full flex-col gap-9 lg:max-w-lg"
+            >
               <h1 className="font-staff-wide text-2xl uppercase leading-[0.9] xs:text-3xl xs:leading-[0.9] sm:text-4xl sm:leading-[0.9]">
                 <Balancer>
-                  More like a <br />{" "}
+                  More like a <br className="hidden sm:block" />{" "}
                   <span className="text-accent">
                     digital journal<sup>1</sup>
                   </span>
@@ -28,7 +35,12 @@ export default async function Home() {
                   am — trying to left a fingerprint in this universe.
                 </p>
               </ParagraphWrapper>
-              <LandingButtons />
+              <div className="flex flex-wrap gap-[10px]">
+                <Button>Snippets</Button>
+                <Button>Tutorials</Button>
+                <Button>Opinions</Button>
+                <Button rightIcon={<ArrowRightIcon />}>About Me</Button>
+              </div>
               <ParagraphWrapper className="text-base md:text-xl">
                 <p>
                   Today, technology thrives in a way never seen before. The
@@ -41,8 +53,15 @@ export default async function Home() {
                 </p>
               </ParagraphWrapper>
               <ChipSlider {...{ chips }} />
+              <Divider />
             </div>
-            <div id="suggestion" className="h-16"></div>
+            <div name="suggestion" className="flex w-full flex-col gap-9">
+              <h2 className="font-staff-wide text-2xl">
+                Dear <span className="text-accent">diary</span>...
+              </h2>
+              <CanvasArt />
+              <SpotifyPlayer />
+            </div>
           </div>
         </Container>
       </main>
@@ -82,7 +101,7 @@ const chips = [
     color: "#2762E9",
     url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
-  { name: "Radix UI", color: "#0DC5B3", url: "https://www.radix-ui.com/" },
+  { name: "RadixUI", color: "#0DC5B3", url: "https://www.radix-ui.com/" },
   { name: "WASM", color: "#634CE8", url: "https://webassembly.org/" },
   {
     name: "Framer Motion",

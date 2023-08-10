@@ -58,7 +58,7 @@ const ChipSlider = ({ chips }) => {
     <div
       style={{ "--gap-y": `${gapY}px` }}
       id="marquee-container"
-      className="relative flex h-fit flex-col gap-[var(--gap-y)] overflow-hidden opacity-0 before:pointer-events-none before:absolute before:bottom-0 before:left-0 before:top-0 before:z-10 before:w-12 before:bg-gradient-to-r before:from-background before:to-transparent after:pointer-events-none after:absolute after:bottom-0 after:right-0 after:top-0 after:z-10 after:w-16 after:bg-gradient-to-l after:from-background after:to-transparent"
+      className="relative flex h-fit flex-col gap-[var(--gap-y)] overflow-hidden opacity-0 before:pointer-events-none before:absolute before:inset-0 before:z-10 before:bg-[linear-gradient(to_right,theme(colors.background),transparent_20%_80%,theme(colors.background))]"
     >
       {divisions.map((chipset, i) => (
         <div
@@ -80,17 +80,23 @@ const ChipSlider = ({ chips }) => {
           }
         >
           {chipset.map(({ name, color, url }, j) => (
-            <Link className="h-7" href={url} target="_blank">
-              <Chip key={name + i + j} {...{ color }}>
-                {name}
-              </Chip>
+            <Link
+              key={name + i + j + "-first"}
+              className="h-7"
+              href={url}
+              target="_blank"
+            >
+              <Chip {...{ color }}>{name}</Chip>
             </Link>
           ))}
           {chipset.map(({ name, color, url }, j) => (
-            <Link className="h-fit" href={url} target="_blank">
-              <Chip key={name + i + j} {...{ color }}>
-                {name}
-              </Chip>
+            <Link
+              key={name + i + j + "-second"}
+              className="h-fit"
+              href={url}
+              target="_blank"
+            >
+              <Chip {...{ color }}>{name}</Chip>
             </Link>
           ))}
         </div>
