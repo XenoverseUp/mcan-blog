@@ -4,6 +4,7 @@ import Chip from "@/components/primitives/Chip"
 import subdivide from "@/utils/subdivide"
 import clsx from "clsx"
 import { gsap } from "gsap"
+import Link from "next/link"
 import { useLayoutEffect, useMemo, useRef } from "react"
 
 const ChipSlider = ({ chips }) => {
@@ -11,7 +12,7 @@ const ChipSlider = ({ chips }) => {
   const refs = useRef([])
   const animations = []
   const gapX = 5
-  const gapY = 6
+  const gapY = 7
 
   useLayoutEffect(() => {
     gsap.fromTo(
@@ -57,14 +58,14 @@ const ChipSlider = ({ chips }) => {
     <div
       style={{ "--gap-y": `${gapY}px` }}
       id="marquee-container"
-      className="relative flex flex-col gap-[var(--gap-y)] overflow-hidden opacity-0 before:pointer-events-none before:absolute before:bottom-0 before:left-0 before:top-0 before:z-10 before:w-12 before:bg-gradient-to-r before:from-background before:to-transparent after:pointer-events-none after:absolute after:bottom-0 after:right-0 after:top-0 after:z-10 after:w-16 after:bg-gradient-to-l after:from-background after:to-transparent"
+      className="relative flex h-fit flex-col gap-[var(--gap-y)] overflow-hidden opacity-0 before:pointer-events-none before:absolute before:bottom-0 before:left-0 before:top-0 before:z-10 before:w-12 before:bg-gradient-to-r before:from-background before:to-transparent after:pointer-events-none after:absolute after:bottom-0 after:right-0 after:top-0 after:z-10 after:w-16 after:bg-gradient-to-l after:from-background after:to-transparent"
     >
       {divisions.map((chipset, i) => (
         <div
           ref={instance => refs.current.push(instance)}
           key={`chipset-${i}`}
           style={{ "--gap-x": `${gapX}px` }}
-          className={clsx("relative flex h-auto w-fit gap-[var(--gap-x)]")}
+          className={clsx("relative flex h-fit w-fit gap-[var(--gap-x)]")}
           onMouseOver={() =>
             gsap.to(animations.at(i), {
               timeScale: 0.2,
@@ -78,15 +79,19 @@ const ChipSlider = ({ chips }) => {
             })
           }
         >
-          {chipset.map(({ name, color }, j) => (
-            <Chip key={name + i + j} {...{ color }}>
-              {name}
-            </Chip>
+          {chipset.map(({ name, color, url }, j) => (
+            <Link className="h-7" href={url} target="_blank">
+              <Chip key={name + i + j} {...{ color }}>
+                {name}
+              </Chip>
+            </Link>
           ))}
-          {chipset.map(({ name, color }, j) => (
-            <Chip key={name + i + j} {...{ color }}>
-              {name}
-            </Chip>
+          {chipset.map(({ name, color, url }, j) => (
+            <Link className="h-fit" href={url} target="_blank">
+              <Chip key={name + i + j} {...{ color }}>
+                {name}
+              </Chip>
+            </Link>
           ))}
         </div>
       ))}
