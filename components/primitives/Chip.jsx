@@ -1,16 +1,15 @@
 import cx from "@/utils/cx"
 import tinycolor from "tinycolor2"
 
-const Chip = ({ children, className, color, border = false }) => (
+const Chip = ({ children, className, color, border = true }) => (
   <span
     style={{
-      color,
-      borderColor: color,
-      backgroundColor: tinycolor(color).darken(border ? 45 : 42),
+      "--color-bg": tinycolor(color).setAlpha(border ? 0.15 : 0.25),
+      "--color-fg": tinycolor(color).brighten().saturate(),
     }}
     className={cx(
       className,
-      "h-fit select-none rounded-full px-4 pb-[5px] pt-[3px] font-mono text-xs font-bold",
+      "h-fit cursor-pointer select-none whitespace-nowrap rounded-full border-[var(--color-fg)] bg-[var(--color-bg)] px-4 pb-[4px] pt-[3px] font-mono text-xs font-bold text-[var(--color-fg)] transition-colors hover:bg-[var(--color-fg)] hover:text-black/70",
       {
         border,
       }

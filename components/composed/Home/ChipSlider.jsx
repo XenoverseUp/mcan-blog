@@ -10,6 +10,8 @@ const ChipSlider = ({ chips }) => {
   const divisions = useMemo(() => subdivide(chips, 3), [])
   const refs = useRef([])
   const animations = []
+  const gapX = 5
+  const gapY = 6
 
   useLayoutEffect(() => {
     gsap.fromTo(
@@ -18,42 +20,51 @@ const ChipSlider = ({ chips }) => {
       { opacity: 1, delay: 0.1 }
     )
 
-    animations[0] = gsap.to(refs.current.at(0), {
-      duration: 30,
-      xPercent: -50,
-      repeat: -1,
-      ease: "none",
-    })
+    // Goes from -50% to `gap` / 2: 2px.
+    animations[0] = gsap.fromTo(
+      refs.current.at(0),
+      { x: "-50%" },
+      {
+        duration: 30 * 0.75,
+        x: gapX / 2,
+        repeat: -1,
+        ease: "none",
+      }
+    )
     animations[1] = gsap.fromTo(
       refs.current.at(1),
-      { xPercent: -50 },
+      { x: "-50%" },
       {
-        duration: 22,
-        xPercent: 0,
+        duration: 21 * 0.75,
+        x: gapX / 2,
         ease: "none",
         repeat: -1,
       }
     )
-    animations[2] = gsap.to(refs.current.at(2), {
-      duration: 25,
-      xPercent: -50,
-      repeat: -1,
-      ease: "none",
-    })
+    animations[2] = gsap.fromTo(
+      refs.current.at(2),
+      { x: "-50%" },
+      {
+        duration: 19 * 0.75,
+        x: gapX / 2,
+        repeat: -1,
+        ease: "none",
+      }
+    )
   }, [])
 
   return (
     <div
+      style={{ "--gap-y": `${gapY}px` }}
       id="marquee-container"
-      className="relative flex flex-col gap-[6px] overflow-hidden opacity-0 before:pointer-events-none before:absolute before:bottom-0 before:left-0 before:top-0 before:z-10 before:w-16 before:bg-gradient-to-r before:from-background before:to-transparent after:pointer-events-none after:absolute after:bottom-0 after:right-0 after:top-0 after:z-10 after:w-16 after:bg-gradient-to-l after:from-background after:to-transparent"
+      className="relative flex flex-col gap-[var(--gap-y)] overflow-hidden opacity-0 before:pointer-events-none before:absolute before:bottom-0 before:left-0 before:top-0 before:z-10 before:w-12 before:bg-gradient-to-r before:from-background before:to-transparent after:pointer-events-none after:absolute after:bottom-0 after:right-0 after:top-0 after:z-10 after:w-16 after:bg-gradient-to-l after:from-background after:to-transparent"
     >
       {divisions.map((chipset, i) => (
         <div
           ref={instance => refs.current.push(instance)}
           key={`chipset-${i}`}
-          className={clsx("relative flex h-auto w-fit gap-1", {
-            "-left-1/4": i % 2,
-          })}
+          style={{ "--gap-x": `${gapX}px` }}
+          className={clsx("relative flex h-auto w-fit gap-[var(--gap-x)]")}
           onMouseOver={() =>
             gsap.to(animations.at(i), {
               timeScale: 0.2,
