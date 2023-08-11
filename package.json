@@ -6,6 +6,7 @@
   "scripts": {
     "create:post": "./scripts/createPost.mjs",
     "commit": "./scripts/git-commit.mjs",
+    "merge": "./scripts/git-merge.sh",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
