@@ -79,14 +79,14 @@ const ChipSlider = ({ chips }) => {
           }
         >
           {chipset.map(({ name, color, url }, j) => (
-            // <Link key={name + i + j + "-first"} href={url} target="_blank">
-            <Chip {...{ color }}>{name}</Chip>
-            // </Link>
+            <Link key={name + i + j + "-first"} href={url} target="_blank">
+              <Chip {...{ color }}>{name}</Chip>
+            </Link>
           ))}
           {chipset.map(({ name, color, url }, j) => (
-            // <Link key={name + i + j + "-second"} href={url} target="_blank">
-            <Chip {...{ color }}>{name}</Chip>
-            // </Link>
+            <Link key={name + i + j + "-second"} href={url} target="_blank">
+              <Chip {...{ color }}>{name}</Chip>
+            </Link>
           ))}
         </div>
       ))}
