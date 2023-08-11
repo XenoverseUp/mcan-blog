@@ -56,9 +56,14 @@ export default async function Home() {
               <Divider />
             </div>
             <div name="suggestion" className="flex w-full flex-col gap-9">
-              <h2 className="font-staff-wide text-2xl">
-                Dear <span className="text-accent">diary</span>...
-              </h2>
+              <div className="space-y-2">
+                <h2 className="font-staff-wide text-2xl">
+                  Dear <span className="text-accent">diary</span>...
+                </h2>
+                <p>
+                  Here are a bunch of suggestions for you to explore new worlds.
+                </p>
+              </div>
               <CanvasArt />
               <SpotifyPlayer />
             </div>
