@@ -7,6 +7,10 @@
     outline: none;
   }
 
+  :root {
+    font-size: 12px !important;
+  }
+
   html {
     -webkit-tap-highlight-color: transparent;
     font-size: 16px;

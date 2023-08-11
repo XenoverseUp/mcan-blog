@@ -4,7 +4,6 @@ import Chip from "@/components/primitives/Chip"
 import subdivide from "@/utils/subdivide"
 import clsx from "clsx"
 import { gsap } from "gsap"
-import Link from "next/link"
 import { useLayoutEffect, useMemo, useRef } from "react"
 
 const ChipSlider = ({ chips }) => {
@@ -80,14 +79,14 @@ const ChipSlider = ({ chips }) => {
           }
         >
           {chipset.map(({ name, color, url }, j) => (
-            <Link key={name + i + j + "-first"} href={url} target="_blank">
-              <Chip {...{ color }}>{name}</Chip>
-            </Link>
+            // <Link key={name + i + j + "-first"} href={url} target="_blank">
+            <Chip {...{ color }}>{name}</Chip>
+            // </Link>
           ))}
           {chipset.map(({ name, color, url }, j) => (
-            <Link key={name + i + j + "-second"} href={url} target="_blank">
-              <Chip {...{ color }}>{name}</Chip>
-            </Link>
+            // <Link key={name + i + j + "-second"} href={url} target="_blank">
+            <Chip {...{ color }}>{name}</Chip>
+            // </Link>
           ))}
         </div>
       ))}
