@@ -4,6 +4,7 @@ import Chip from "@/components/primitives/Chip"
 import subdivide from "@/utils/subdivide"
 import clsx from "clsx"
 import { gsap } from "gsap"
+import Link from "next/link"
 import { useLayoutEffect, useMemo, useRef } from "react"
 
 const ChipSlider = ({ chips }) => {
