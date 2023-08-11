@@ -12,6 +12,10 @@ let branch = (await execute("git rev-parse --abbrev-ref HEAD")).stdout.replace(
   ""
 )
 
+let origin = (
+  await execute("git config --get remote.origin.url")
+).stdout.replace("\n", "")
+
 try {
   const answers = await getParams()
   await process(answers)
@@ -76,6 +80,7 @@ async function process({ type, message }) {
   try {
     const { stdout } = await execute(`git push -u origin ${branch}`)
     console.log(stdout)
+    console.log(`\nOrigin: ${origin}`)
   } catch (error) {
     console.error(error)
   }
