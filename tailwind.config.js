@@ -25,8 +25,8 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       colors: {
-        accent: "#CEFF9D",
-        background: "#000",
+        accent: "var(--accent)",
+        background: "var(--background)",
       },
     },
   },

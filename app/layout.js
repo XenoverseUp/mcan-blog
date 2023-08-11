@@ -13,6 +13,7 @@ export const metadata = {
   title: "Can Durmus | Blog",
   description: "Hello my bud!",
   viewport: "width=device-width; initial-scale=1.0;",
+  themeColor: "var(--background)",
 }
 
 export default function RootLayout({ children }) {
