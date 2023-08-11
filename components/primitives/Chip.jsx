@@ -9,7 +9,7 @@ const Chip = ({ children, className, color, border = true }) => (
     }}
     className={cx(
       className,
-      "h-fit cursor-pointer select-none whitespace-nowrap rounded-full border-[var(--color-fg)] bg-[var(--color-bg)] px-4 pb-[4px] pt-[3px] font-mono text-xs font-bold text-[var(--color-fg)] transition-colors hover:bg-[var(--color-fg)] hover:text-black/70",
+      "flex h-7 w-fit cursor-pointer select-none items-center whitespace-nowrap rounded-full border-[var(--color-fg)] bg-[var(--color-bg)] px-4 pb-[4px] pt-[3px] font-mono text-xs font-bold text-[var(--color-fg)] transition-colors hover:bg-[var(--color-fg)] hover:text-black/70",
       {
         border,
       }

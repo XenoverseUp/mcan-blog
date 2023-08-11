@@ -58,14 +58,14 @@ const ChipSlider = ({ chips }) => {
     <div
       style={{ "--gap-y": `${gapY}px` }}
       id="marquee-container"
-      className="relative flex h-fit flex-col gap-[var(--gap-y)] overflow-hidden opacity-0 before:pointer-events-none before:absolute before:inset-0 before:z-10 before:bg-[linear-gradient(to_right,theme(colors.background),transparent_20%_80%,theme(colors.background))]"
+      className="relative flex flex-col gap-[var(--gap-y)] overflow-hidden opacity-0 before:pointer-events-none before:absolute before:inset-0 before:z-10 before:bg-[linear-gradient(to_right,theme(colors.background),transparent_20%_80%,theme(colors.background))]"
     >
       {divisions.map((chipset, i) => (
         <div
           ref={instance => refs.current.push(instance)}
           key={`chipset-${i}`}
           style={{ "--gap-x": `${gapX}px` }}
-          className={clsx("relative flex h-fit w-fit gap-[var(--gap-x)]")}
+          className={clsx("relative flex w-fit gap-[var(--gap-x)]")}
           onMouseOver={() =>
             gsap.to(animations.at(i), {
               timeScale: 0.2,
@@ -80,22 +80,12 @@ const ChipSlider = ({ chips }) => {
           }
         >
           {chipset.map(({ name, color, url }, j) => (
-            <Link
-              key={name + i + j + "-first"}
-              className="h-7"
-              href={url}
-              target="_blank"
-            >
+            <Link key={name + i + j + "-first"} href={url} target="_blank">
               <Chip {...{ color }}>{name}</Chip>
             </Link>
           ))}
           {chipset.map(({ name, color, url }, j) => (
-            <Link
-              key={name + i + j + "-second"}
-              className="h-fit"
-              href={url}
-              target="_blank"
-            >
+            <Link key={name + i + j + "-second"} href={url} target="_blank">
               <Chip {...{ color }}>{name}</Chip>
             </Link>
           ))}
