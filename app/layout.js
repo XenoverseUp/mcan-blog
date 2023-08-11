@@ -12,6 +12,7 @@ import MainNavigation from "@/components/composed/Layout/MainNavigation"
 export const metadata = {
   title: "Can Durmus | Blog",
   description: "Hello my bud!",
+  viewport: "width=device-width; initial-scale=1.0;",
 }
 
 export default function RootLayout({ children }) {
