@@ -11,7 +11,7 @@ const ChipSlider = ({ chips }) => {
   const refs = useRef([])
   const animations = []
   const gapX = 5
-  const gapY = 7
+  const gapY = 6
 
   useLayoutEffect(() => {
     gsap.fromTo(
@@ -64,7 +64,7 @@ const ChipSlider = ({ chips }) => {
           ref={instance => refs.current.push(instance)}
           key={`chipset-${i}`}
           style={{ "--gap-x": `${gapX}px` }}
-          className={clsx("relative flex w-fit gap-[var(--gap-x)]")}
+          className={clsx("relative flex h-8 w-fit gap-[var(--gap-x)]")}
           onMouseOver={() =>
             gsap.to(animations.at(i), {
               timeScale: 0.2,
