@@ -1,6 +1,6 @@
 "use client"
 
-import useScrollY from "@/hooks/useScrollY"
+import useScrollY from "@/hooks/useScrollPosition"
 import cx from "@/utils/cx"
 
 const Nav = ({ children, className, atTopClassName, scrolledClassName }) => {

@@ -5,7 +5,7 @@ const useScrollPosition = () => {
 
   useEffect(() => {
     const updatePosition = () => {
-      setScrollPosition(window.pageYOffset)
+      setScrollPosition(document.documentElement.scrollTop)
     }
     window.addEventListener("scroll", updatePosition)
     updatePosition()
