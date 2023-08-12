@@ -6,9 +6,9 @@
 
 const kebabize = string =>
   string
-    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
-    .split(" ")
-    .map(word => word.toLowerCase())
-    .join("-")
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
+    .replace(/\s+/g, "-")
+    .replace(/_{1,}/g, "-")
+    .toLowerCase()
 
 export default kebabize

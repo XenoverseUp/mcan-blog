@@ -21,7 +21,7 @@ const ChipSlider = ({ chips }) => {
       { opacity: 1, delay: 0.1 }
     )
 
-    // Goes from -50% to `gap` / 2: 2px.
+    // Goes from -50% to {gapX / 2}.
     animations[0] = gsap.fromTo(
       refs.current.at(0),
       { x: "-50%" },
