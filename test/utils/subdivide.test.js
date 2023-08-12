@@ -14,4 +14,9 @@ describe("subdivide", () => {
       1, 1, 1, 1, 1, 1, 1, 1, 1,
     ])
   })
+
+  it.todo("returns an array that is equal to the subdivision count.")
+  it.todo(
+    "the elements of returned array are the length of inputArrayLength/subdivisionCount."
+  )
 })

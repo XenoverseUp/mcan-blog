@@ -1,8 +1,8 @@
-import Logo from "@/components/primitives/Logo"
+import Logo from "@/assets/svg/ui/Logo.svg"
 import { ImageResponse } from "next/server"
 
 export const size = {
-  width: 27,
+  width: 32,
   height: 32,
 }
 export const contentType = "image/png"

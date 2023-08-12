@@ -20,7 +20,7 @@ const MainNavigation = ({ announce }) => {
       >
         <Container className="flex h-full items-center justify-between">
           <div className="relative -z-10 flex items-center gap-4 ">
-            <Logo className="md:6 w-5" shadow />
+            <Logo className="w-5" shadow />
             <div className="flex items-center gap-1">
               <span className="font-staff-wide text-xs uppercase md:text-sm">
                 Can Durmus
