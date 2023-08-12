@@ -20,11 +20,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${space_mono.variable} ${staff.variable} ${staff_condensed.variable} ${staff_wide.variable} bg-background font-staff text-white`}
+        className={`${space_mono.variable} ${staff.variable} ${staff_condensed.variable} ${staff_wide.variable} bg-background font-staff text-white h-screen overflow-hidden`}
       >
-        <MainNavigation />
-        {children}
-        <MainFooter />
+        <div
+          vaul-drawer-wrapper=""
+          className=" w-full h-screen overflow-hidden"
+        >
+          <div
+            id="scroll-container"
+            className="relative w-full h-screen overflow-auto"
+          >
+            <MainNavigation />
+            {children}
+            <MainFooter />
+          </div>
+        </div>
       </body>
     </html>
   )

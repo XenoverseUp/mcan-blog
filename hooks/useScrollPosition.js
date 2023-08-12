@@ -5,11 +5,16 @@ const useScrollPosition = () => {
 
   useEffect(() => {
     const updatePosition = () => {
-      setScrollPosition(document.documentElement.scrollTop)
+      setScrollPosition(document.getElementById("scroll-container").scrollTop)
     }
-    window.addEventListener("scroll", updatePosition)
+    document
+      .getElementById("scroll-container")
+      .addEventListener("scroll", updatePosition)
     updatePosition()
-    return () => window.removeEventListener("scroll", updatePosition)
+    return () =>
+      document
+        .getElementById("scroll-container")
+        .removeEventListener("scroll", updatePosition)
   }, [])
 
   return scrollPosition

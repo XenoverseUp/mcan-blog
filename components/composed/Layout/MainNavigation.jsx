@@ -1,9 +1,8 @@
+import Drawer from "@/components/composed/Layout/Drawer"
 import Nav from "@/components/composed/Layout/Nav"
 import When from "@/components/helper/When"
 import Container from "@/components/primitives/Container"
 import Logo from "@/components/primitives/Logo"
-import { AccessibleIcon } from "@/components/primitives/Radix"
-import { DragHandleDots2Icon } from "@radix-ui/react-icons"
 
 const MainNavigation = ({ announce }) => {
   return (
@@ -31,14 +30,7 @@ const MainNavigation = ({ announce }) => {
               </span>
             </div>
           </div>
-          <button
-            tabIndex={0}
-            className="grid aspect-square w-7 place-items-center rounded border border-zinc-900 bg-neutral-900/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-          >
-            <AccessibleIcon label="Navigation Menu" key="handle">
-              <DragHandleDots2Icon className="origin-center scale-125" />
-            </AccessibleIcon>
-          </button>
+          <Drawer />
         </Container>
       </Nav>
     </>
