@@ -1,5 +1,6 @@
 import CanvasArt from "@/components/composed/Home/CanvasArt"
 import ChipSlider from "@/components/composed/Home/ChipSlider"
+import SpotifyPlayer from "@/components/composed/Home/SpotifyPlayer"
 import FadedPattern from "@/components/composed/Layout/FadedPattern"
 import Button from "@/components/primitives/Button"
 import Container from "@/components/primitives/Container"
@@ -16,7 +17,7 @@ export default async function Home() {
       <main className="w-full">
         <Container>
           <div className="mt-10 flex w-full flex-col gap-9 xs:mt-12 lg:flex-row lg:justify-between">
-            <div
+            <section
               name="intro"
               className="flex w-full flex-col gap-9 lg:max-w-lg"
             >
@@ -54,22 +55,18 @@ export default async function Home() {
               </ParagraphWrapper>
               <ChipSlider {...{ chips }} />
               <Divider className="lg:hidden" />
-            </div>
-            <div
+            </section>
+            <section
               name="suggestion"
               className="flex w-full flex-col gap-9 lg:max-w-lg"
             >
-              <div className="space-y-2 sm:text-center lg:hidden">
-                <h2 className="font-staff-wide text-2xl">
-                  Dear <span className="text-accent">diary</span>...
-                </h2>
-                <p>
-                  Here are a bunch of suggestions for you to explore new worlds.
-                </p>
-              </div>
+              <p className="sm:text-center lg:hidden">
+                Here are a bunch of suggestions for you to explore new worlds.
+              </p>
               <CanvasArt />
-              {/* <SpotifyPlayer /> */}
-            </div>
+              <SpotifyPlayer />
+            </section>
+            <section name="blog-content"></section>
           </div>
         </Container>
       </main>

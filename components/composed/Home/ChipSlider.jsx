@@ -1,11 +1,12 @@
 "use client"
 
 import Chip from "@/components/primitives/Chip"
+import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect"
 import subdivide from "@/utils/subdivide"
 import clsx from "clsx"
 import { gsap } from "gsap"
 import Link from "next/link"
-import { useLayoutEffect, useMemo, useRef } from "react"
+import { useMemo, useRef } from "react"
 
 const ChipSlider = ({ chips }) => {
   const divisions = useMemo(() => subdivide(chips, 3), [])
@@ -14,7 +15,7 @@ const ChipSlider = ({ chips }) => {
   const gapX = 5
   const gapY = 6
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     gsap.fromTo(
       "#marquee-container",
       { opacity: 0 },
