@@ -19,7 +19,7 @@ export default function Drawers() {
         </button>
       </Drawer.Trigger>
       <Drawer.Portal>
-        <Drawer.Overlay className="fixed inset-0 bg-black/40 z-30" />
+        <Drawer.Overlay className="fixed inset-0 bg-black/50 z-30" />
         <Drawer.Content className="bg-zinc-900 z-40 flex flex-col rounded-t-[16px] h-[80%] lg:h-[60%] xl:h-[40%] mt-24 fixed bottom-0 left-0 right-0 overflow-hidden">
           <div className="p-4 bg-zinc-900 flex-1">
             <div className="mx-auto w-12 h-1 flex-shrink-0 rounded-full bg-zinc-300 mb-8" />
