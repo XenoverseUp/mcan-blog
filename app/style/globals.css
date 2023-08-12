@@ -2,15 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --accent: #ceff9d;
-  --background: #000;
-  font-size: 16px !important;
-}
-
 @layer base {
   * {
     outline: none;
+  }
+
+  :root {
+    --accent: 206 255 157;
+    --background: 0 0 0;
   }
 
   html {
