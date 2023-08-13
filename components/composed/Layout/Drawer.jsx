@@ -25,7 +25,7 @@ export default function Drawers() {
             <div className="mx-auto mt-4 w-12 h-1 flex-shrink-0 rounded-full bg-zinc-300 mb-8" />
             <Container className="max-w-2xl">
               <Drawer.Title className="font-staff-condensed mb-4 text-2xl">
-                DRAWER
+                SHELF
               </Drawer.Title>
               <p className="text-zinc-300 mb-2">
                 This component can be used as a replacement for a Dialog on
