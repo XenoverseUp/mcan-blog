@@ -1,5 +1,6 @@
 "use client"
 
+import Button from "@/components/primitives/Button"
 import Container from "@/components/primitives/Container"
 import { AccessibleIcon } from "@/components/primitives/Radix"
 import { DragHandleDots2Icon } from "@radix-ui/react-icons"
@@ -20,18 +21,69 @@ export default function Drawers() {
       </Drawer.Trigger>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-background/60 z-30" />
-        <Drawer.Content className="bg-zinc-950 z-40 flex flex-col rounded-t-[16px] h-[80%] lg:h-[60%] xl:h-[40%] mt-24 fixed bottom-0 left-0 right-0 overflow-hidden">
-          <div className="bg-accent bg-opacity-[0.02] flex-1">
-            <div className="mx-auto mt-4 w-12 h-1 flex-shrink-0 rounded-full bg-zinc-300 mb-8" />
-            <Container className="max-w-2xl">
-              <Drawer.Title className="font-staff-condensed mb-4 text-2xl">
-                SHELF
-              </Drawer.Title>
-              <p className="text-zinc-300 mb-2">
-                This component can be used as a replacement for a Dialog on
-                mobile and tablet devices.
-              </p>
-            </Container>
+        <Drawer.Content className="bg-zinc-950 z-40 flex flex-col rounded-t-[16px] h-[80%] mt-24 fixed bottom-0 left-0 right-0 overflow-hidden">
+          <div className="bg-accent bg-opacity-[0.05] flex-1">
+            <div className="mx-auto my-6 w-12 h-1 flex-shrink-0 rounded-full bg-accent" />
+            <div className="w-full border-t border-accent/20 h-full">
+              <Container className="max-w-2xl relative pt-6 h-full flex flex-col">
+                <Drawer.Title className="font-staff-condensed mb-4 text-2xl">
+                  SHELF
+                </Drawer.Title>
+                <div className="absolute flex flex-col gap-4 bottom-14 left-6 md:left-10 lg:left-16 right-6 md:right-10 lg:right-16 top-20 overflow-auto">
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                  <Button variant="soft" size="small">
+                    Snippets
+                  </Button>
+                </div>
+              </Container>
+            </div>
           </div>
         </Drawer.Content>
       </Drawer.Portal>

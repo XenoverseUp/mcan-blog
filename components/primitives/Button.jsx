@@ -1,12 +1,11 @@
 import ConditionalWrapper from "@/components/helper/ConditionalWrapper"
 import When from "@/components/helper/When"
-import Link from "next/link"
-
 import cx from "@/utils/cx"
 import { cva } from "class-variance-authority"
+import Link from "next/link"
 
 const ButtonVariants = cva(
-  "rounded-full select-none w-fit h-9 flex items-center font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
+  "rounded-full select-none flex-shrink-0 w-fit h-9 flex items-center font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
   {
     variants: {
       size: {

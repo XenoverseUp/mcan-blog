@@ -1,3 +1,7 @@
-export function GET(req: Request) {
-  return new Response("top", { status: 200 })
+import { getTopTracks } from "@/lib/spotify"
+
+export async function GET(req: Request) {
+  const res = await getTopTracks()
+
+  return new Response(JSON.stringify(res), { status: 200 })
 }
