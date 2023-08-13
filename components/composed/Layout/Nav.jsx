@@ -1,5 +1,6 @@
 "use client"
 
+import useLog from "@/hooks/useLog"
 import useScrollY from "@/hooks/useScrollPosition"
 import cx from "@/utils/cx"
 

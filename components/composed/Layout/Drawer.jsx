@@ -7,7 +7,7 @@ import { Drawer } from "vaul"
 
 export default function Drawers() {
   return (
-    <Drawer.Root shouldScaleBackground>
+    <Drawer.Root>
       <Drawer.Trigger asChild>
         <button
           tabIndex={0}
@@ -19,11 +19,11 @@ export default function Drawers() {
         </button>
       </Drawer.Trigger>
       <Drawer.Portal>
-        <Drawer.Overlay className="fixed inset-0 bg-black/50 z-30" />
-        <Drawer.Content className="bg-zinc-900 z-40 flex flex-col rounded-t-[16px] h-[80%] lg:h-[60%] xl:h-[40%] mt-24 fixed bottom-0 left-0 right-0 overflow-hidden">
-          <div className="p-4 bg-zinc-900 flex-1">
-            <div className="mx-auto w-12 h-1 flex-shrink-0 rounded-full bg-zinc-300 mb-8" />
-            <Container className="max-w-2xl mx-auto">
+        <Drawer.Overlay className="fixed inset-0 bg-background/60 z-30" />
+        <Drawer.Content className="bg-zinc-950 z-40 flex flex-col rounded-t-[16px] h-[80%] lg:h-[60%] xl:h-[40%] mt-24 fixed bottom-0 left-0 right-0 overflow-hidden">
+          <div className="bg-accent bg-opacity-[0.02] flex-1">
+            <div className="mx-auto mt-4 w-12 h-1 flex-shrink-0 rounded-full bg-zinc-300 mb-8" />
+            <Container className="max-w-2xl">
               <Drawer.Title className="font-staff-condensed mb-4 text-2xl">
                 DRAWER
               </Drawer.Title>
