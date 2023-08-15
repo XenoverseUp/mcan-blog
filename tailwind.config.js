@@ -35,6 +35,9 @@ module.exports = {
     require("@tailwindcss/typography")({
       className: "typography",
     }),
+    require("tailwindcss-radix")({
+      variantPrefix: false,
+    }),
   ],
   future: {
     hoverOnlyWhenSupported: true,

@@ -3,9 +3,10 @@
   "useTabs": false,
   "semi": false,
   "arrowParens": "avoid",
+  "organizeImportsSkipDestructiveCodeActions": true,
   "plugins": [
-    "prettier-plugin-organize-imports",
-    "prettier-plugin-tailwindcss"
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-organize-imports"
   ],
-  "organizeImportsSkipDestructiveCodeActions": true
+  "tailwindConfig": "./tailwind.config.js"
 }
