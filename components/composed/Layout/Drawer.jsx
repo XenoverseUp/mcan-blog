@@ -25,7 +25,7 @@ export default function Drawers() {
       </Drawer.Trigger>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-background/60 z-30" />
-        <Drawer.Content className="bg-zinc-950 z-40 rounded-t-[16px] h-[80%] mt-24 fixed bottom-0 left-0 right-0">
+        <Drawer.Content className="bg-zinc-950 z-40 rounded-t-[16px] h-[80%] mt-24 fixed bottom-0 left-0 right-0 after:border-l after:border-r after:border-white/10">
           <div className="w-full h-full border-t flex flex-col border-l border-r border-white/10 overflow-hidden rounded-t-[16px]">
             <div className="border-b border-t flex-shrink-0 border-t-transparent border-white/5 h-fit">
               <div className="mx-auto bg-accent my-5 w-12 h-1 flex-shrink-0 rounded-full" />
@@ -53,7 +53,7 @@ export default function Drawers() {
                         </Drawer.Trigger>
                         <Drawer.Portal>
                           <Drawer.Overlay className="fixed inset-0 bg-background/30 z-40" />
-                          <Drawer.Content className="bg-zinc-950 z-50 rounded-t-[16px] h-[78.5%] md:h-[79%] lg:h-[79.5%] mt-24 fixed bottom-0 left-0 right-0">
+                          <Drawer.Content className="bg-zinc-950 z-50 rounded-t-[16px] h-[78.5%] md:h-[79%] lg:h-[79.5%] mt-24 fixed bottom-0 left-0 right-0 after:border-l after:border-r after:border-white/10">
                             <div className="w-full h-full border-t flex flex-col border-l border-r border-white/10 overflow-hidden rounded-t-[16px]">
                               <div className="border-b border-t flex-shrink-0 border-t-transparent border-white/5 h-fit">
                                 <div className="mx-auto bg-accent my-5 w-12 h-1 flex-shrink-0 rounded-full" />
