@@ -9,7 +9,6 @@ import { Drawer } from "vaul"
 
 const TAGS = Array.from({ length: 50 }).map((_, i, a) => `v1.2.0-beta.${i}`)
 
-// TODO: Add radix ui scroll area.
 export default function Drawers() {
   return (
     <Drawer.Root>
@@ -25,7 +24,7 @@ export default function Drawers() {
       </Drawer.Trigger>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-background/60 z-30" />
-        <Drawer.Content className="bg-zinc-950 z-40 rounded-t-[16px] h-[80%] mt-24 fixed bottom-0 left-0 right-0 after:border-l after:border-r after:border-white/10">
+        <Drawer.Content className="isolate bg-zinc-950 z-50 rounded-t-[16px] h-[80%] mt-24 fixed bottom-0 left-0 right-0 after:border-l after:border-r after:border-white/10">
           <div className="w-full h-full border-t flex flex-col border-l border-r border-white/10 overflow-hidden rounded-t-[16px]">
             <div className="border-b border-t flex-shrink-0 border-t-transparent border-white/5 h-fit">
               <div className="mx-auto bg-accent my-5 w-12 h-1 flex-shrink-0 rounded-full" />
@@ -38,7 +37,9 @@ export default function Drawers() {
                       <span>Shelf</span>
                     </Drawer.Title>
                     <nav className="space-y-5 text-2xl font-bold capitalize">
-                      <Drawer.NestedRoot>
+                      <Drawer.NestedRoot
+                        experimentalSafariThemeAnimation={true}
+                      >
                         <Drawer.Trigger asChild>
                           <div className="space-y-1 w-fit rounded-lg cursor-pointer group">
                             <p className="group-hover:underline underline-offset-4 flex items-center gap-3">

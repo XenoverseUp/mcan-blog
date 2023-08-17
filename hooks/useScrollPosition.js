@@ -5,6 +5,7 @@ const useScrollPosition = () => {
 
   useEffect(() => {
     const updatePosition = () => {
+      if (document.documentElement.style.overflow === "hidden") return
       setScrollPosition(document.documentElement.scrollTop)
       console.log(document.documentElement.scrollTop)
     }

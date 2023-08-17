@@ -33,7 +33,7 @@
     "tailwindcss": "3.3.2",
     "tailwindcss-radix": "^2.8.0",
     "tinycolor2": "^1.6.0",
-    "vaul": "^0.2.3"
+    "vaul": "^0.3.2"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.0.1",
