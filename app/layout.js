@@ -25,6 +25,7 @@ export default function RootLayout({ children }) {
         <MainNavigation />
         {children}
         <MainFooter />
+        <div id="drawer"></div>
       </body>
     </html>
   )

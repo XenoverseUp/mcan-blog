@@ -15,7 +15,7 @@ const MainNavigation = ({ announce }) => {
       <Nav
         atTopClassName="bg-transparent"
         scrolledClassName="bg-background"
-        className="fixed top-0 z-20 h-16 w-full border-b border-zinc-800 backdrop-blur-sm transition-colors duration-300"
+        className="sticky top-0 z-20 h-16 w-full border-b border-zinc-800 before:absolute before:inset-0 before:-z-10 before:backdrop-blur-sm transition-colors duration-300"
       >
         <Container className="flex h-full items-center justify-between">
           <div className="relative -z-10 flex items-center gap-4 ">
@@ -33,7 +33,6 @@ const MainNavigation = ({ announce }) => {
           <Drawer />
         </Container>
       </Nav>
-      <div aria-hidden className="w-full h-16"></div>
     </>
   )
 }
