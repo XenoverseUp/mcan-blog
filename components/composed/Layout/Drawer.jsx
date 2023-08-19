@@ -10,15 +10,7 @@ const TAGS = Array.from({ length: 50 }).map((_, i, a) => `v1.2.0-beta.${i}`)
 
 export default function Drawers() {
   return (
-    <Drawer.Root
-      shouldScaleBackground
-      onOpenChange={open => {
-        if (!open) {
-          document.querySelector("[scroll-container]").style.overflow = "auto"
-          document.querySelector("[scroll-container]").style.transform = "none"
-        }
-      }}
-    >
+    <Drawer.Root>
       <Drawer.Trigger asChild>
         <button
           tabIndex={0}
