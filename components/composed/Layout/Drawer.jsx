@@ -10,7 +10,15 @@ const TAGS = Array.from({ length: 50 }).map((_, i, a) => `v1.2.0-beta.${i}`)
 
 export default function Drawers() {
   return (
-    <Drawer.Root>
+    <Drawer.Root
+      shouldScaleBackground
+      onOpenChange={open => {
+        if (!open) {
+          document.querySelector("[scroll-container]").style.overflow = "auto"
+          document.querySelector("[scroll-container]").style.transform = "none"
+        }
+      }}
+    >
       <Drawer.Trigger asChild>
         <button
           tabIndex={0}
@@ -36,9 +44,7 @@ export default function Drawers() {
                       <span>Shelf</span>
                     </Drawer.Title>
                     <nav className="space-y-5 text-2xl font-bold capitalize">
-                      <Drawer.NestedRoot
-                        experimentalSafariThemeAnimation={true}
-                      >
+                      <Drawer.NestedRoot shouldScaleBackground>
                         <Drawer.Trigger asChild>
                           <div className="space-y-1 w-fit rounded-lg cursor-pointer group">
                             <p className="group-hover:underline underline-offset-4 flex items-center gap-3">

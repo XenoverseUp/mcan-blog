@@ -5,13 +5,21 @@ const useScrollPosition = () => {
 
   useEffect(() => {
     const updatePosition = () => {
-      if (document.documentElement.style.overflow === "hidden") return
-      setScrollPosition(document.documentElement.scrollTop)
-      console.log(document.documentElement.scrollTop)
+      if (
+        document.querySelector("[scroll-container]").style.overflow === "hidden"
+      )
+        return
+      setScrollPosition(document.querySelector("[scroll-container]").scrollTop)
+      console.log(document.querySelector("[scroll-container]").scrollTop)
     }
-    window.addEventListener("scroll", updatePosition)
+    document
+      .querySelector("[scroll-container]")
+      .addEventListener("scroll", updatePosition)
     updatePosition()
-    return () => window.removeEventListener("scroll", updatePosition)
+    return () =>
+      document
+        .querySelector("[scroll-container]")
+        .removeEventListener("scroll", updatePosition)
   }, [])
 
   return scrollPosition
