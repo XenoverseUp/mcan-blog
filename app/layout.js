@@ -30,7 +30,6 @@ export default function RootLayout({ children }) {
           <MainNavigation />
           {children}
           <MainFooter />
-          <div className="w-full h-[300vh]"></div>
         </div>
       </body>
     </html>
