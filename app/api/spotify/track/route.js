@@ -1,7 +1,12 @@
 import { getTrack } from "@/lib/spotify"
 import { headers } from "next/headers"
 
-export async function GET(req: Request) {
+/**
+ *
+ * @param {Request} req
+ * @returns {Response}
+ */
+export async function GET(req) {
   const headersList = headers()
   const res = await getTrack(headersList.get("track-id"))
 
