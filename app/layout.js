@@ -20,11 +20,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${space_mono.variable} ${staff.variable} ${staff_condensed.variable} ${staff_wide.variable} overscroll-auto bg-background font-staff w-full text-white`}
+        className={`${space_mono.variable} ${staff.variable} ${staff_condensed.variable} ${staff_wide.variable} bg-background font-staff w-full text-white`}
       >
         <div
           scroll-container="true"
-          className="h-[100dvh] w-full overflow-auto relative overscroll-auto"
+          className="h-[100dvh] w-full overflow-auto relative"
           vaul-drawer-wrapper=""
         >
           <MainNavigation />

@@ -6,8 +6,6 @@ import { ArrowRightIcon, DragHandleDots2Icon } from "@radix-ui/react-icons"
 import * as ScrollArea from "@radix-ui/react-scroll-area"
 import { Drawer } from "vaul"
 
-const TAGS = Array.from({ length: 50 }).map((_, i, a) => `v1.2.0-beta.${i}`)
-
 export default function Drawers() {
   return (
     <Drawer.Root>
