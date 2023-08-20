@@ -36,7 +36,7 @@ export default function Drawers() {
                       <span>Shelf</span>
                     </Drawer.Title>
                     <nav className="space-y-5 text-2xl font-bold capitalize">
-                      <Drawer.NestedRoot shouldScaleBackground>
+                      <Drawer.NestedRoot>
                         <Drawer.Trigger asChild>
                           <div className="space-y-1 w-fit rounded-lg cursor-pointer group">
                             <p className="group-hover:underline underline-offset-4 flex items-center gap-3">

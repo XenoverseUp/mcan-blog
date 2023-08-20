@@ -18,13 +18,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="overflow-hidden">
+    <html lang="en">
       <body
-        className={`${space_mono.variable} ${staff.variable} ${staff_condensed.variable} ${staff_wide.variable} bg-background font-staff w-full text-white overflow-hidden`}
+        className={`${space_mono.variable} ${staff.variable} ${staff_condensed.variable} ${staff_wide.variable} overscroll-auto bg-background font-staff w-full text-white`}
       >
         <div
           scroll-container="true"
-          className="h-[100dvh] w-full overflow-auto relative"
+          className="h-[100dvh] w-full overflow-auto relative overscroll-auto"
           vaul-drawer-wrapper=""
         >
           <MainNavigation />
