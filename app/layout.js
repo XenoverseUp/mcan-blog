@@ -25,7 +25,6 @@ export default function RootLayout({ children }) {
         <div
           scroll-container="true"
           className="h-[100dvh] w-full overflow-auto relative"
-          vaul-drawer-wrapper=""
         >
           <MainNavigation />
           {children}
