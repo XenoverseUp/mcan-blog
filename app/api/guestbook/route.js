@@ -12,6 +12,7 @@ export const GET = async _ => {
 export const POST = async request => {
   const body = await request.json()
   const [err, data] = await try_(createSignature, body)
+
   if (err) return new Response(err, { status: err.errorCode ?? 500 })
   return new Response(JSON.stringify(data), { status: 200 })
 }
