@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const CanvasArt = () => {
   return (
-    <div className="relative mx-auto flex h-auto max-w-xl flex-col gap-4 rounded-t-2xl bg-background px-4 py-[14px] after:absolute after:-inset-[1px] after:-z-10 after:rounded-t-2xl after:bg-gradient-to-b after:from-white/20 after:to-background">
+    <div className="relative mx-auto flex h-auto max-w-xl flex-col gap-4 rounded-t-2xl bg-background px-4 py-[14px] after:absolute after:-inset-[1px] after:-z-10 after:rounded-t-2xl after:bg-gradient-to-b after:from-border after:to-background">
       <header className="col-span-full flex w-full items-center justify-between @2xl:col-span-2 @2xl:col-start-4">
         <div>
           <h3 className="font-staff-wide">

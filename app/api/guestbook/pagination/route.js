@@ -1,5 +1,5 @@
 import { ValidationError } from "@/lib/error"
-import { getPaginatedEntries } from "@/lib/guestbook"
+import { getPaginatedSignatures } from "@/lib/guestbook"
 import { PaginationParameters } from "@/lib/schema"
 import { try_ } from "@/utils/try"
 
@@ -20,7 +20,7 @@ export const GET = async request => {
   }
 
   const [err, data] = await try_(
-    getPaginatedEntries,
+    getPaginatedSignatures,
     result.data.page,
     result.data.limit,
   )

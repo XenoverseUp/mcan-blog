@@ -1,10 +1,13 @@
+import { fetchSignatures } from "@/actions/guestbook.action"
 import Drawer from "@/components/composed/Layout/Drawer"
 import Nav from "@/components/composed/Layout/Nav"
 import When from "@/components/helper/When"
 import Container from "@/components/primitives/Container"
 import Logo from "@/components/primitives/Logo"
 
-const MainNavigation = ({ announce }) => {
+const MainNavigation = async ({ announce }) => {
+  const initialSignatures = await fetchSignatures()
+
   return (
     <>
       <When condition={!!announce} asChild>
@@ -15,7 +18,7 @@ const MainNavigation = ({ announce }) => {
       <Nav
         atTopClassName="bg-transparent"
         scrolledClassName="bg-background"
-        className="sticky top-0 z-20 h-16 w-full border-b border-zinc-800 before:absolute before:inset-0 before:-z-10 before:backdrop-blur-sm transition-colors duration-300"
+        className="sticky top-0 z-20 h-16 w-full border-b border-border before:absolute before:inset-0 before:-z-10 before:backdrop-blur-sm transition-colors duration-300"
       >
         <Container className="flex h-full items-center justify-between">
           <div className="relative -z-10 flex items-center gap-4 ">
@@ -30,7 +33,7 @@ const MainNavigation = ({ announce }) => {
               </span>
             </div>
           </div>
-          <Drawer />
+          <Drawer {...{ initialSignatures }} />
         </Container>
       </Nav>
     </>

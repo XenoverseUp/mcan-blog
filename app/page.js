@@ -65,8 +65,8 @@ export default async function Home() {
               <CanvasArt />
               <SpotifyPlayer />
             </section>
-            <section name="blog-content"></section>
           </div>
+          <section name="blog-content"></section>
         </Container>
       </main>
     </>
