@@ -7,5 +7,5 @@ import redis from "@/lib/redis"
  */
 export const GET = async () => {
   console.log(`\n\nUPDATING CACHE...\n\n`)
-  Cache.set(GUESTBOOK_COUNT, await redis.llen(GUESTBOOK_REFERRER))
+  Cache.set(GUESTBOOK_COUNT, await redis.lLen(GUESTBOOK_REFERRER))
 }

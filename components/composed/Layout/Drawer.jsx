@@ -89,7 +89,12 @@ export default function Drawers({ initialSignatures }) {
                                   <Container>
                                     <div className="space-y-12 pb-16 pt-8">
                                       {signatures?.data.map(signature => (
-                                        <div className="space-y-2 max-w-4xl">
+                                        <div
+                                          key={
+                                            signature.name + signature.createdAt
+                                          }
+                                          className="space-y-2 max-w-4xl"
+                                        >
                                           <h3 className="text-xl font-bold">
                                             {signature.name}
                                           </h3>
