@@ -14,7 +14,7 @@ module.exports = {
       ...defaultTheme.screens,
     },
     fontFamily: {
-      mono: ["Courier", "monospace"],
+      mono: ["var(--font-space-mono)", "Courier", "monospace"],
       staff: ["var(--font-staff)", "sans-serif"],
       "staff-wide": ["var(--font-staff-wide)", "sans-serif"],
       "staff-condensed": ["var(--font-staff-condensed)", "sans-serif"],

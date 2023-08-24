@@ -1,8 +1,13 @@
 "use client"
 
+import Button from "@/components/primitives/Button"
 import Container from "@/components/primitives/Container"
 import { AccessibleIcon } from "@/components/primitives/Radix"
-import { ArrowRightIcon, DragHandleDots2Icon } from "@radix-ui/react-icons"
+import {
+  ArrowRightIcon,
+  CardStackPlusIcon,
+  DragHandleDots2Icon,
+} from "@radix-ui/react-icons"
 import * as ScrollArea from "@radix-ui/react-scroll-area"
 import { useEffect, useState } from "react"
 import { Drawer } from "vaul"
@@ -72,13 +77,20 @@ export default function Drawers({ initialSignatures }) {
                               <div className="border-b border-t flex-shrink-0 border-t-transparent border-border h-fit">
                                 <div className="mx-auto bg-accent my-5 w-12 h-1 flex-shrink-0 rounded-full" />
                               </div>
-                              <Container className="w-full flex-grow overflow-hidden flex-shrink-0 pb-6">
-                                <Drawer.Title className="text-accent capitalize mt-7 mb-3 font-bold ">
-                                  <span className="text-4xl">Guestbook</span>
-                                  <sup className="text-2xl ml-1">
-                                    {totalSignature}
-                                  </sup>
-                                </Drawer.Title>
+                              <Container className="w-full flex-grow overflow-hidden flex-shrink-0 pb-4">
+                                <header className="flex items-center justify-between mt-7 mb-4 ">
+                                  <Drawer.Title className="text-accent capitalize font-bold ">
+                                    <span className="text-4xl">Guestbook</span>
+                                    <sup className="text-2xl ml-1">
+                                      {totalSignature}
+                                    </sup>
+                                  </Drawer.Title>
+                                  <Button>
+                                    <AccessibleIcon label="Add Comment">
+                                      <CardStackPlusIcon />
+                                    </AccessibleIcon>
+                                  </Button>
+                                </header>
                                 <span className="normal-case text-sm block leading-5 opacity-75">
                                   Don't forget to fill out my guestbook with
                                   your lovely comments.

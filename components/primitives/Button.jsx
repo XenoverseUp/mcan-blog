@@ -16,6 +16,7 @@ const ButtonVariants = cva(
         capitalize: ["capitalize"],
         uppercase: ["uppercase"],
         lowercase: ["lowercase"],
+        none: ["normal-case"],
       },
       variant: {
         border: [
@@ -49,7 +50,7 @@ const ButtonVariants = cva(
       variant: "border",
       textCase: "uppercase",
     },
-  }
+  },
 )
 
 const Button = ({
@@ -60,6 +61,7 @@ const Button = ({
   href,
   leftIcon,
   rightIcon,
+  label,
   className,
   ...rest
 }) => {
