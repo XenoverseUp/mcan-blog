@@ -14,6 +14,5 @@ export const fetchSignatures = async (page = 0) => {
  * @param {Pick<import("@/lib/schema").Signature, "name" | "content">} form
  */
 export const create = async ({ name, content }) => {
-  console.log({ name, content })
   return await createSignature({ name, content })
 }

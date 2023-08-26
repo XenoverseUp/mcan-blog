@@ -11,7 +11,7 @@ import * as Tooltip from "@radix-ui/react-tooltip"
 import { useEffect, useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 
-const GuestBookForm = () => {
+const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
   const nameRef = useRef()
   const contentRef = useRef()
 
@@ -19,7 +19,9 @@ const GuestBookForm = () => {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    reset,
+    formState,
+    formState: { errors, isSubmitSuccessful },
   } = useForm({
     resolver: zodResolver(Signature),
     defaultValues: {
@@ -34,10 +36,44 @@ const GuestBookForm = () => {
   const { ref: formNameRef, ...nameRest } = register("name")
   const { ref: formContentRef, ...contentRest } = register("content")
 
-  /** @type {import("react-hook-form").SubmitHandler<Pick<Signature, "name" | "content">} */
+  /** @type {import("react-hook-form").SubmitHandler<Pick<Signature, "name" | "content">>} */
   const onSubmit = async data => {
+    setTotalSignature(i => i + 1)
+    addOptimisticSignatures(signatures => [
+      {
+        name: data.name,
+        content: data.content,
+        createdAt: new Date(),
+        pending: true,
+      },
+      ...signatures,
+    ])
+
     const res = await create(data)
+
+    if (!res.success) {
+      setTotalSignature(i => i - 1)
+      addOptimisticSignatures(signatures => signatures.slice(1))
+    } else
+      addOptimisticSignatures(signatures => [
+        {
+          name: res.data.name,
+          content: res.data.content,
+          createdAt: res.data.createdAt,
+          pending: false,
+        },
+        ...signatures.slice(1),
+      ])
   }
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset({
+        name: "",
+        content: "",
+      })
+    }
+  }, [formState, reset])
 
   return (
     <form

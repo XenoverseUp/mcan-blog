@@ -1,9 +1,11 @@
 "use client"
 
 import GuestBookForm from "@/components/composed/Layout/Drawer/GuestBookForm"
+import Signature from "@/components/composed/Layout/Drawer/Signature"
 import Button from "@/components/primitives/Button"
 import { AccessibleIcon } from "@/components/primitives/Client"
 import Container from "@/components/primitives/Container"
+import cx from "@/utils/cx"
 import {
   ArrowRightIcon,
   CardStackPlusIcon,
@@ -24,6 +26,10 @@ export default function Drawers({ initialSignatures }) {
     /** @type {import("@/lib/guestbook").PaginatedSignature} */ (
       initialSignatures
     ),
+  )
+
+  const [optimisticSignatures, addOptimisticSignatures] = useState(
+    /** @type {(import("@/lib/schema").Signature & {pending: boolean})[]} */ ([]),
   )
 
   const [totalSignature, setTotalSignature] = useState(
@@ -99,23 +105,14 @@ export default function Drawers({ initialSignatures }) {
                                 <ScrollArea.Viewport className="w-full h-full z-0">
                                   <Container>
                                     <div className="space-y-12 py-8">
+                                      {optimisticSignatures.map(signature => (
+                                        <Signature
+                                          data={signature}
+                                          pending={signature.pending}
+                                        />
+                                      ))}
                                       {signatures?.data.map(signature => (
-                                        <div
-                                          key={
-                                            signature.name + signature.createdAt
-                                          }
-                                          className="space-y-2 max-w-4xl"
-                                        >
-                                          <h3 className="text-xl font-bold">
-                                            {signature.name}
-                                          </h3>
-                                          <p className="select-auto">
-                                            {signature.content}
-                                          </p>
-                                          <span className="text-sm opacity-50 block">
-                                            {signature.createdAt}
-                                          </span>
-                                        </div>
+                                        <Signature data={signature} />
                                       ))}
                                     </div>
                                   </Container>
@@ -130,42 +127,12 @@ export default function Drawers({ initialSignatures }) {
                               </ScrollArea.Root>
                               <div className="flex-shrink-0 w-full border-t border-border">
                                 <Container>
-                                  <GuestBookForm {...{ setTotalSignature }}>
-                                    <Tooltip.Provider>
-                                      <Tooltip.Root>
-                                        <Tooltip.Trigger asChild>
-                                          <Button
-                                          // onClick={() => {
-                                          //   console.log("WTF")
-                                          //   toast.custom(t => (
-                                          //     <Toast
-                                          //       dismiss={() =>
-                                          //         toast.dismiss(t)
-                                          //       }
-                                          //     >
-                                          //       Signature is created
-                                          //     </Toast>
-                                          //   ))
-                                          // }}
-                                          >
-                                            <AccessibleIcon label="Add Comment">
-                                              <CardStackPlusIcon />
-                                            </AccessibleIcon>
-                                          </Button>
-                                        </Tooltip.Trigger>
-                                        <Tooltip.Portal>
-                                          <Tooltip.Content
-                                            side="top"
-                                            className="z-50 bg-zinc-100 dark:bg-zinc-800 text-xs px-3 pt-[0.2rem] pb-1 rounded-lg will-change-[transform,opacity]"
-                                            sideOffset={4}
-                                          >
-                                            Add Signature
-                                            <Tooltip.Arrow className="fill-zinc-100 dark:fill-zinc-800" />
-                                          </Tooltip.Content>
-                                        </Tooltip.Portal>
-                                      </Tooltip.Root>
-                                    </Tooltip.Provider>
-                                  </GuestBookForm>
+                                  <GuestBookForm
+                                    {...{
+                                      setTotalSignature,
+                                      addOptimisticSignatures,
+                                    }}
+                                  />
                                 </Container>
                               </div>
                             </div>
