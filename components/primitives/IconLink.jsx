@@ -1,5 +1,5 @@
 import Link from "next/link"
-import AccessibleIcon from "./Radix"
+import AccessibleIcon from "./Client"
 
 const IconLink = ({ children, href, target = "_blank", label, className }) => (
   <Link {...{ href, target, className }}>

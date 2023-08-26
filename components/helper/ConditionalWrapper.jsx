@@ -1,15 +1,15 @@
-import { Fragment } from "react"
+import { Fragment, forwardRef } from "react"
 
-const ConditionalWrapper = ({
-  children,
-  wrapper: Wrapper = "div",
-  condition,
-  ...rest
-}) =>
+const ConditionalWrapper = (
+  { children, wrapper: Wrapper = "div", condition, ...rest },
+  ref,
+) =>
   condition ? (
-    <Wrapper {...rest}>{children}</Wrapper>
+    <Wrapper {...rest} ref={ref}>
+      {children}
+    </Wrapper>
   ) : (
     <Fragment>{children}</Fragment>
   )
 
-export default ConditionalWrapper
+export default forwardRef(ConditionalWrapper)

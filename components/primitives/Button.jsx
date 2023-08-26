@@ -3,6 +3,7 @@ import When from "@/components/helper/When"
 import cx from "@/utils/cx"
 import { cva } from "class-variance-authority"
 import Link from "next/link"
+import { forwardRef } from "react"
 
 const ButtonVariants = cva(
   "rounded-full select-none flex-shrink-0 w-fit h-9 flex items-center font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
@@ -53,24 +54,33 @@ const ButtonVariants = cva(
   },
 )
 
-const Button = ({
-  children,
-  variant,
-  size,
-  textCase,
-  href,
-  leftIcon,
-  rightIcon,
-  label,
-  className,
-  ...rest
-}) => {
+/**
+ * Generic button component.
+ * @param {import("class-variance-authority").VariantProps<ButtonVariants> & {leftIcon: import("react").FC, rightIcon: import("react").FC} & (import("react").HTMLAttributes<HTMLButtonElement> | import("next/link").LinkProps)} props
+ * @param {import("react").Ref} ref
+ * @returns {import("react").FC}
+ */
+const Button = (
+  {
+    children,
+    variant,
+    size,
+    textCase,
+    href,
+    leftIcon,
+    rightIcon,
+    className,
+    ...rest
+  },
+  ref,
+) => {
   return (
     <ConditionalWrapper
       wrapper={href ? Link : "button"}
       condition={true}
       {...(href && { href })}
       {...rest}
+      ref={ref}
       className={cx(ButtonVariants({ size, variant, textCase }), className)}
     >
       <When condition={!!leftIcon}>{leftIcon}</When>
@@ -80,4 +90,4 @@ const Button = ({
   )
 }
 
-export default Button
+export default forwardRef(Button)
