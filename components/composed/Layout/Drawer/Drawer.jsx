@@ -96,12 +96,46 @@ export default function Drawers({ initialSignatures }) {
                                 element="header"
                                 className="w-full flex-grow overflow-hidden flex-shrink-0 pb-4"
                               >
-                                <Drawer.Title className="text-accent capitalize font-bold mt-7 mb-2">
-                                  <span className="text-4xl">Guestbook</span>
-                                  <sup className="text-2xl ml-1">
-                                    {totalSignature}
-                                  </sup>
-                                </Drawer.Title>
+                                <div className="flex justify-between items-center">
+                                  <Drawer.Title className="text-accent capitalize font-bold mt-7 mb-2">
+                                    <span className="text-4xl">Guestbook</span>
+                                    <sup className="text-2xl ml-1">
+                                      {totalSignature}
+                                    </sup>
+                                  </Drawer.Title>
+                                  <Drawer.NestedRoot>
+                                    <Drawer.Trigger asChild>
+                                      <Button className="md:hidden">
+                                        <AccessibleIcon label="Add Comment">
+                                          <CardStackPlusIcon className="scale-125" />
+                                        </AccessibleIcon>
+                                      </Button>
+                                    </Drawer.Trigger>
+                                    <Drawer.Portal>
+                                      <Drawer.Overlay className="md:hidden fixed inset-0 bg-background/50 z-50" />
+                                      <Drawer.Content className="md:hidden bg-background dark:bg-zinc-950 z-[60] rounded-t-[16px] mt-24 fixed bottom-0 left-0 right-0 after:border-l after:border-r after:border-border">
+                                        <div className="w-full h-full border-t flex flex-col border-l border-r border-border overflow-hidden rounded-t-[16px]">
+                                          <div className="border-b border-t flex-shrink-0 border-t-transparent border-border h-fit">
+                                            <div className="mx-auto bg-accent my-5 w-12 h-1 flex-shrink-0 rounded-full" />
+                                          </div>
+                                        </div>
+                                        <Container className="my-7">
+                                          <Drawer.Title className="text-accent capitalize font-bold mb-6">
+                                            <span className="text-2xl">
+                                              Create Signature
+                                            </span>
+                                          </Drawer.Title>
+                                          <GuestBookForm
+                                            {...{
+                                              setTotalSignature,
+                                              addOptimisticSignatures,
+                                            }}
+                                          />
+                                        </Container>
+                                      </Drawer.Content>
+                                    </Drawer.Portal>
+                                  </Drawer.NestedRoot>
+                                </div>
                                 <span className="normal-case text-sm block leading-5 opacity-75">
                                   Don't forget to fill out my guestbook with
                                   your lovely comments.
@@ -142,7 +176,7 @@ export default function Drawers({ initialSignatures }) {
                                   <ScrollArea.Thumb className="flex-1 bg-accent rounded-[10px] relative before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-full before:h-full before:min-w-[44px] before:min-h-[44px]" />
                                 </ScrollArea.Scrollbar>
                               </ScrollArea.Root>
-                              <div className="flex-shrink-0 w-full border-t border-border">
+                              <div className="flex-shrink-0 w-full border-t border-border hidden md:block">
                                 <Container>
                                   <GuestBookForm
                                     {...{
