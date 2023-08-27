@@ -10,7 +10,6 @@ const useScrollPosition = () => {
       )
         return
       setScrollPosition(document.querySelector("[scroll-container]").scrollTop)
-      console.log(document.querySelector("[scroll-container]").scrollTop)
     }
     document
       .querySelector("[scroll-container]")

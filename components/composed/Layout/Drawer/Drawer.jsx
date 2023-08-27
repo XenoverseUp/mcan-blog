@@ -5,6 +5,7 @@ import Signature from "@/components/composed/Layout/Drawer/Signature"
 import Button from "@/components/primitives/Button"
 import { AccessibleIcon } from "@/components/primitives/Client"
 import Container from "@/components/primitives/Container"
+import useUpdateEffect from "@/hooks/useUpdateEffect"
 import cx from "@/utils/cx"
 import {
   ArrowRightIcon,
@@ -13,7 +14,7 @@ import {
 } from "@radix-ui/react-icons"
 import * as ScrollArea from "@radix-ui/react-scroll-area"
 import * as Tooltip from "@radix-ui/react-tooltip"
-import { experimental_useOptimistic as useOptimistic, useState } from "react"
+import { useRef, useState } from "react"
 import { Drawer } from "vaul"
 
 /**
@@ -22,6 +23,7 @@ import { Drawer } from "vaul"
  * @returns {import("react").FC}
  */
 export default function Drawers({ initialSignatures }) {
+  const scrollViewportRef = useRef(null)
   const [signatures, setSignatures] = useState(
     /** @type {import("@/lib/guestbook").PaginatedSignature} */ (
       initialSignatures
@@ -35,6 +37,10 @@ export default function Drawers({ initialSignatures }) {
   const [totalSignature, setTotalSignature] = useState(
     /** @type {number} */ (initialSignatures.totalSignature),
   )
+
+  useUpdateEffect(() => {
+    scrollViewportRef.current.scrollTo({ top: 0, behavior: "smooth" })
+  }, [optimisticSignatures])
 
   return (
     <Drawer.Root>
@@ -102,17 +108,28 @@ export default function Drawers({ initialSignatures }) {
                                 </span>
                               </Container>
                               <ScrollArea.Root className="w-full h-full overflow-hidden relative before:z-10 before:absolute before:top-0 before:left-0 before:right-3 before:h-8 before:bg-gradient-to-b before:from-white dark:before:from-zinc-950 before:to-transparent before:pointer-events-none">
-                                <ScrollArea.Viewport className="w-full h-full z-0">
+                                <ScrollArea.Viewport
+                                  ref={scrollViewportRef}
+                                  className="w-full h-full z-0"
+                                >
                                   <Container>
-                                    <div className="space-y-12 py-8">
+                                    <div className="space-y-9 md:space-y-12 py-8">
                                       {optimisticSignatures.map(signature => (
                                         <Signature
+                                          key={
+                                            signature.name + signature.createdAt
+                                          }
                                           data={signature}
                                           pending={signature.pending}
                                         />
                                       ))}
                                       {signatures?.data.map(signature => (
-                                        <Signature data={signature} />
+                                        <Signature
+                                          key={
+                                            signature.name + signature.createdAt
+                                          }
+                                          data={signature}
+                                        />
                                       ))}
                                     </div>
                                   </Container>

@@ -43,7 +43,8 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
       {
         name: data.name,
         content: data.content,
-        createdAt: new Date(),
+        createdAt: new Date().toISOString(),
+        uid: null,
         pending: true,
       },
       ...signatures,
@@ -59,7 +60,8 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
         {
           name: res.data.name,
           content: res.data.content,
-          createdAt: res.data.createdAt,
+          createdAt: res.data.createdAt.toISOString(),
+          uid: res.data.uid,
           pending: false,
         },
         ...signatures.slice(1),
@@ -78,14 +80,14 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="my-4 flex justify-between gap-4 text-sm"
+      className="my-3 md:my-4 grid grid-rows-2 grid-cols-6 md:flex justify-between md:gap-4 text-sm"
     >
       <div
         name="name"
         onClick={() => {
           nameRef.current.focus()
         }}
-        className="flex-shrink-0 w-64 relative flex group h-[3.75rem] flex-col [&:has(:focus-visible)]:ring-4 justify-center border border-border rounded-xl px-4 cursor-pointer"
+        className="flex-shrink-0 col-span-5 md:w-64 mr-2 md:mr-0 relative flex group h-[3.5rem] md:h-[3.75rem] flex-col [&:has(:focus-visible)]:ring-4 justify-center border border-border rounded-xl px-4 cursor-pointer"
       >
         <When condition={errors.name?.message}>
           <Tooltip.Provider>
@@ -150,7 +152,7 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
       <div
         name="content"
         onClick={() => contentRef.current.focus()}
-        className="flex-grow relative w-64 flex group flex-col h-[3.75rem] [&:has(:focus-visible)]:ring-4 justify-center border border-border rounded-xl px-4 cursor-pointer"
+        className="flex-grow row-start-2 col-span-full mt-1 md:mt-0  w-full relative md:w-64 flex group flex-col h-[3.5rem] md:h-[3.75rem] [&:has(:focus-visible)]:ring-4 justify-center border border-border rounded-xl px-4 cursor-pointer"
       >
         <When condition={errors.content?.message}>
           <Tooltip.Provider>
@@ -213,7 +215,7 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
       </div>
       <button
         type="submit"
-        className="text-accent hover:text-background hover:bg-accent focus-visible:text-background focus-visible:bg-accent active:text-background active:bg-accent/90 transition-colors rounded-xl aspect-square h-[3.75rem] grid place-items-center border-2 border-accent focus-visible:ring-4"
+        className="text-accent row-start-1 row-span-1 col-start-6 hover:text-background hover:bg-accent focus-visible:text-background focus-visible:bg-accent active:text-background active:bg-accent/90 transition-colors rounded-xl md:aspect-square h-[3.5rem] md:h-[3.75rem] grid place-items-center border-2 border-accent focus-visible:ring-4"
       >
         <AccessibleIcon label="Add Comment">
           <CardStackPlusIcon className="scale-125" />
