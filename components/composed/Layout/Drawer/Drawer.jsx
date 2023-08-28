@@ -58,8 +58,8 @@ export default function Drawers({ initialSignatures }) {
             <div className="border-b border-t flex-shrink-0 border-t-transparent border-border h-fit">
               <div className="mx-auto bg-accent my-5 w-12 h-1 flex-shrink-0 rounded-full" />
             </div>
-            <div className="w-full h-full flex-grow overflow-hidden relative after:absolute after:bottom-0 after:left-0 after:right-3 after:h-16 after:bg-gradient-to-t after:from-white dark:after:from-zinc-950 after:to-transparent after:pointer-events-none">
-              <Container className="w-full h-full  overflow-auto">
+            <div className="w-full h-[32rem] overflow-hidden relative after:absolute after:bottom-0 after:left-0 after:right-3 after:h-16 after:bg-gradient-to-t after:from-white dark:after:from-zinc-950 after:to-transparent after:pointer-events-none">
+              <Container className="w-full h-full overflow-auto">
                 <div className="pb-16">
                   <Drawer.Title className="text-accent font-staff-condensed flex gap-4 text-5xl uppercase my-6">
                     <span>Shelf</span>
@@ -90,7 +90,7 @@ export default function Drawers({ initialSignatures }) {
                             </div>
                             <Container
                               element="header"
-                              className="w-full flex-grow overflow-hidden flex-shrink-0 pb-4"
+                              className="w-full flex-shrink-0 pb-4"
                             >
                               <div className="flex justify-between items-center">
                                 <Drawer.Title className="text-accent capitalize font-bold mt-7 mb-2">
@@ -137,7 +137,7 @@ export default function Drawers({ initialSignatures }) {
                                 lovely comments.
                               </span>
                             </Container>
-                            <div className="w-full h-full flex-grow overflow-hidden relative before:z-10 before:absolute before:top-0 before:left-0 before:right-3 before:h-8 before:bg-gradient-to-b before:from-white dark:before:from-zinc-950 before:to-transparent before:pointer-events-none">
+                            <div className="w-full h-64 overflow-hidden relative before:z-10 before:absolute before:top-0 before:left-0 before:right-3 before:h-8 before:bg-gradient-to-b before:from-white dark:before:from-zinc-950 before:to-transparent before:pointer-events-none">
                               <div
                                 ref={scrollViewportRef}
                                 className="w-full h-full z-0 overflow-auto"
