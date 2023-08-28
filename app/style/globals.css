@@ -10,12 +10,14 @@
   :root {
     --accent: 74 161 255;
     --background: 255 255 255;
-    --border-color: theme(colors.zinc.200);
+    --border: theme(colors.zinc.200);
+    --warn: 255 180 0;
 
     @media (prefers-color-scheme: dark) {
       --accent: 206 255 157;
       --background: 0 0 0;
-      --border-color: theme(colors.zinc.800);
+      --border: theme(colors.zinc.800);
+      --warn: 255 180 0;
     }
   }
   html {

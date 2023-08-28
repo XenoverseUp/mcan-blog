@@ -18,7 +18,7 @@ const useScrollPosition = () => {
     return () =>
       document
         .querySelector("[scroll-container]")
-        .removeEventListener("scroll", updatePosition)
+        ?.removeEventListener("scroll", updatePosition)
   }, [])
 
   return scrollPosition
