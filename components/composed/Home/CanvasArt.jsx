@@ -1,5 +1,5 @@
 import img from "@/assets/canvas.png"
-import CanvasLikeButton from "@/components/composed/Home/CanvasLikeButton"
+import CanvasLikeButton from "@/components/composed/home/CanvasLikeButton"
 import Image from "next/image"
 
 const CanvasArt = () => {
