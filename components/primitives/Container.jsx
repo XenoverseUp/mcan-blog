@@ -1,4 +1,4 @@
-import cx from "@/utils/cx"
+import cx from "@/lib/utils/cx"
 
 const Container = ({
   element: Wrapper = "div",
@@ -9,7 +9,7 @@ const Container = ({
   <Wrapper
     className={cx(
       className,
-      "mx-auto w-full max-w-[1440px] px-6 md:px-10 lg:px-16"
+      "mx-auto w-full max-w-[1440px] px-6 md:px-10 lg:px-16",
     )}
     {...rest}
   >

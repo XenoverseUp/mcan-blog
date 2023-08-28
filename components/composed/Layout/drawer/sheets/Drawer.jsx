@@ -4,27 +4,37 @@ import DragHandle from "@/components/composed/layout/drawer/helper/DragHandle"
 import GuestBook from "@/components/composed/layout/drawer/sheets/GuestBook"
 import { AccessibleIcon } from "@/components/primitives/Client"
 import Container from "@/components/primitives/Container"
-import { ArrowRightIcon, DragHandleDots2Icon } from "@radix-ui/react-icons"
+import { DragHandleDots2Icon } from "@radix-ui/react-icons"
 import * as ScrollArea from "@radix-ui/react-scroll-area"
+import { useRef } from "react"
 import { Drawer } from "vaul"
 
 /**
- *
  * @param {{initialSignatures: import("@/lib/guestbook").PaginatedSignature[]}} props
  * @returns {import("react").FC}
  */
 export default function Drawers({ initialSignatures }) {
+  const drawer = useRef(/** @type {HTMLDivElement|null} */ (null))
+
   return (
-    <Drawer.Root>
+    <Drawer.Root
+      onOpenChange={open => {
+        setTimeout(() => drawer.current?.focus(), 0)
+      }}
+    >
       <Drawer.Trigger className="grid aspect-square w-7 place-items-center rounded border border-border bg-neutral-50 dark:border-zinc-800 dark:bg-neutral-900/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-        <AccessibleIcon label="Navigation Menu" key="handle">
+        <AccessibleIcon label="Navigation Menu">
           <DragHandleDots2Icon className="origin-center scale-125 text-inherit" />
         </AccessibleIcon>
       </Drawer.Trigger>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-background/60 z-30" />
-        <Drawer.Content className="isolate bg-background dark:bg-zinc-950 z-40 rounded-t-[16px] !h-[80%] mt-24 fixed bottom-0 left-0 right-0 after:border-l after:border-r after:border-border">
-          <div className="w-full h-full border-t flex flex-col border-l border-r border-border overflow-hidden rounded-t-[16px]">
+        <Drawer.Content className="bg-background dark:bg-zinc-950 z-40 rounded-t-[16px] !h-[80%] mt-24 fixed bottom-0 left-0 right-0 after:border-l after:border-r after:border-border">
+          <div
+            tabIndex={-1}
+            ref={drawer}
+            className="w-full h-full border-t flex flex-col border-l border-r border-border overflow-hidden rounded-t-[16px]"
+          >
             <DragHandle />
             <Container className="w-full flex-grow overflow-hidden">
               <ScrollArea.Root className="w-full h-full overflow-hidden relative after:absolute after:bottom-0 after:left-0 after:right-3 after:h-16 after:bg-gradient-to-t after:from-white dark:after:from-zinc-950 after:to-transparent after:pointer-events-none">

@@ -1,4 +1,4 @@
-import cx from "@/utils/cx"
+import cx from "@/lib/utils/cx"
 
 /**
  * @typedef {Object} DividerProps

@@ -1,7 +1,7 @@
 import Spotify from "@/assets/svg/social/spotify"
 import { PlayerType, spotifyTrackId } from "@/config"
 import { getTopTrack, getTrack } from "@/lib/spotify"
-import cx from "@/utils/cx"
+import cx from "@/lib/utils/cx"
 import Image from "next/image"
 import Button from "../../../ui/Button"
 import Visualizer from "./Visualizer"
@@ -16,7 +16,7 @@ const SpotifyWidget = async ({ className }) => {
       role="presentation"
       className={cx(
         className,
-        "relative w-full overflow-hidden rounded-3xl bg-neutral-400 shadow-xl @container/spotify-widget before:absolute before:inset-0 before:z-10 before:bg-black before:bg-opacity-30 before:backdrop-blur-xl"
+        "relative w-full overflow-hidden rounded-3xl bg-neutral-400 shadow-xl @container/spotify-widget before:absolute before:inset-0 before:z-10 before:bg-black before:bg-opacity-30 before:backdrop-blur-xl",
       )}
     >
       <Image

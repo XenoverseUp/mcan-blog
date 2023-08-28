@@ -2,7 +2,7 @@
 
 import Chip from "@/components/primitives/Chip"
 import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect"
-import subdivide from "@/utils/subdivide"
+import subdivide from "@/lib/utils/subdivide"
 import clsx from "clsx"
 import { gsap } from "gsap"
 import Link from "next/link"
@@ -19,7 +19,7 @@ const ChipSlider = ({ chips }) => {
     gsap.fromTo(
       "#marquee-container",
       { opacity: 0 },
-      { opacity: 1, delay: 0.1 }
+      { opacity: 1, delay: 0.1 },
     )
 
     // Goes from -50% to {gapX / 2}.
@@ -31,7 +31,7 @@ const ChipSlider = ({ chips }) => {
         x: gapX / 2,
         repeat: -1,
         ease: "none",
-      }
+      },
     )
     animations[1] = gsap.fromTo(
       refs.current.at(1),
@@ -41,7 +41,7 @@ const ChipSlider = ({ chips }) => {
         x: gapX / 2,
         ease: "none",
         repeat: -1,
-      }
+      },
     )
     animations[2] = gsap.fromTo(
       refs.current.at(2),
@@ -51,7 +51,7 @@ const ChipSlider = ({ chips }) => {
         x: gapX / 2,
         repeat: -1,
         ease: "none",
-      }
+      },
     )
   }, [])
 

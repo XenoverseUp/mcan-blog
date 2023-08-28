@@ -9,7 +9,7 @@ const execute = promisify(exec)
 
 let branch = (await execute("git rev-parse --abbrev-ref HEAD")).stdout.replace(
   "\n",
-  ""
+  "",
 )
 
 let origin = (
@@ -22,7 +22,7 @@ try {
 } catch (err) {
   console.error(
     `There was an error while talking to the API: ${err.message}`,
-    err
+    err,
   )
 }
 
