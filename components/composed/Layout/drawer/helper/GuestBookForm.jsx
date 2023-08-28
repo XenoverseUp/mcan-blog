@@ -8,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon"
 import { CardStackPlusIcon, InfoCircledIcon } from "@radix-ui/react-icons"
 import * as Tooltip from "@radix-ui/react-tooltip"
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react"
 import { useForm } from "react-hook-form"
 
 const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
@@ -50,6 +50,11 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
       ...signatures,
     ])
 
+    reset({
+      name: "",
+      content: "",
+    })
+
     const res = await create(data)
 
     if (!res.success) {
@@ -68,21 +73,12 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
       ])
   }
 
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      reset({
-        name: "",
-        content: "",
-      })
-    }
-  }, [formState, reset])
-
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
       className="my-3 md:my-4 grid grid-rows-2 grid-cols-6 md:flex justify-between md:gap-4 text-sm"
     >
-      <div
+      <fieldset
         name="name"
         onClick={() => {
           nameRef.current.focus()
@@ -148,8 +144,8 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
             },
           )}
         />
-      </div>
-      <div
+      </fieldset>
+      <fieldset
         name="content"
         onClick={() => contentRef.current.focus()}
         className="flex-grow row-start-2 col-span-full mt-1 md:mt-0  w-full relative md:w-64 flex group flex-col h-[3.5rem] md:h-[3.75rem] [&:has(:focus-visible)]:ring-4 justify-center border border-border rounded-xl px-4 cursor-pointer"
@@ -212,7 +208,7 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
             },
           )}
         />
-      </div>
+      </fieldset>
       <button
         type="submit"
         className="text-accent row-start-1 row-span-1 col-start-6 hover:text-background hover:bg-accent focus-visible:text-background focus-visible:bg-accent active:text-background active:bg-accent/90 transition-colors rounded-xl md:aspect-square h-[3.5rem] md:h-[3.75rem] grid place-items-center border-2 border-accent focus-visible:ring-4"

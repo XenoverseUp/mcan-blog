@@ -15,14 +15,25 @@ const Signature = ({ data, pending }) => {
           title="Avatar"
           name={data.name}
           variant="beam"
-          colors={["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"]}
+          colors={["#CECE5A", "#FFE17B", "#FD8D14", "#C51605"]}
         />
         <div className="flex flex-col">
-          <h3 className="md:text-xl font-bold">{data.name}</h3>
+          <div className="flex items-center gap-2">
+            <h3 className="md:text-xl font-bold">{data.name}</h3>
+            <div
+              className={cx(
+                "rounded-full transition-opacity opacity-0 flex gap-[0.375rem] items-center justify-center px-2 py-1 text-xs text-accent border border-accent/30 bg-accent/10",
+                { "opacity-100": pending },
+              )}
+            >
+              <span className="rounded-full border-2 border-dotted border-accent animate-spin [animation-duration:1.5s] w-3 aspect-square"></span>
+              <span>Posting...</span>
+            </div>
+          </div>
           <ReactTimeago
             className="text-xs md:text-sm opacity-60"
             date={new Date(data.createdAt)}
-            minPeriod={10}
+            minPeriod={4}
           />
         </div>
       </header>
