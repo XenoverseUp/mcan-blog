@@ -14,7 +14,7 @@ import { useRef, useState } from "react"
 import { Drawer } from "vaul"
 
 const GuestBook = ({ initialSignatures }) => {
-  const scrollViewportRef = useRef(null)
+  const scrollViewportRef = useRef(/** @type {HTMLDivElement|null} */ (null))
   const [signatures, setSignatures] = useState(
     /** @type {import("@/lib/guestbook").PaginatedSignature} */ (
       initialSignatures
@@ -30,7 +30,7 @@ const GuestBook = ({ initialSignatures }) => {
   )
 
   useUpdateEffect(() => {
-    scrollViewportRef.current.scrollTo({ top: 0, behavior: "smooth" })
+    scrollViewportRef.current?.scrollTo({ top: 0, behavior: "smooth" })
   }, [optimisticSignatures])
 
   return (
