@@ -1,7 +1,7 @@
 "use client"
 
-import DragHandle from "@/components/composed/layout/drawer/helper/DragHandle"
-import GuestBook from "@/components/composed/layout/drawer/sheets/GuestBook"
+import DragHandle from "@/components/composed/Layout/drawer/helper/DragHandle"
+import GuestBook from "@/components/composed/Layout/drawer/sheets/GuestBook"
 import { AccessibleIcon } from "@/components/primitives/Client"
 import Container from "@/components/primitives/Container"
 import { DragHandleDots2Icon } from "@radix-ui/react-icons"
