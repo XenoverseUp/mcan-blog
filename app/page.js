@@ -62,8 +62,8 @@ export default async function Home() {
               <p className="sm:text-center lg:hidden">
                 Here are a bunch of suggestions for you to explore new worlds.
               </p>
-              <CanvasArt />
               <SpotifyPlayer />
+              <CanvasArt />
             </section>
           </div>
           <section name="blog-content"></section>
@@ -131,4 +131,5 @@ const chips = [
     url: "https://aws.amazon.com/",
   },
   { name: "GSAP", color: "#89CE03", url: "https://greensock.com/gsap/" },
+  { name: "Redis", color: "#dc372c", url: "https://redis.io" },
 ]

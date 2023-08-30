@@ -1,11 +1,27 @@
-import { Space_Mono } from "next/font/google"
 import localFont from "next/font/local"
 
-export const space_mono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
+// export const space_mono = Space_Mono({
+//   subsets: ["latin"],
+//   weight: ["400", "700"],
+//   variable: "--font-space-mono",
+//   display: "swap",
+// })
+
+export const space_mono = localFont({
+  src: [
+    {
+      path: "../../assets/font/Space Mono/SpaceMono-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../assets/font/Space Mono/SpaceMono-Bold.ttf",
+      weight: "bold",
+      style: "normal",
+    },
+  ],
   display: "swap",
+  variable: "--font-mono",
 })
 
 export const staff = localFont({

@@ -4,9 +4,5 @@
   "semi": false,
   "arrowParens": "avoid",
   "organizeImportsSkipDestructiveCodeActions": true,
-  "plugins": [
-    "prettier-plugin-jsdoc",
-    "prettier-plugin-tailwindcss",
-    "prettier-plugin-organize-imports"
-  ]
+  "plugins": ["prettier-plugin-organize-imports"]
 }
