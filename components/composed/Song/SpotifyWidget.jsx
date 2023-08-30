@@ -1,15 +1,11 @@
-import Spotify from "@/assets/svg/social/spotify"
-import { PlayerType, spotifyTrackId } from "@/config"
+import Button from "@/components/primitives/Button"
 import { getTopTrack, getTrack } from "@/lib/spotify"
 import cx from "@/lib/utils/cx"
 import Image from "next/image"
-import Button from "../../../ui/Button"
 import Visualizer from "./Visualizer"
 
 const SpotifyWidget = async ({ className }) => {
-  const track = await (PlayerType == "track"
-    ? getTrack(spotifyTrackId)
-    : getTopTrack())
+  const track = await getTopTrack()
 
   return (
     <div
@@ -67,7 +63,6 @@ const SpotifyWidget = async ({ className }) => {
         <div className="flex flex-col justify-end">
           <Button
             className="z-10 flex items-center gap-2 whitespace-nowrap rounded-xl bg-white px-3 py-[6px] text-sm font-bold text-black text-opacity-80 shadow-xl transition-transform hover:scale-[1.025] @xl/spotify-widget:px-5"
-            appendIcon={Spotify}
             iconClassName="aspect-square w-8 fill-green-500"
             href={track.url}
             target="_blank"

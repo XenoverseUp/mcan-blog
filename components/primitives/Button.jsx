@@ -6,11 +6,11 @@ import Link from "next/link"
 import { forwardRef } from "react"
 
 const ButtonVariants = cva(
-  "rounded-full select-none flex-shrink-0 w-fit h-9 flex items-center font-staff-condensed uppercase transition-colors motion-reduce:transition-none",
+  "rounded-full select-none flex-shrink-0 w-fit h-9 flex items-center font-staff-condensed uppercase transition-colors motion-reduce:transition-none focus-visible:ring-4",
   {
     variants: {
       size: {
-        small: ["px-4", "text-sm", "gap-2"],
+        small: ["px-4", "h-7", "text-sm", "gap-2"],
         normal: ["px-5", "text-lg", "gap-3"],
       },
       textCase: {
@@ -27,6 +27,8 @@ const ButtonVariants = cva(
           "border-accent",
           "hover:bg-accent",
           "hover:text-background",
+          "focus-visible:bg-accent",
+          "focus-visible:text-background",
           "active:text-background",
           "active:bg-accent/90",
         ],
@@ -34,6 +36,7 @@ const ButtonVariants = cva(
           "text-background",
           "bg-accent",
           "hover:bg-accent/90",
+          "focus-visible:bg-accent/90",
           "active:bg-accent",
         ],
         soft: [
@@ -41,9 +44,10 @@ const ButtonVariants = cva(
           "bg-accent/20",
           "border-transparent",
           "hover:bg-accent/30",
+          "focus-visible:bg-accent/30",
           "active:bg-accent/40",
         ],
-        ghost: ["!px-2", "py-0", "rounded-none", "text-accent"],
+        ghost: ["!px-2", "py-0", "text-accent"],
       },
     },
     defaultVariants: {
