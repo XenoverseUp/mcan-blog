@@ -1,7 +1,7 @@
 "use client"
 
 import useScrollY from "@/hooks/useScrollPosition"
-import cx from "@/utils/cx"
+import cx from "@/lib/utils/cx"
 
 const Nav = ({
   children,

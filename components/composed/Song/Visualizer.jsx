@@ -1,8 +1,8 @@
 "use client"
 
 import Sine from "@/components/canvas/Sine"
-import SpotifyPlayer from "./MusicPlayer"
 import { useRef } from "react"
+import SpotifyPlayer from "./MusicPlayer"
 
 const Visualizer = ({ preview }) => {
   const ref = useRef(null)

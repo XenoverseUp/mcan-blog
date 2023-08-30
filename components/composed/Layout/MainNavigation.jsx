@@ -1,6 +1,6 @@
 import { fetchSignatures } from "@/actions/guestbook.action"
-import Drawer from "@/components/composed/Layout/drawer/sheets/Drawer"
-import Nav from "@/components/composed/Layout/Nav"
+import Drawer from "@/components/composed/layout/drawer/sheets/Drawer"
+import Nav from "@/components/composed/layout/Nav"
 import When from "@/components/helper/When"
 import Container from "@/components/primitives/Container"
 import Logo from "@/components/primitives/Logo"

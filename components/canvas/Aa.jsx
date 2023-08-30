@@ -1,6 +1,6 @@
 "use client"
 
-import cx from "@/utils/cx"
+import cx from "@/lib/utils/cx"
 import {
   forwardRef,
   useImperativeHandle,
@@ -63,7 +63,7 @@ class Aaa {
         (this.radius * this.width) / 4,
         0,
         Math.PI * 2,
-        false
+        false,
       )
     })
 
@@ -83,7 +83,7 @@ class Aaa {
         (this.radius * this.width) / 4,
         0,
         Math.PI * 2,
-        false
+        false,
       )
       this.context.fillStyle = color
       this.context.fill()
@@ -160,7 +160,7 @@ const Aa = forwardRef(
         })}
       />
     )
-  }
+  },
 )
 
 export default Aa

@@ -1,7 +1,7 @@
 import { ValidationError } from "@/lib/error"
 import { getPaginatedSignatures } from "@/lib/guestbook"
 import { PaginationParameters } from "@/lib/schema"
-import { try_ } from "@/utils/try"
+import { try_ } from "@/lib/utils/try"
 
 /**
  * @param {Request} request

@@ -8,8 +8,8 @@
  * @property {string[]} options
  */
 
-import capitalize from "../utils/capitalize.js"
 import inquirer from "inquirer"
+import capitalize from "../lib/utils/capitalize.js"
 
 const { prompt } = inquirer
 
@@ -21,7 +21,7 @@ const { prompt } = inquirer
   } catch (err) {
     console.error(
       `There was an error while talking to the API: ${err.message}`,
-      err
+      err,
     )
   }
 })()

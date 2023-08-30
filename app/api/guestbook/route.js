@@ -1,5 +1,5 @@
 import { createSignature, getAllEntries } from "@/lib/guestbook"
-import { try_ } from "@/utils/try"
+import { try_ } from "@/lib/utils/try"
 
 /** @param {Request} _ */
 export const GET = async _ => {

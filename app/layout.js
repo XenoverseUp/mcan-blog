@@ -5,8 +5,8 @@ import {
   staff_wide,
 } from "@/app/style/font"
 import "@/app/style/globals.css"
-import MainFooter from "@/components/composed/Layout/MainFooter"
-import MainNavigation from "@/components/composed/Layout/MainNavigation"
+import MainFooter from "@/components/composed/layout/MainFooter"
+import MainNavigation from "@/components/composed/layout/MainNavigation"
 
 /** @type {import("next").Metadata} */
 export const metadata = {

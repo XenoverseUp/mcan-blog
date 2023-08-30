@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 
 const useLocalStorage = (storageKey, fallbackState) => {
   if (typeof window == "undefined") return [fallbackState, null]

@@ -1,7 +1,7 @@
 "use client"
 
 import useBoolean from "@/hooks/useBoolean"
-import cx from "@/utils/cx"
+import cx from "@/lib/utils/cx"
 import { HeartFilledIcon } from "@radix-ui/react-icons"
 import { useState } from "react"
 
@@ -19,7 +19,7 @@ const CanvasLikeButton = () => {
         "flex select-none items-center justify-center gap-[7px] rounded-full border px-[10px] py-[4px] font-staff-condensed transition-colors",
         {
           "border-red-400 bg-red-400/40": liked,
-        }
+        },
       )}
     >
       <HeartFilledIcon
