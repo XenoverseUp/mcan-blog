@@ -2,7 +2,7 @@
 
 import Pause from "@/assets/svg/media/pause"
 import Play from "@/assets/svg/media/play"
-import AudioPlayer from "@/components/composed/song/AudioPlayer"
+import AudioPlayer from "@/components/composed/Song/AudioPlayer"
 import AccessibleIcon from "@/components/ui/AcessibleIcon"
 import useUpdateEffect from "@/hooks/useUpdateEffect"
 

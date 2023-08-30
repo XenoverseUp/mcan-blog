@@ -1,5 +1,5 @@
-import DragHandle from "@/components/composed/layout/drawer/helper/DragHandle"
-import GuestBookForm from "@/components/composed/layout/drawer/helper/GuestBookForm"
+import DragHandle from "@/components/composed/Layout/drawer/helper/DragHandle"
+import GuestBookForm from "@/components/composed/Layout/drawer/helper/GuestBookForm"
 import Container from "@/components/primitives/Container"
 import { Drawer } from "vaul"
 
