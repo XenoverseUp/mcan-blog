@@ -4,7 +4,7 @@ import { getMockTrack, getTopTrack, getTrack } from "@/lib/spotify"
 import { DotFilledIcon, MoonIcon } from "@radix-ui/react-icons"
 
 const SpotifyWidget = async () => {
-  const track = await (process.env.NODE_ENV !== "development"
+  const track = await (process.env.NODE_ENV === "development"
     ? getMockTrack()
     : getTopTrack(19))
 

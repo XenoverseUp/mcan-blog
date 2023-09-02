@@ -8,12 +8,12 @@ import { gsap } from "gsap"
 import Link from "next/link"
 import { useEffect, useMemo, useRef } from "react"
 
+const gapX = 5
+const gapY = 6
 const ChipSlider = ({ chips }) => {
   const divisions = useMemo(() => subdivide(chips, 3), [])
   const refs = useRef([])
   const animations = []
-  const gapX = 5
-  const gapY = 6
 
   useEffect(() => console.log(divisions), [])
 
@@ -30,7 +30,7 @@ const ChipSlider = ({ chips }) => {
       { x: "-50%" },
       {
         duration: 30 * 0.75,
-        x: gapX / 2,
+        x: 0,
         repeat: -1,
         ease: "none",
       },
@@ -40,7 +40,7 @@ const ChipSlider = ({ chips }) => {
       { x: "-50%" },
       {
         duration: 21 * 0.75,
-        x: gapX / 2,
+        x: 0,
         ease: "none",
         repeat: -1,
       },
@@ -50,7 +50,7 @@ const ChipSlider = ({ chips }) => {
       { x: "-50%" },
       {
         duration: 19 * 0.75,
-        x: gapX / 2,
+        x: 0,
         repeat: -1,
         ease: "none",
       },
@@ -67,8 +67,7 @@ const ChipSlider = ({ chips }) => {
         <div
           ref={instance => refs.current.push(instance)}
           key={`chipset-${i}`}
-          style={{ "--gap-x": `${gapX}px` }}
-          className={clsx("relative flex h-8 w-fit gap-[var(--gap-x)]")}
+          className={clsx("relative flex h-8 w-fit")}
           onMouseOver={() =>
             gsap.to(animations.at(i), {
               timeScale: 0.2,
@@ -82,16 +81,18 @@ const ChipSlider = ({ chips }) => {
             })
           }
         >
-          {chipset.map(({ name, color, url }, j) => (
-            <Link key={name + i + j + "-first"} href={url} target="_blank">
-              <Chip {...{ color }}>{name}</Chip>
-            </Link>
-          ))}
-          {chipset.map(({ name, color, url }, j) => (
-            <Link key={name + i + j + "-second"} href={url} target="_blank">
-              <Chip {...{ color }}>{name}</Chip>
-            </Link>
-          ))}
+          {new Array(2).fill(null).map((_, j) =>
+            chipset.map(({ name, color, url }, k) => (
+              <Link
+                className="mr-[5px]"
+                key={`${name}-${i}-${j}-${k}`}
+                href={url}
+                target="_blank"
+              >
+                <Chip {...{ color }}>{name}</Chip>
+              </Link>
+            )),
+          )}
         </div>
       ))}
     </div>
