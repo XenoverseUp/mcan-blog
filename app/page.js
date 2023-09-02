@@ -1,6 +1,6 @@
 import CanvasArt from "@/components/composed/Home/CanvasArt"
 import ChipSlider from "@/components/composed/Home/ChipSlider"
-import SpotifyPlayer from "@/components/composed/Home/SpotifyPlayer"
+import SpotifyWidget from "@/components/composed/Home/SpotifyWidget"
 import FadedPattern from "@/components/composed/Layout/FadedPattern"
 import Button from "@/components/primitives/Button"
 import Container from "@/components/primitives/Container"
@@ -18,7 +18,7 @@ export default async function Home() {
           <div className="mt-10 flex w-full flex-col gap-9 xs:mt-12 lg:flex-row lg:justify-between">
             <section
               name="intro"
-              className="flex w-full flex-col gap-9 lg:max-w-lg"
+              className="flex w-full flex-col gap-9 lg:max-w-lg 2xl:max-w-2xl"
             >
               <h1 className="font-staff-wide text-2xl uppercase leading-[0.9] xs:text-3xl xs:leading-[0.9] sm:text-4xl sm:leading-[0.9]">
                 <Balancer>
@@ -62,8 +62,8 @@ export default async function Home() {
               <p className="sm:text-center lg:hidden">
                 Here are a bunch of suggestions for you to explore new worlds.
               </p>
+              <SpotifyWidget />
               <CanvasArt />
-              <SpotifyPlayer />
             </section>
           </div>
           <section name="blog-content"></section>
@@ -131,4 +131,5 @@ const chips = [
     url: "https://aws.amazon.com/",
   },
   { name: "GSAP", color: "#89CE03", url: "https://greensock.com/gsap/" },
+  { name: "Redis", color: "#dc372c", url: "https://redis.io" },
 ]

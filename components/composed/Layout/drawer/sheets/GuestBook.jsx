@@ -40,7 +40,7 @@ const GuestBook = ({ initialSignatures }) => {
           <span>Guestbook</span>
           <ArrowRightIcon className="group-hover:text-accent scale-110 transition-colors" />
         </p>
-        <span className="font-normal normal-case text-sm block leading-5 opacity-75">
+        <span className="font-normal normal-case text-sm block leading-5 opacity-75 text-start">
           Don't forget to fill out my guestbook with your lovely comments.
         </span>
       </Drawer.Trigger>

@@ -10,7 +10,7 @@ import {
 } from "react"
 
 class Wave {
-  constructor(canvas, maxAmplitude = 7, length = 40, frequency = 50, y) {
+  constructor(canvas, maxAmplitude = 7, length = 40, frequency = 40, y) {
     this.canvas = canvas
     this.ctx = this.canvas.getContext("2d")
     this.maxAmplitude = maxAmplitude
@@ -20,7 +20,7 @@ class Wave {
     this.frequencySine = frequency / 2
     this.increment = Math.random() * 360
     this.incrementSine = this.increment
-    this.lineWidth = 3
+    this.lineWidth = 2
     this.y = y || this.canvas.height / 2
 
     this.multiplier = 1

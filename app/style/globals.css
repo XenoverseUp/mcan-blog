@@ -8,17 +8,15 @@
   }
 
   :root {
-    --accent: 74 161 255;
+    /* --accent: 74 161 255;
     --background: 255 255 255;
     --border: theme(colors.zinc.200);
-    --warn: 255 180 0;
+    --warn: 255 180 0; */
 
-    @media (prefers-color-scheme: dark) {
-      --accent: 206 255 157;
-      --background: 0 0 0;
-      --border: theme(colors.zinc.800);
-      --warn: 255 180 0;
-    }
+    --accent: 206 255 157;
+    --background: 0 0 0;
+    --border: theme(colors.zinc.800);
+    --warn: 255 180 0;
   }
   html {
     -webkit-tap-highlight-color: transparent;
@@ -30,3 +28,12 @@
   background-color: theme(colors.accent);
   color: theme(colors.background);
 }
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --accent: 206 255 157;
+    --background: 0 0 0;
+    --border: theme(colors.zinc.800);
+    --warn: 255 180 0;
+  }
+} */

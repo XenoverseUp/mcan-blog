@@ -2,6 +2,7 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,10 +15,11 @@ module.exports = {
       ...defaultTheme.screens,
     },
     fontFamily: {
-      mono: ["var(--font-space-mono)", "Courier", "monospace"],
+      mono: ["var(--font-mono)", "Courier", "monospace"],
       staff: ["var(--font-staff)", "sans-serif"],
       "staff-wide": ["var(--font-staff-wide)", "sans-serif"],
       "staff-condensed": ["var(--font-staff-condensed)", "sans-serif"],
+      commuter: ["var(--font-commuter)", "sans-serif"],
     },
     extend: {
       backgroundImage: {
