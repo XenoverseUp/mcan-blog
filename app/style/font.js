@@ -27,19 +27,39 @@ export const space_mono = localFont({
 export const staff = localFont({
   src: [
     {
-      path: "../../assets/font/Staff/Staff-Regular.woff2",
+      path: "../../assets/font/Staff/Staff-Light.woff",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../assets/font/Staff/Staff-Regular.woff",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../assets/font/Staff/Staff-Italic.woff2",
+      path: "../../assets/font/Staff/Staff-Medium.woff",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../assets/font/Staff/Staff-SemiBold.woff",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../assets/font/Staff/Staff-Bold.woff",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../assets/font/Staff/Staff-Black.woff",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "../../assets/font/Staff/Staff-Italic.woff",
       weight: "400",
       style: "italic",
-    },
-    {
-      path: "../../assets/font/Staff/Staff-Bold.woff2",
-      weight: "bold",
-      style: "normal",
     },
   ],
   display: "swap",

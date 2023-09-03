@@ -36,7 +36,7 @@ export default async function Home() {
                 </p>
               </ParagraphWrapper>
               <div className="flex flex-wrap gap-[10px]">
-                <Button>Snippets</Button>
+                <Button href="/article/qwqx2e32d">Snippets</Button>
                 <Button>Tutorials</Button>
                 <Button>Opinions</Button>
                 <Button rightIcon={<ArrowRightIcon />}>About Me</Button>

@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 
 const CircularProgress = ({
   className: { base, track, thumb } = { base: "", track: "", thumb: "" },
-  width = 100,
+  size = 100,
   radius = 30,
   spread = 10,
   start = false,
@@ -47,14 +47,14 @@ const CircularProgress = ({
         base,
         "aspect-square w-[--width] flex items-center justify-center",
       )}
-      style={{ "--width": `${width}px` }}
+      style={{ "--width": `${size}px` }}
     >
-      <svg width={width} height={width} viewBox={`0 0 ${width} ${width}`}>
+      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
         <path
           className={thumb}
           d={ring({
-            x: width / 2,
-            y: width / 2,
+            x: size / 2,
+            y: size / 2,
             radius,
             spread,
           })}
@@ -62,8 +62,8 @@ const CircularProgress = ({
         <path
           className={track}
           d={describeArc({
-            x: width / 2,
-            y: width / 2,
+            x: size / 2,
+            y: size / 2,
             radius: radius,
             spread,
             angle: duration ? Angle.fromProportion(progress) : angleRef.current,
