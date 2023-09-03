@@ -6,7 +6,7 @@ import { DotFilledIcon, MoonIcon } from "@radix-ui/react-icons"
 const SpotifyWidget = async () => {
   const track = await (process.env.NODE_ENV === "development"
     ? getMockTrack()
-    : getTopTrack(19))
+    : getTopTrack(0))
 
   return (
     <div className="relative border border-border h-40 w-full isolate flex items-center gap-3 rounded-xl bg-background p-4 overflow-hidden after:absolute after:-z-10 after:inset-0 after:backdrop-blur-sm after:bg-[radial-gradient(122.38%_122.38%_at_-0.00%_-0.00%,_rgba(var(--background)_/_0.900)_0%,rgba(var(--background)_/_0.60)_40%,_rgb(var(--background)_/_0.9)_100%)]">

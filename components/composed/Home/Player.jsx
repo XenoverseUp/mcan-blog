@@ -3,11 +3,8 @@
 import Sine from "@/components/canvas/Sine"
 import AudioPlayer from "@/components/primitives/AudioPlayer"
 import CircularProgress from "@/components/primitives/CircularProgress"
-import useUpdateEffect from "@/hooks/useUpdateEffect"
-import Angle from "@/lib/utils/angle"
 import cx from "@/lib/utils/cx"
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon"
-import { PauseIcon, PlayIcon } from "@radix-ui/react-icons"
 import Image from "next/image"
 
 const Player = ({ coverImagePlaceholder, coverImage, title, previewUrl }) => {

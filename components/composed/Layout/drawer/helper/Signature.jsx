@@ -10,13 +10,7 @@ const Signature = ({ data, pending }) => {
       })}
     >
       <header className="flex gap-4 items-center">
-        <Avatar
-          size={40}
-          title="Avatar"
-          name={data.name}
-          variant="beam"
-          colors={["#CECE5A", "#FFE17B", "#FD8D14", "#C51605"]}
-        />
+        <Avatar size={40} title="Avatar" name={data.name} variant="beam" />
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
             <h3 className="md:text-xl font-bold">{data.name}</h3>
