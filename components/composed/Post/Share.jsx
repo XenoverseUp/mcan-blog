@@ -85,7 +85,7 @@ const Share = ({
             <span className="my-6 text-xs text-t-secondary">
               or share using...
             </span>
-            {/* <SocialShareButtons url={process.env.NEXT_PUBLIC_HOST + pathname} /> */}
+            <SocialShareButtons url={process.env.NEXT_PUBLIC_HOST + pathname} />
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
