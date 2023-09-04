@@ -15,13 +15,31 @@ const SocialMedia = {
       </svg>
     ),
     label: "Share to WhatsApp",
-    generator: (uri, title, message) => ``,
+    generator: (uri, title) => {
+      const url = new URL("https://www.facebook.com/sharer/sharer.php/")
+      const searchParams = new URLSearchParams({
+        u: uri,
+        t: title,
+      })
+      url.search = searchParams
+
+      return url
+    },
   },
 
   instagram: {
     icon: <InstagramLogoIcon width={20} height={20} />,
     label: "Share on Instagram",
-    generator: (uri, title, message) => ``,
+    generator: (uri, title) => {
+      const url = new URL("https://www.facebook.com/sharer/sharer.php/")
+      const searchParams = new URLSearchParams({
+        u: uri,
+        t: title,
+      })
+      url.search = searchParams
+
+      return url
+    },
   },
   threads: {
     icon: (
@@ -36,7 +54,16 @@ const SocialMedia = {
       </svg>
     ),
     label: "Share on Threads",
-    generator: (uri, title, message) => ``,
+    generator: (uri, title) => {
+      const url = new URL("https://www.facebook.com/sharer/sharer.php/")
+      const searchParams = new URLSearchParams({
+        u: uri,
+        t: title,
+      })
+      url.search = searchParams
+
+      return url
+    },
   },
   x: {
     icon: (
@@ -99,7 +126,16 @@ const SocialMedia = {
       </svg>
     ),
     label: "Share on In",
-    generator: (uri, title, message) => ``,
+    generator: (uri, title) => {
+      const url = new URL("https://www.facebook.com/sharer/sharer.php/")
+      const searchParams = new URLSearchParams({
+        u: uri,
+        t: title,
+      })
+      url.search = searchParams
+
+      return url
+    },
   },
   discord: {
     icon: (
@@ -114,7 +150,16 @@ const SocialMedia = {
       </svg>
     ),
     label: "Share on Discord",
-    generator: (uri, title, message) => ``,
+    generator: (uri, title) => {
+      const url = new URL("https://www.facebook.com/sharer/sharer.php/")
+      const searchParams = new URLSearchParams({
+        u: uri,
+        t: title,
+      })
+      url.search = searchParams
+
+      return url
+    },
   },
 }
 
