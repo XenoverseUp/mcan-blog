@@ -1,0 +1,102 @@
+"use client"
+
+import SocialShareButtons from "@/components/composed/Post/SocialShareButtons"
+import When from "@/components/helper/When"
+import Button from "@/components/primitives/Button"
+import ShareController from "@/components/primitives/ShareController"
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard"
+import { AccessibleIcon } from "@radix-ui/react-accessible-icon"
+import * as Dialog from "@radix-ui/react-dialog"
+import { CheckIcon, InstagramLogoIcon, Link1Icon } from "@radix-ui/react-icons"
+import Avatar from "boring-avatars"
+import { usePathname } from "next/navigation"
+import {
+  Fragment,
+  cloneElement,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react"
+
+const Share = ({
+  children,
+  shareData,
+  onInteraction,
+  onSuccess,
+  onError,
+  disabled,
+  type = "opinions",
+}) => {
+  const [openPopup, setOpenPopup] = useState(false)
+  const trigger = useRef(null)
+
+  const [copied, copy] = useCopyToClipboard()
+  const pathname = usePathname()
+
+  const handleNonNativeShare = useCallback(() => {
+    setOpenPopup(true)
+  }, [])
+
+  const copyToClipboard = useCallback(
+    () => copy(new URL(pathname, process.env.NEXT_PUBLIC_HOST)?.toString()),
+    [pathname],
+  )
+
+  useEffect(() => {
+    if (!openPopup) trigger.current?.focus()
+  }, [openPopup])
+
+  return (
+    <Fragment>
+      <ShareController
+        shareData={shareData}
+        onInteraction={onInteraction}
+        onSuccess={onSuccess}
+        onError={onError}
+        onNonNativeShare={handleNonNativeShare}
+        disabled={disabled}
+      >
+        {cloneElement(children, { ref: trigger })}
+      </ShareController>
+      <When condition={openPopup}>
+        <Dialog.Root open={openPopup} onOpenChange={setOpenPopup}>
+          <Dialog.Portal>
+            <Dialog.Overlay className="fixed inset-0 bg-background/50 z-40" />
+            <Dialog.Content className="pt-6 pb-8 px-6 border flex flex-col items-center border-border fixed top-[50%] z-50 left-[50%] max-h-[85vh] w-[90vw] max-w-[360px] translate-x-[-50%] translate-y-[-50%] rounded-xl bg-neutral-900">
+              <header className="mb-8 text-center">
+                <h1 className="font-staff-wide text-lg">Share</h1>
+                <p className="text-xs text-t-secondary">
+                  Share this item with friends & family.
+                </p>
+              </header>
+              <div className="w-fit h-fit overflow-hidden mb-6 rounded-xl border-4 border-white">
+                <Avatar size={120} square variant="pixel" />
+              </div>
+              <Button
+                variant="soft"
+                size="small"
+                onClick={copyToClipboard}
+                leftIcon={!!copied ? <CheckIcon /> : <Link1Icon />}
+              >
+                {!!copied ? "Copied" : "Copy Link"}
+              </Button>
+
+              <span className="my-6 text-xs text-t-secondary">
+                or share using...
+              </span>
+              <SocialShareButtons
+                url={new URL(
+                  pathname,
+                  process.env.NEXT_PUBLIC_HOST,
+                )?.toString()}
+              />
+            </Dialog.Content>
+          </Dialog.Portal>
+        </Dialog.Root>
+      </When>
+    </Fragment>
+  )
+}
+
+export default Share

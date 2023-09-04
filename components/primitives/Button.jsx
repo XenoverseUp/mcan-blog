@@ -99,7 +99,9 @@ const Button = (
       {...(href && { href })}
       {...rest}
       ref={ref}
-      className={cx(ButtonVariants({ size, variant, textCase }), className)}
+      className={cx(ButtonVariants({ size, variant, textCase }), className, {
+        "px-3": leftIcon && size === "small",
+      })}
     >
       <When condition={!!leftIcon}>{leftIcon}</When>
       {children}
