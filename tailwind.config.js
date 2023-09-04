@@ -29,6 +29,8 @@ module.exports = {
         accent: "rgb(var(--accent) / <alpha-value>)",
         background: "rgb(var(--background) / <alpha-value>)",
         border: "var(--border)",
+        "t-primary": "var(--t-primary)",
+        "t-secondary": "var(--t-secondary)",
         warn: "rgb(var(--warn) / <alpha-value>)",
       },
     },

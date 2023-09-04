@@ -1,7 +1,6 @@
 import Category from "@/components/composed/Post/Category"
 import Controls from "@/components/composed/Post/Controls"
 import Vibe from "@/components/composed/Post/Vibe"
-import Button from "@/components/primitives/Button"
 import Container from "@/components/primitives/Container"
 import { DotFilledIcon, Link2Icon } from "@radix-ui/react-icons"
 import Avatar from "boring-avatars"
@@ -15,6 +14,7 @@ const Article = () => {
     vibe: "controversial",
     previewUrl: "https://google.com",
     repoUrl: "https://google.com",
+    type: "opinions",
   }
 
   return (
@@ -22,11 +22,11 @@ const Article = () => {
       <Container className="flex justify-between xl:gap-16">
         <section className="w-full max-w-3xl">
           <header className="flex flex-col">
-            <Category type="tutorials" />
+            <Category type={post.type} />
             <h1 className="text-[42px] leading-tight mt-5 font-bold">
               <Balancer ratio={0}>{post.title}</Balancer>
             </h1>
-            <p className="text-[22px] text-[#BEC0BB]">{post.subtitle}</p>
+            <p className="text-[22px] text-t-secondary">{post.subtitle}</p>
             <div className="flex justify-between mt-9">
               <div className="flex gap-3 items-center">
                 <Avatar size={40} variant="beam" name={post.author.name} />
@@ -42,7 +42,7 @@ const Article = () => {
                   </a>
                   <div className="flex items-center gap-1 text-xs">
                     <time
-                      className="text-[#BEC0BB]"
+                      className="text-t-secondary"
                       pubdate="true"
                       dateTime="2023-08-29"
                       title="August 29th, 2023"
@@ -58,7 +58,9 @@ const Article = () => {
             </div>
           </header>
         </section>
-        <section className="hidden xl:block">Table of contents</section>
+        <section className="hidden xl:block w-64">
+          <h2 className="text-accent font-medium">On this page</h2>
+        </section>
       </Container>
     </main>
   )

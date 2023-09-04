@@ -1,5 +1,5 @@
 import Link from "next/link"
-import AccessibleIcon from "./Client"
+import AccessibleIcon from "../helper/Client"
 
 const IconLink = ({ children, href, target = "_blank", label, className }) => (
   <Link {...{ href, target, className }}>

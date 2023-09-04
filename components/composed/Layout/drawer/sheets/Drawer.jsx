@@ -2,7 +2,7 @@
 
 import DragHandle from "@/components/composed/Layout/drawer/helper/DragHandle"
 import GuestBook from "@/components/composed/Layout/drawer/sheets/GuestBook"
-import { AccessibleIcon } from "@/components/primitives/Client"
+import { AccessibleIcon } from "@/components/helper/Client"
 import Container from "@/components/primitives/Container"
 import { DragHandleDots2Icon } from "@radix-ui/react-icons"
 import * as ScrollArea from "@radix-ui/react-scroll-area"
