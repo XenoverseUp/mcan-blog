@@ -1,13 +1,12 @@
 "use client"
 
 import SocialShareButtons from "@/components/composed/Post/SocialShareButtons"
-import When from "@/components/helper/When"
 import Button from "@/components/primitives/Button"
 import ShareController from "@/components/primitives/ShareController"
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard"
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon"
 import * as Dialog from "@radix-ui/react-dialog"
-import { CheckIcon, InstagramLogoIcon, Link1Icon } from "@radix-ui/react-icons"
+import { CheckIcon, Cross1Icon, Link1Icon } from "@radix-ui/react-icons"
 import Avatar from "boring-avatars"
 import { usePathname } from "next/navigation"
 import {
@@ -19,6 +18,19 @@ import {
   useState,
 } from "react"
 
+/**
+ * @typedef {{
+ *  children: React.ReactElement<HTMLButtonElement>;
+ *  shareData: ShareData;
+ *  onSuccess?: () => void;
+ *  onError?: (error?: unknown) => void;
+ *  onInteraction?: () => void;
+ *  disabled?: boolean;
+ *  type: "opinions"|"tutorials"|"snippets";
+ * }} Props
+ */
+
+/** @type {import("react").FC<Props>} */
 const Share = ({
   children,
   shareData,
@@ -64,6 +76,13 @@ const Share = ({
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0 bg-background/50 z-40" />
           <Dialog.Content className="pt-6 pb-8 px-6 border flex flex-col items-center border-border fixed top-[50%] z-50 left-[50%] max-h-[85vh] w-[90vw] max-w-[360px] translate-x-[-50%] translate-y-[-50%] rounded-xl bg-neutral-900">
+            <Dialog.Close asChild>
+              <button className="absolute top-3 right-3 focus-visible:ring-4 rounded-sm">
+                <AccessibleIcon label="Close Share Sheet">
+                  <Cross1Icon />
+                </AccessibleIcon>
+              </button>
+            </Dialog.Close>
             <header className="mb-8 text-center">
               <h1 className="font-staff-wide text-lg">Share</h1>
               <p className="text-xs text-t-secondary">

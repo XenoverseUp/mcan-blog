@@ -1,6 +1,6 @@
-import Cache, { GUESTBOOK_COUNT } from "@/lib/cache"
+import Cache, { GUESTBOOK_COUNT } from "@/lib/db/cache"
+import redis from "@/lib/db/redis"
 import { GUESTBOOK_REFERRER } from "@/lib/guestbook"
-import redis from "@/lib/redis"
 
 /**
  * This method runs at 5AM everyday to update cache.

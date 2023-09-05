@@ -1,25 +1,26 @@
 import Category from "@/components/composed/Post/Category"
 import Controls from "@/components/composed/Post/Controls"
+import TableOfContent from "@/components/composed/Post/TableOfContent"
 import Vibe from "@/components/composed/Post/Vibe"
 import Container from "@/components/primitives/Container"
 import { DotFilledIcon, Link2Icon } from "@radix-ui/react-icons"
 import Avatar from "boring-avatars"
 import { Balancer } from "react-wrap-balancer"
 
-const Article = () => {
-  const post = {
-    title: "Good Design Has No Language At All!",
-    subtitle: "Indeed, there are more than you could ever think.",
-    author: { name: "Can Durmus", url: "https://candurmuss.bio.link/" },
-    vibe: "controversial",
-    previewUrl: "https://google.com",
-    repoUrl: "https://google.com",
-    type: "opinions",
-  }
+const post = {
+  title: "Good Design Has No Language At All!",
+  subtitle: "Indeed, there are more than you could ever think.",
+  author: { name: "Can Durmus", url: "https://candurmuss.bio.link/" },
+  vibe: "controversial",
+  previewUrl: "https://google.com",
+  repoUrl: "https://google.com",
+  type: "opinions",
+}
 
+const Article = () => {
   return (
     <main className="w-full mt-16">
-      <Container className="flex justify-between xl:gap-16">
+      <Container className="flex justify-center xl:justify-between xl:gap-16">
         <section className="w-full max-w-3xl">
           <header className="flex flex-col">
             <Category type={post.type} />
@@ -57,9 +58,10 @@ const Article = () => {
               <Controls previewUrl={post.previewUrl} repoUrl={post.repoUrl} />
             </div>
           </header>
+          <article></article>
         </section>
         <section className="hidden xl:block w-64">
-          <h2 className="text-accent font-medium">On this page</h2>
+          <TableOfContent />
         </section>
       </Container>
     </main>

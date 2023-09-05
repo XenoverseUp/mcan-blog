@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model PostMeta {
+  id            Int          @id @default(autoincrement())
+  slug          String       @unique @db.VarChar(255)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  published     Boolean      @default(false)
+  title         String       @db.VarChar(255)
+  subtitle      String       @db.VarChar(255)
+  publication   Publication
+  type          PostType?
+  previewUrl    String?
+  repository    String?
+  references    String[]
+  externalLinks String[]
+  PostContent   PostContent?
+
+  @@index([slug])
+}
+
+model PostContent {
+  id      Int      @id @unique @default(autoincrement())
+  meta    PostMeta @relation(fields: [postMetaId], references: [id])
+  content String
+
+  postMetaId Int @unique
+}
+
+enum Publication {
+  OPINION
+  TUTORIAL
+  SNIPPET
+}
+
+enum PostType {
+  EASY
+  MEDIUM
+  CHALLENGING
+  CONTROVERSIAL
+  SUGGESTION
+}
