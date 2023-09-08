@@ -1,4 +1,4 @@
-import kebabize from "@/lib/utils/kebabize"
+import kebabize from "@/utils/kebabize"
 
 describe("kebabize", () => {
   it("returns the same string if it is one word.", () => {

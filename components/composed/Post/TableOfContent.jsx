@@ -1,4 +1,4 @@
-import cx from "@/lib/utils/cx"
+import cx from "@/utils/cx"
 
 const TableOfContent = () => {
   return (

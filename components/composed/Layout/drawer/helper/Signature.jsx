@@ -1,4 +1,4 @@
-import cx from "@/lib/utils/cx"
+import cx from "@/utils/cx"
 import Avatar from "boring-avatars"
 import ReactTimeago from "react-timeago"
 

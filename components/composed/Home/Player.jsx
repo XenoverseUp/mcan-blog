@@ -3,7 +3,7 @@
 import Sine from "@/components/canvas/Sine"
 import AudioPlayer from "@/components/primitives/AudioPlayer"
 import CircularProgress from "@/components/primitives/CircularProgress"
-import cx from "@/lib/utils/cx"
+import cx from "@/utils/cx"
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon"
 import Image from "next/image"
 

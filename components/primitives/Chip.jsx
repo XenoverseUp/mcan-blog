@@ -1,4 +1,4 @@
-import cx from "@/lib/utils/cx"
+import cx from "@/utils/cx"
 import tinycolor from "tinycolor2"
 
 const Chip = ({ children, className, color, border = true }) => (

@@ -1,6 +1,6 @@
 import ConditionalWrapper from "@/components/helper/ConditionalWrapper"
 import When from "@/components/helper/When"
-import cx from "@/lib/utils/cx"
+import cx from "@/utils/cx"
 import { cva } from "class-variance-authority"
 import Link from "next/link"
 import { forwardRef } from "react"

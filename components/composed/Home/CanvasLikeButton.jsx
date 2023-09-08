@@ -1,7 +1,7 @@
 "use client"
 
 import useBoolean from "@/hooks/useBoolean"
-import cx from "@/lib/utils/cx"
+import cx from "@/utils/cx"
 import { HeartFilledIcon } from "@radix-ui/react-icons"
 import { useState } from "react"
 

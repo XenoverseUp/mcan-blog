@@ -2,7 +2,7 @@
 
 import Chip from "@/components/primitives/Chip"
 import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect"
-import subdivide from "@/lib/utils/subdivide"
+import subdivide from "@/utils/subdivide"
 import clsx from "clsx"
 import { gsap } from "gsap"
 import Link from "next/link"

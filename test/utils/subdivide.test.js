@@ -1,4 +1,4 @@
-import subdivide from "@/lib/utils/subdivide"
+import subdivide from "@/utils/subdivide"
 
 describe("subdivide", () => {
   it("returns empty array when passed empty array.", () => {

@@ -1,6 +1,6 @@
 "use client"
 
-import cx from "@/lib/utils/cx"
+import cx from "@/utils/cx"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { forwardRef, useMemo } from "react"

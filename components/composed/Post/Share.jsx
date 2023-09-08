@@ -6,7 +6,7 @@ import ShareController from "@/components/primitives/ShareController"
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard"
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon"
 import * as Dialog from "@radix-ui/react-dialog"
-import { CheckIcon, Cross1Icon, Link1Icon } from "@radix-ui/react-icons"
+import { CheckIcon, ClipboardIcon, Cross1Icon } from "@radix-ui/react-icons"
 import Avatar from "boring-avatars"
 import { usePathname } from "next/navigation"
 import {
@@ -96,7 +96,7 @@ const Share = ({
               variant="soft"
               size="small"
               onClick={copyToClipboard}
-              leftIcon={!!copied ? <CheckIcon /> : <Link1Icon />}
+              leftIcon={!!copied ? <CheckIcon /> : <ClipboardIcon />}
             >
               {!!copied ? "Copied" : "Copy Link"}
             </Button>

@@ -1,5 +1,5 @@
-import Angle from "@/lib/utils/angle"
-import cx from "@/lib/utils/cx"
+import Angle from "@/utils/angle"
+import cx from "@/utils/cx"
 import { gsap } from "gsap"
 import { useEffect, useMemo, useRef, useState } from "react"
 
@@ -31,7 +31,6 @@ const CircularProgress = ({
           duration: duration,
           ease: "linear",
           onUpdate: () => {
-            console.log(p.progress)
             setProgress(p.progress)
           },
         })
