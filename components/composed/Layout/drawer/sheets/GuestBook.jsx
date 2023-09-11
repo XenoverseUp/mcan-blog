@@ -36,9 +36,9 @@ const GuestBook = ({ initialSignatures }) => {
   return (
     <Drawer.NestedRoot>
       <Drawer.Trigger className="space-y-1 w-fit rounded-lg cursor-pointer group ">
-        <p className="group-focus-visible:outline-none group-focus-visible:underline group-focus-visible:text-accent group-hover:underline underline-offset-4 flex items-center gap-3">
+        <p className="group-focus-visible:outline-none group-focus-visible:underline group-focus-visible:text-cool-lime-300 group-hover:underline underline-offset-4 flex items-center gap-3">
           <span>Guestbook</span>
-          <ArrowRightIcon className="group-hover:text-accent scale-110 transition-colors" />
+          <ArrowRightIcon className="group-hover:text-cool-lime-300 scale-110 transition-colors" />
         </p>
         <span className="font-normal normal-case text-sm block leading-5 opacity-75 text-start">
           Don't forget to fill out my guestbook with your lovely comments.
@@ -54,7 +54,7 @@ const GuestBook = ({ initialSignatures }) => {
               className="w-full flex-grow overflow-hidden flex-shrink-0 pb-4"
             >
               <div className="flex justify-between items-center">
-                <Drawer.Title className="text-accent capitalize font-bold mt-7 mb-2">
+                <Drawer.Title className="text-cool-lime-300 capitalize font-bold mt-7 mb-2">
                   <span className="text-4xl">Guestbook</span>
                   <sup className="text-2xl ml-1">{totalSignature}</sup>
                 </Drawer.Title>
@@ -100,7 +100,7 @@ const GuestBook = ({ initialSignatures }) => {
                 className="flex state-hidden:opacity-0 state-visible:opacity-100 transition select-none touch-none bg-zinc-950/[0.03] hover:bg-zinc-950/5  dark:bg-white/[0.03] dark:hover:bg-white/5 px-0.5 my-6 rounded-full duration-[160ms] ease-out hover:bg-blackA8 data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:flex-col data-[orientation=horizontal]:h-2.5"
                 orientation="vertical"
               >
-                <ScrollArea.Thumb className="flex-1 bg-accent rounded-[10px] relative before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-full before:h-full before:min-w-[44px] before:min-h-[44px]" />
+                <ScrollArea.Thumb className="flex-1 bg-cool-lime-300 rounded-[10px] relative before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-full before:h-full before:min-w-[44px] before:min-h-[44px]" />
               </ScrollArea.Scrollbar>
             </ScrollArea.Root>
             <div className="flex-shrink-0 w-full border-t border-border hidden md:block">

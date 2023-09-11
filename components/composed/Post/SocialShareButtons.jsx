@@ -183,7 +183,7 @@ const SocialButton = ({ children, label, href }) => (
   <a
     {...{ href }}
     target="_blank"
-    className="w-14 focus-visible:ring-4 focus-visible:bg-accent focus-visible:text-background hover:bg-accent hover:text-background transition-colors rounded-full aspect-square bg-accent/10 grid place-items-center text-accent"
+    className="w-14 focus-visible:ring-4 focus-visible:bg-cool-lime-300 focus-visible:text-background hover:bg-cool-lime-300 hover:text-background transition-colors rounded-full aspect-square bg-cool-lime-300/10 grid place-items-center text-cool-lime-300"
   >
     <AccessibleIcon {...{ label }}>{children}</AccessibleIcon>
   </a>

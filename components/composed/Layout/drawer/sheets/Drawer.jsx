@@ -40,26 +40,26 @@ export default function Drawers({ initialSignatures }) {
               <ScrollArea.Root className="w-full h-full overflow-hidden relative after:absolute after:bottom-0 after:left-0 after:right-3 after:h-16 after:bg-gradient-to-t after:from-white dark:after:from-zinc-950 after:to-transparent after:pointer-events-none">
                 <ScrollArea.Viewport className="w-full h-full">
                   <div className="pb-16">
-                    <Drawer.Title className="text-accent font-staff-condensed flex gap-4 text-5xl uppercase my-6">
+                    <Drawer.Title className="text-cool-lime-300 font-staff-condensed flex gap-4 text-5xl uppercase my-6">
                       <span>Shelf</span>
                     </Drawer.Title>
                     <nav className="space-y-5 text-2xl font-bold capitalize">
                       <GuestBook {...{ initialSignatures }} />
                       <div
                         tabIndex={0}
-                        className="focus-visible:outline-none focus-visible:underline focus-visible:text-accent hover:underline underline-offset-4 w-fit cursor-pointer"
+                        className="focus-visible:outline-none focus-visible:underline focus-visible:text-cool-lime-300 hover:underline underline-offset-4 w-fit cursor-pointer"
                       >
                         snippets
                       </div>
                       <div
                         tabIndex={0}
-                        className="focus-visible:outline-none focus-visible:underline focus-visible:text-accent hover:underline underline-offset-4 w-fit cursor-pointer"
+                        className="focus-visible:outline-none focus-visible:underline focus-visible:text-cool-lime-300 hover:underline underline-offset-4 w-fit cursor-pointer"
                       >
                         tutorials
                       </div>
                       <div
                         tabIndex={0}
-                        className="focus-visible:outline-none focus-visible:underline focus-visible:text-accent hover:underline underline-offset-4 w-fit cursor-pointer"
+                        className="focus-visible:outline-none focus-visible:underline focus-visible:text-cool-lime-300 hover:underline underline-offset-4 w-fit cursor-pointer"
                       >
                         opinions
                       </div>
@@ -71,7 +71,7 @@ export default function Drawers({ initialSignatures }) {
                   className="flex state-hidden:opacity-0 state-visible:opacity-100 transition select-none touch-none bg-white bg-opacity-[0.03] hover:bg-white/5 px-0.5 my-6 rounded-full duration-[160ms] ease-out hover:bg-blackA8 data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:flex-col data-[orientation=horizontal]:h-2.5"
                   orientation="vertical"
                 >
-                  <ScrollArea.Thumb className="flex-1 bg-accent rounded-[10px] relative before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-full before:h-full before:min-w-[44px] before:min-h-[44px]" />
+                  <ScrollArea.Thumb className="flex-1 bg-cool-lime-300 rounded-[10px] relative before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-full before:h-full before:min-w-[44px] before:min-h-[44px]" />
                 </ScrollArea.Scrollbar>
               </ScrollArea.Root>
             </Container>

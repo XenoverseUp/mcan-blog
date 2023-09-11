@@ -3,9 +3,10 @@ import { try_ } from "@/utils/try"
 
 /**
  * Retrieves metadata for specified filters.
- * @param {Request} req
+ * @param {Request} request
  * @returns {Response}
  *
+ * &published={"1"|"0"}
  * &page={number}
  * &limit={number}
  * &publication={"opinions"|"tutorials"|"snippets"}
@@ -13,7 +14,14 @@ import { try_ } from "@/utils/try"
  *
  */
 export async function GET(request) {
-  const posts = await getAllPosts()
+  const url = new URL(request.url)
+  const published = url.searchParams.get("published")
+
+  const posts = await getAllPosts({
+    where: {
+      draft: published === null ? undefined : published === "0" ? true : false,
+    },
+  })
   return new Response(JSON.stringify(posts), { status: 200 })
 }
 

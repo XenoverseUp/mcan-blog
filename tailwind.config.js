@@ -26,7 +26,20 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       colors: {
-        accent: "rgb(var(--accent) / <alpha-value>)",
+        "cool-lime": {
+          DEFAULT: "#CEFF9D",
+          50: "#FFFFFF",
+          100: "#F7FFEF",
+          200: "#E2FFC6",
+          300: "#CEFF9D",
+          400: "#B5FF6A",
+          500: "#9BFF37",
+          600: "#82FF04",
+          700: "#68D000",
+          800: "#4F9D00",
+          900: "#356A00",
+          950: "#285000",
+        },
         background: "rgb(var(--background) / <alpha-value>)",
         border: "var(--border)",
         "t-primary": "var(--t-primary)",
@@ -37,9 +50,7 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/container-queries"),
-    require("@tailwindcss/typography")({
-      className: "typography",
-    }),
+    require("@tailwindcss/typography")(),
     require("tailwindcss-radix")({
       variantPrefix: false,
     }),

@@ -23,7 +23,7 @@ export default async function Home() {
               <h1 className="font-staff-wide text-2xl uppercase leading-[0.9] xs:text-3xl xs:leading-[0.9] sm:text-4xl sm:leading-[0.9]">
                 <Balancer>
                   More like a <br className="hidden sm:block" />{" "}
-                  <span className="text-accent">
+                  <span className="text-cool-lime-300">
                     digital journal<sup>1</sup>
                   </span>
                 </Balancer>
@@ -36,7 +36,9 @@ export default async function Home() {
                 </p>
               </ParagraphWrapper>
               <div className="flex flex-wrap gap-[10px]">
-                <Button href="/article/qwqx2e32d">Snippets</Button>
+                <Button href="/posts/good-design-has-no-language-at-all!">
+                  Snippets
+                </Button>
                 <Button>Tutorials</Button>
                 <Button>Opinions</Button>
                 <Button rightIcon={<ArrowRightIcon />}>About Me</Button>

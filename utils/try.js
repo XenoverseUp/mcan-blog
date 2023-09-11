@@ -1,3 +1,8 @@
+/**
+ * @param {Function} fn
+ * @param  {...any} args
+ * @returns {Promise<ReturnType<typeof fn>>}
+ */
 export const try_ = async (fn, ...args) => {
   try {
     const res = await fn(...args)

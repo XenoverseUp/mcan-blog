@@ -115,9 +115,9 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
         >
           <label
             className={cx(
-              "opacity-50 group-focus-within:text-xs group-focus-within:text-accent group-focus-within:opacity-100 transition-all cursor-pointer",
+              "opacity-50 group-focus-within:text-xs group-focus-within:text-cool-lime-300 group-focus-within:opacity-100 transition-all cursor-pointer",
               {
-                "text-xs text-accent opacity-100": ![
+                "text-xs text-cool-lime-300 opacity-100": ![
                   "",
                   undefined,
                   null,
@@ -180,9 +180,9 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
         >
           <label
             className={cx(
-              "opacity-50 group-focus-within:text-xs group-focus-within:text-accent group-focus-within:opacity-100 transition-all cursor-pointer",
+              "opacity-50 group-focus-within:text-xs group-focus-within:text-cool-lime-300 group-focus-within:opacity-100 transition-all cursor-pointer",
               {
-                "text-xs text-accent opacity-100": ![
+                "text-xs text-cool-lime-300 opacity-100": ![
                   "",
                   undefined,
                   null,
@@ -211,7 +211,7 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
       </fieldset>
       <button
         type="submit"
-        className="text-accent row-start-1 row-span-1 col-start-6 hover:text-background hover:bg-accent focus-visible:text-background focus-visible:bg-accent active:text-background active:bg-accent/90 transition-colors rounded-xl md:aspect-square h-[3.5rem] md:h-[3.75rem] grid place-items-center border-2 border-accent focus-visible:ring-4"
+        className="text-cool-lime-300 row-start-1 row-span-1 col-start-6 hover:text-background hover:bg-cool-lime-300 focus-visible:text-background focus-visible:bg-cool-lime-300 active:text-background active:bg-cool-lime-300/90 transition-colors rounded-xl md:aspect-square h-[3.5rem] md:h-[3.75rem] grid place-items-center border-2 border-cool-lime-300 focus-visible:ring-4"
       >
         <AccessibleIcon label="Add Comment">
           <CardStackPlusIcon className="scale-125" />

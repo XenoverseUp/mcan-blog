@@ -42,16 +42,16 @@ const Popover = () => {
                 url: "https://guthib.com/",
               }}
             >
-              <button className="whitespace-nowrap font-medium gap-2 items-center hover:bg-white/5 hover:text-accent focus-visible:text-accent focus-visible:bg-white/5 hover:opacity-100 focus-visible:opacity-100 opacity-90 transition w-full flex py-2 px-4">
+              <button className="whitespace-nowrap font-medium gap-2 items-center hover:bg-white/5 hover:text-cool-lime-300 focus-visible:text-cool-lime-300 focus-visible:bg-white/5 hover:opacity-100 focus-visible:opacity-100 opacity-90 transition w-full flex py-2 px-4">
                 <Share2Icon />
                 <span>Share</span>
               </button>
             </Share>
-            <button className="whitespace-nowrap font-medium gap-2 items-center hover:bg-white/5 hover:text-accent focus-visible:text-accent focus-visible:bg-white/5 hover:opacity-100 focus-visible:opacity-100 opacity-90 transition w-full flex py-2 px-4">
+            <button className="whitespace-nowrap font-medium gap-2 items-center hover:bg-white/5 hover:text-cool-lime-300 focus-visible:text-cool-lime-300 focus-visible:bg-white/5 hover:opacity-100 focus-visible:opacity-100 opacity-90 transition w-full flex py-2 px-4">
               <QuoteIcon />
               <span>References & Links</span>
             </button>
-            <button className="whitespace-nowrap font-medium gap-2 items-center hover:bg-white/5 hover:text-accent focus-visible:text-accent focus-visible:bg-white/5 hover:opacity-100 focus-visible:opacity-100 opacity-90 transition w-full flex py-2 px-4">
+            <button className="whitespace-nowrap font-medium gap-2 items-center hover:bg-white/5 hover:text-cool-lime-300 focus-visible:text-cool-lime-300 focus-visible:bg-white/5 hover:opacity-100 focus-visible:opacity-100 opacity-90 transition w-full flex py-2 px-4">
               <MixerVerticalIcon />
               <span>Post Stats</span>
             </button>

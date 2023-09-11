@@ -21,14 +21,14 @@ const Divider = ({ className, variant = "dots" }) =>
       {new Array(3).fill(null).map((_, index) => (
         <span
           key={`sep-${index}`}
-          className="aspect-square w-1 rounded-full bg-accent"
+          className="aspect-square w-1 rounded-full bg-cool-lime-300"
         ></span>
       ))}
     </div>
   ) : (
     <div
       aria-hidden
-      className={cx("my-2 h-[1px] w-full bg-accent/50", className)}
+      className={cx("my-2 h-[1px] w-full bg-cool-lime-300/50", className)}
     />
   )
 export default Divider

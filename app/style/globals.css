@@ -16,7 +16,6 @@
 
     /* Dark Mode */
 
-    --accent: 206 255 157;
     --background: 0 0 0;
     --border: theme(colors.zinc.800);
     --t-primary: #fff;
@@ -30,7 +29,7 @@
 }
 
 ::selection {
-  background-color: theme(colors.accent);
+  background-color: theme(colors.cool-lime.300);
   color: theme(colors.background);
 }
 

@@ -16,7 +16,7 @@ const MobileFormDrawer = ({
         <div className="w-full h-full border-t flex flex-col border-l border-r border-border overflow-hidden rounded-t-[16px]">
           <DragHandle />
           <Container className="my-7">
-            <Drawer.Title className="text-accent capitalize font-bold mb-6">
+            <Drawer.Title className="text-cool-lime-300 capitalize font-bold mb-6">
               <span className="text-2xl">Create Signature</span>
             </Drawer.Title>
             <GuestBookForm

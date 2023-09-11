@@ -68,7 +68,7 @@ const Player = ({ coverImagePlaceholder, coverImage, title, previewUrl }) => {
                         },
                       ),
                       thumb: "fill-white/40 stroke-white/75 stroke-1",
-                      track: "fill-accent",
+                      track: "fill-cool-lime-300",
                     }}
                   />
                   {playing ? (

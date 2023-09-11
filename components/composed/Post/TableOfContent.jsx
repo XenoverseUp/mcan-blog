@@ -2,8 +2,10 @@ import cx from "@/utils/cx"
 
 const TableOfContent = () => {
   return (
-    <div className="w-full">
-      <h2 className="text-accent font-medium mb-4 select-none">On this page</h2>
+    <div className="w-full sticky top-24">
+      <h2 className="text-cool-lime-300 font-medium mb-4 select-none">
+        On this page
+      </h2>
       <Subject>First Interactions</Subject>
       <Subject active>Getting to know the tools</Subject>
       <Subject>Numbers to art</Subject>

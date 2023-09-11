@@ -1,6 +1,12 @@
+import { PostType } from "@prisma/client"
+
 const vibes = {
-  controversial: {
-    title: <p className="text-amber-100">Controversial</p>,
+  [PostType.CONTROVERSIAL]: {
+    title: (
+      <p className="text-amber-100 capitalize">
+        {PostType.CONTROVERSIAL.toLowerCase()}
+      </p>
+    ),
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -16,11 +16,11 @@ const Signature = ({ data, pending }) => {
             <h3 className="md:text-xl font-bold">{data.name}</h3>
             <div
               className={cx(
-                "rounded-full transition-opacity opacity-0 flex gap-[0.375rem] items-center justify-center px-2 py-1 text-xs text-accent border border-accent/30 bg-accent/10",
+                "rounded-full transition-opacity opacity-0 flex gap-[0.375rem] items-center justify-center px-2 py-1 text-xs text-cool-lime-300 border border-cool-lime-300/30 bg-cool-lime-300/10",
                 { "opacity-100": pending },
               )}
             >
-              <span className="rounded-full border-2 border-dotted border-accent animate-spin [animation-duration:1.5s] w-3 aspect-square"></span>
+              <span className="rounded-full border-2 border-dotted border-cool-lime-300 animate-spin [animation-duration:1.5s] w-3 aspect-square"></span>
               <span>Posting...</span>
             </div>
           </div>

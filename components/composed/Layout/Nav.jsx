@@ -2,6 +2,7 @@
 
 import useScrollY from "@/hooks/useScrollPosition"
 import cx from "@/utils/cx"
+import { useParams, usePathname } from "next/navigation"
 
 const Nav = ({
   children,
@@ -11,6 +12,11 @@ const Nav = ({
   ...rest
 }) => {
   const scrollY = useScrollY()
+
+  const { slug } = useParams()
+  const pathname = usePathname()
+
+  console.log({ pathname: pathname.split("/").at(1), slug })
 
   return (
     <nav
