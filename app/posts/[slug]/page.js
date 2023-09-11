@@ -11,16 +11,6 @@ import Avatar from "boring-avatars"
 import { notFound } from "next/navigation"
 import { Balancer } from "react-wrap-balancer"
 
-const post = {
-  title: "Good Design Has No Language At All!",
-  subtitle: "Indeed, there are more than you could ever think.",
-  author: { name: "Can Durmus", url: "https://candurmuss.bio.link/" },
-  vibe: "controversial",
-  previewUrl: "https://google.com",
-  repoUrl: "https://google.com",
-  type: "opinions",
-}
-
 const Post = async ({ params }) => {
   const [err, post] = await try_(getSinglePost, params?.slug)
 
@@ -64,6 +54,7 @@ const Post = async ({ params }) => {
                 </div>
               </div>
               <Controls
+                title={post.title}
                 previewUrl={post.previewUrl}
                 repoUrl={post.repositoryUrl}
               />
