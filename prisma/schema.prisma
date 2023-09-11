@@ -31,15 +31,15 @@ model Post {
 
 model PostContent {
   id      Int    @id @unique @default(autoincrement())
-  meta    Post   @relation(fields: [metaId], references: [id])
+  meta    Post   @relation(fields: [metaId], references: [id], onDelete: Cascade)
   content String
   metaId  Int    @unique
 }
 
 enum Publication {
-  OPINION
-  TUTORIAL
-  SNIPPET
+  OPINIONS
+  TUTORIALS
+  SNIPPETS
 }
 
 enum PostType {
