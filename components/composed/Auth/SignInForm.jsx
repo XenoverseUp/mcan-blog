@@ -1,6 +1,6 @@
 "use client"
 
-import { a } from "@/actions/auth.action"
+import { getRole } from "@/actions/auth.action"
 import Input from "@/components/primitives/Input"
 import { SignInSchema } from "@/lib/schema"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -42,8 +42,7 @@ const SignInForm = () => {
     })
 
     if (res.error === null) {
-      const role = await a(data.email)
-      console.log(role)
+      const role = await getRole(data.email)
 
       if (role === UserRole.ADMIN) router.push("/dashboard")
       else router.push("/")

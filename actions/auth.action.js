@@ -2,7 +2,7 @@
 
 import { getUserRole } from "@/lib/auth"
 
-export const a = async email => {
+export const getRole = async email => {
   const role = getUserRole(email)
   return role
 }
