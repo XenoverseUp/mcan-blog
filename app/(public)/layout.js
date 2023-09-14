@@ -2,7 +2,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import MainFooter from "@/components/composed/Layout/MainFooter"
 import MainNavigation from "@/components/composed/Layout/MainNavigation"
 import When from "@/components/helper/When"
-import { SignIn, SignOut } from "@/components/primitives/auth"
+import { SignIn, SignOut } from "@/components/primitives/Auth"
 import { getServerSession } from "next-auth"
 
 /** @type {import("next").Metadata} */
