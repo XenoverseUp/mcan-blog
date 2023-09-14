@@ -60,7 +60,7 @@ const Post = async ({ params }) => {
               />
             </div>
           </header>
-          <Article data={post.content.content} />
+          <Article data={post.content.markdown} />
         </section>
         <section className="hidden xl:block w-64">
           <TableOfContent />

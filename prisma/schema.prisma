@@ -7,19 +7,27 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id       Int      @id @default(autoincrement())
+  email    String   @unique @db.VarChar(256)
+  name     String   @db.VarChar(256)
+  password String   @db.VarChar(256)
+  role     UserRole @default(READER)
+}
+
 model Post {
   id            Int          @id @default(autoincrement())
-  slug          String       @unique @db.VarChar(255)
+  slug          String       @unique @db.VarChar(256)
   createdAt     DateTime     @default(now())
   updatedAt     DateTime     @updatedAt
   draft         Boolean      @default(true)
-  title         String       @db.VarChar(255)
+  title         String       @db.VarChar(256)
   subtitle      String
   coverImage    String?
   publication   Publication
-  type          PostType?
-  previewUrl    String?      @db.VarChar(255)
-  repositoryUrl String?      @db.VarChar(255)
+  type          PostType
+  previewUrl    String?      @db.VarChar(256)
+  repositoryUrl String?      @db.VarChar(256)
   references    String[]
   externalLinks String[]
   view          Int          @default(0)
@@ -30,16 +38,36 @@ model Post {
 }
 
 model PostContent {
-  id      Int    @id @unique @default(autoincrement())
-  meta    Post   @relation(fields: [metaId], references: [id], onDelete: Cascade)
-  content String
-  metaId  Int    @unique
+  id       Int    @id @unique @default(autoincrement())
+  meta     Post   @relation(fields: [metaId], references: [id], onDelete: Cascade)
+  markdown String
+  metaId   Int    @unique
+}
+
+model Snippet {
+  id             Int             @id @default(autoincrement())
+  name           String          @db.VarChar(256)
+  slug           String          @unique @db.VarChar(256)
+  description    String
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  type           SnippetType
+  view           Int             @default(0)
+  snippetContent SnippetContent?
+
+  @@index([slug])
+}
+
+model SnippetContent {
+  id       Int     @id @unique @default(autoincrement())
+  meta     Snippet @relation(fields: [metaId], references: [id], onDelete: Cascade)
+  markdown String
+  metaId   Int     @unique
 }
 
 enum Publication {
   OPINIONS
   TUTORIALS
-  SNIPPETS
 }
 
 enum PostType {
@@ -48,4 +76,17 @@ enum PostType {
   CHALLENGING
   CONTROVERSIAL
   SUGGESTION
+}
+
+enum SnippetType {
+  REACT
+  VANILLA_JS
+  CSS
+  SASS
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+  READER
 }

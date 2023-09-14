@@ -12,6 +12,7 @@ const nextConfig = {
   },
   experimental: {
     serverActions: true,
+    serverComponentsExternalPackages: ["bcrypt", "@prisma/client"],
   },
   webpack(config) {
     config.module.rules.push({

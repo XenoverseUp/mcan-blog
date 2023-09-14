@@ -8,7 +8,7 @@ const MainNavigation = async ({ announce }) => {
   return (
     <>
       <When condition={!!announce} asChild>
-        <div className="z-10 flex h-6 w-full items-center justify-center bg-white text-center text-sm text-black">
+        <div className="z-10 flex h-8 w-full items-center justify-center bg-white text-center text-sm text-black">
           {announce}
         </div>
       </When>

@@ -1,5 +1,5 @@
 const MainFooter = () => (
-  <footer className="h-96 bg-zinc-950 mt-16 grid place-items-center">
+  <footer className="h-96 font-mono bg-zinc-950 border-t border-border mt-16 grid place-items-center">
     Footer
   </footer>
 )

@@ -1,9 +1,26 @@
+import { fromHtmlIsomorphic } from "hast-util-from-html-isomorphic"
 import { compileMDX } from "next-mdx-remote/rsc"
+import { rehypeAccessibleEmojis } from "rehype-accessible-emojis"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeSlug from "rehype-slug"
 
 const Article = async ({ data }) => {
   const { content } = await compileMDX({
     source: data,
-    options: { parseFrontmatter: false },
+    options: {
+      mdxOptions: {
+        format: "mdx",
+        rehypePlugins: [
+          rehypeSlug,
+          () =>
+            rehypeAutolinkHeadings({
+              behavior: "append",
+              content: fromHtmlIsomorphic("<span>#</span>", { fragment: true }),
+            }),
+        ],
+      },
+      parseFrontmatter: false,
+    },
   })
 
   return (

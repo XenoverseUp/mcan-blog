@@ -7,10 +7,7 @@ const Container = ({
   ...rest
 }) => (
   <Wrapper
-    className={cx(
-      className,
-      "mx-auto w-full max-w-[1440px] px-6 md:px-10 lg:px-16",
-    )}
+    className={cx(className, "mx-auto w-full max-w-[1280px] px-6 md:px-10")}
     {...rest}
   >
     {children}

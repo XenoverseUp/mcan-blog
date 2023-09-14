@@ -1,3 +1,4 @@
+import { Providers } from "@/app/providers"
 import {
   space_mono,
   staff,
@@ -5,8 +6,6 @@ import {
   staff_wide,
 } from "@/app/style/font"
 import "@/app/style/globals.css"
-import MainFooter from "@/components/composed/Layout/MainFooter"
-import MainNavigation from "@/components/composed/Layout/MainNavigation"
 
 /** @type {import("next").Metadata} */
 export const metadata = {
@@ -22,14 +21,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${space_mono.variable} ${staff.variable} ${staff_condensed.variable} ${staff_wide.variable} bg-background font-staff w-full text-t-primary`}
       >
-        <div
-          scroll-container="true"
-          className="h-[100dvh] w-full overflow-auto relative"
-        >
-          <MainNavigation />
-          {children}
-          <MainFooter />
-        </div>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

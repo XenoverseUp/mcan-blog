@@ -24,7 +24,7 @@ const Nav = ({ initialSignatures }) => {
   return (
     <nav
       className={cx(
-        "sticky top-0 z-20 h-16 w-full border-b border-border before:absolute before:inset-0 before:-z-10 before:backdrop-blur-sm transition-colors duration-300",
+        "sticky top-0 z-20 h-14 w-full border-b border-border before:absolute before:inset-0 before:-z-10 before:backdrop-blur-sm transition-colors duration-300",
         scrollY > 12 ||
           scrollY === null ||
           navigationType === NavigationType.POST
@@ -37,15 +37,13 @@ const Nav = ({ initialSignatures }) => {
           href="/"
           className="focus-visible:ring-4 rounded-md relative flex items-center gap-4"
         >
-          <Logo className="w-5" shadow />
+          <Logo className="w-4" shadow />
           <div className="flex items-center gap-1">
-            <span className="font-staff-wide text-xs uppercase md:text-sm">
+            <span className="font-staff-wide text-xs uppercase ">
               Can Durmus
             </span>
             <span className="px-1 opacity-40">/</span>
-            <span className="font-mono text-xs tracking-tight md:text-sm">
-              Blog
-            </span>
+            <span className="font-mono text-xs tracking-tight">Blog</span>
           </div>
         </Link>
         <Drawers {...{ initialSignatures }} />
