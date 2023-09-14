@@ -39,7 +39,7 @@ export default async function Home() {
                 <Button href="/posts/good-design-has-no-language-at-all!">
                   Snippets
                 </Button>
-                <Button href="/login">Tutorials</Button>
+                <Button href="/sign-in">Tutorials</Button>
                 <Button>Opinions</Button>
                 <Button rightIcon={<ArrowRightIcon />}>About Me</Button>
               </div>

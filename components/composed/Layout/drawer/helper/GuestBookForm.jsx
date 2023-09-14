@@ -8,10 +8,13 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon"
 import { CardStackPlusIcon, InfoCircledIcon } from "@radix-ui/react-icons"
 import * as Tooltip from "@radix-ui/react-tooltip"
-import { useRef } from "react"
+import { useId, useRef } from "react"
 import { useForm } from "react-hook-form"
 
 const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
+  const nameId = useId()
+  const contentId = useId()
+
   const nameRef = useRef()
   const contentRef = useRef()
 
@@ -76,7 +79,7 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="my-3 md:my-4 grid grid-rows-2 grid-cols-6 md:flex justify-between md:gap-4 text-sm"
+      className="my-4 flex justify-between gap-4 text-sm"
     >
       <fieldset
         name="name"
@@ -101,7 +104,7 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
                   className="z-50 bg-zinc-100 text-background text-xs px-3 pt-[0.2rem] pb-1 rounded-lg will-change-[transform,opacity]"
                   sideOffset={6}
                 >
-                  {errors.name?.message.content}
+                  {errors.name?.message}
                   <Tooltip.Arrow className="fill-zinc-100" />
                 </Tooltip.Content>
               </Tooltip.Portal>
@@ -114,6 +117,7 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
           })}
         >
           <label
+            htmlFor={nameId}
             className={cx(
               "opacity-50 group-focus-within:text-xs group-focus-within:text-cool-lime-300 group-focus-within:opacity-100 transition-all cursor-pointer",
               {
@@ -134,6 +138,7 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
             formNameRef(e)
             nameRef.current = e
           }}
+          id={nameId}
           value={name}
           type="text"
           autoComplete="off"
@@ -166,7 +171,7 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
                   className="z-50 bg-zinc-100 text-background text-xs px-3 pt-[0.2rem] pb-1 rounded-lg will-change-[transform,opacity]"
                   sideOffset={6}
                 >
-                  {errors.content?.message.content}
+                  {errors.content?.message}
                   <Tooltip.Arrow className="fill-zinc-100" />
                 </Tooltip.Content>
               </Tooltip.Portal>
@@ -179,6 +184,7 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
           })}
         >
           <label
+            htmlFor={contentId}
             className={cx(
               "opacity-50 group-focus-within:text-xs group-focus-within:text-cool-lime-300 group-focus-within:opacity-100 transition-all cursor-pointer",
               {
@@ -199,6 +205,7 @@ const GuestBookForm = ({ setTotalSignature, addOptimisticSignatures }) => {
             formContentRef(e)
             contentRef.current = e
           }}
+          id={contentId}
           type="text"
           autoComplete="off"
           className={cx(
