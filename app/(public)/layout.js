@@ -1,6 +1,7 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import MainFooter from "@/components/composed/Layout/MainFooter"
 import MainNavigation from "@/components/composed/Layout/MainNavigation"
+import { SecretRedirect } from "@/components/composed/Layout/SecretActions"
 import When from "@/components/helper/When"
 import { SignIn, SignOut } from "@/components/primitives/Auth"
 import { getServerSession } from "next-auth"
@@ -21,6 +22,7 @@ export default async function Layout({ children }) {
       scroll-container="true"
       className="h-[100dvh] w-full overflow-auto relative"
     >
+      <SecretRedirect />
       <MainNavigation
         announce={
           <div className="flex gap-4">

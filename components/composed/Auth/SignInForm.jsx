@@ -1,13 +1,13 @@
 "use client"
 
-import { getRole } from "@/actions/auth.action"
+import { getRoleAction, revalidateSignIn } from "@/actions/auth.action"
 import Input from "@/components/primitives/Input"
 import { SignInSchema } from "@/lib/schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { UserRole } from "@prisma/client"
-import { signIn, useSession } from "next-auth/react"
-import { useRouter } from "next/navigation"
-import { useEffect, useId, useRef } from "react"
+import { signIn } from "next-auth/react"
+import { revalidatePath } from "next/cache"
+import { useRouter, useSearchParams } from "next/navigation"
 import { useForm } from "react-hook-form"
 
 const SignInForm = () => {
@@ -33,6 +33,9 @@ const SignInForm = () => {
   const { ref: passwordRef, ...passwordRest } = register("password")
 
   const router = useRouter()
+  const searchParams = useSearchParams()
+
+  const callback = searchParams.get("callback")
 
   const onSubmit = async data => {
     const res = await signIn("credentials", {
@@ -42,10 +45,14 @@ const SignInForm = () => {
     })
 
     if (res.error === null) {
-      const role = await getRole(data.email)
+      const role = await getRoleAction(data.email)
+      await revalidateSignIn()
 
-      if (role === UserRole.ADMIN) router.push("/dashboard")
-      else router.push("/")
+      router.replace(callback ?? "/")
+      if (role === UserRole.ADMIN) router.replace("/dashboard")
+    } else {
+      // TODO: Handle not found error.
+      reset()
     }
   }
 
@@ -63,6 +70,7 @@ const SignInForm = () => {
         autoComplete="off"
         type="text"
         label="Email"
+        autoFocus
       />
       <Input
         value={password}

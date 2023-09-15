@@ -1,6 +1,6 @@
 "use client"
 
-import { signIn, signOut } from "next-auth/react"
+import { signOut } from "next-auth/react"
 import Link from "next/link"
 
 const SignIn = () => <Link href="/sign-in">Sign In</Link>

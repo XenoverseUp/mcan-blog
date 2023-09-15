@@ -6,16 +6,14 @@ import subdivide from "@/utils/subdivide"
 import clsx from "clsx"
 import { gsap } from "gsap"
 import Link from "next/link"
-import { useEffect, useMemo, useRef } from "react"
+import { useMemo, useRef } from "react"
 
-const gapX = 5
 const gapY = 6
+
 const ChipSlider = ({ chips }) => {
   const divisions = useMemo(() => subdivide(chips, 3), [])
   const refs = useRef([])
   const animations = []
-
-  useEffect(() => console.log(divisions), [])
 
   useIsomorphicLayoutEffect(() => {
     gsap.fromTo(
