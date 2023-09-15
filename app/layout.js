@@ -1,4 +1,5 @@
 import SessionProvider from "@/app/SessionProvider"
+import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import {
   space_mono,
   staff,
@@ -17,7 +18,7 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
-  const session = await getServerSession()
+  const session = await getServerSession(authOptions)
 
   return (
     <html lang="en" className="dark">

@@ -1,5 +1,8 @@
+import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import { createPost, getAllPosts } from "@/lib/post"
 import { try_ } from "@/utils/try"
+import { UserRole } from "@prisma/client"
+import { getServerSession } from "next-auth"
 
 /**
  * Retrieves metadata for specified filters.
@@ -30,6 +33,12 @@ export async function GET(request) {
  * @param {Request} req
  */
 export async function POST(request) {
+  const session = await getServerSession(authOptions)
+  if (!session || session?.user?.role !== UserRole.ADMIN)
+    return new Response(JSON.stringify({ err: "Unauthorized" }), {
+      status: 401,
+    })
+
   const [parseErr, body] = await try_(request.json)
   if (parseErr) return new Response(parseErr, { status: 400 })
 

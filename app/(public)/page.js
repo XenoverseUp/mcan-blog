@@ -9,6 +9,8 @@ import ParagraphWrapper from "@/components/primitives/ParagraphWrapper"
 import { ArrowRightIcon } from "@radix-ui/react-icons"
 import { Balancer } from "react-wrap-balancer"
 
+export const revalidate = 60
+
 export default async function Home() {
   return (
     <>
