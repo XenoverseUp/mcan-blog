@@ -4,6 +4,7 @@ import MainNavigation from "@/components/composed/Layout/MainNavigation"
 import { SecretRedirect } from "@/components/composed/Layout/SecretActions"
 import When from "@/components/helper/When"
 import { SignIn, SignOut } from "@/components/primitives/Auth"
+import { UserRole } from "@prisma/client"
 import { getServerSession } from "next-auth"
 
 /** @type {import("next").Metadata} */
@@ -25,13 +26,14 @@ export default async function Layout({ children }) {
       <SecretRedirect />
       <MainNavigation
         announce={
-          <div className="flex gap-4">
-            <SignIn />
-            <When condition={!!session}>
+          session ? (
+            <div className="flex gap-4">
               <pre>{JSON.stringify(session)}</pre>
-            </When>
-            <SignOut />
-          </div>
+              <When condition={session.user.role !== UserRole.ADMIN}>
+                <SignOut />
+              </When>
+            </div>
+          ) : undefined
         }
       />
       {children}
