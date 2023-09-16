@@ -1,5 +1,7 @@
+import { AccessibleIcon, ReactTimeago } from "@/components/helper/Client"
+import Tooltip from "@/components/primitives/Tooltip"
 import cx from "@/utils/cx"
-import { DotFilledIcon, GlobeIcon } from "@radix-ui/react-icons"
+import { DotFilledIcon, InfoCircledIcon } from "@radix-ui/react-icons"
 
 const StatusBar = ({
   className,
@@ -15,7 +17,7 @@ const StatusBar = ({
       )}
     >
       <div>
-        <p className="text-xs space-x-1 whitespace-nowrap">
+        <p className="text-xs flex items-center gap-1 whitespace-nowrap">
           <span className="text-t-secondary">Live since</span>
           <time
             className="text-cool-lime-300"
@@ -28,6 +30,17 @@ const StatusBar = ({
               date,
             )}
           </time>
+          <Tooltip
+            content={
+              <ReactTimeago className="text-xs" date={date} minPeriod={4} />
+            }
+          >
+            <button className="opacity-50 hover:opacity-100 transition-opacity">
+              <AccessibleIcon>
+                <InfoCircledIcon />
+              </AccessibleIcon>
+            </button>
+          </Tooltip>
         </p>
       </div>
       <div className="flex gap-1 text-xs items-center whitespace-nowrap">

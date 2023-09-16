@@ -1,9 +1,12 @@
 import { fetchSignatures } from "@/actions/guestbook.action"
+import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import Nav from "@/components/composed/PublicLayout/Nav"
 import When from "@/components/helper/When"
+import { getServerSession } from "next-auth"
 
 const MainNavigation = async ({ announce }) => {
   const initialSignatures = await fetchSignatures()
+  const session = await getServerSession(authOptions)
 
   return (
     <>
@@ -12,7 +15,7 @@ const MainNavigation = async ({ announce }) => {
           {announce}
         </div>
       </When>
-      <Nav {...{ initialSignatures }} />
+      <Nav {...{ initialSignatures, user: session?.user }} />
     </>
   )
 }

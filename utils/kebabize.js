@@ -6,6 +6,10 @@
 
 const kebabize = string =>
   string
+    .replace(/[&\/\\#, +()$~%.'":*?!<>{}]/g, " ")
+    .split(" ")
+    .filter(Boolean)
+    .join(" ")
     .replace(/([a-z])([A-Z])/g, "$1-$2")
     .replace(/\s+/g, "-")
     .replace(/_{1,}/g, "-")

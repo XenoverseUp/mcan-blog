@@ -38,7 +38,7 @@ export default async function Home() {
                 </p>
               </ParagraphWrapper>
               <div className="flex flex-wrap gap-[10px]">
-                <Button href="/posts/good-design-has-no-language-at-all!">
+                <Button href="/posts/good-design-has-no-language-at-all">
                   Snippets
                 </Button>
                 <Button href="/sign-in">Tutorials</Button>

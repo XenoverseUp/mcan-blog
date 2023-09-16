@@ -22,7 +22,7 @@ export default function Drawers({ initialSignatures }) {
         setTimeout(() => drawer.current?.focus(), 0)
       }}
     >
-      <Drawer.Trigger className="grid aspect-square w-7 place-items-center rounded border border-border bg-neutral-50 dark:border-zinc-800 dark:bg-neutral-900/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+      <Drawer.Trigger className="grid aspect-square w-7 place-items-center rounded-lg border border-border bg-neutral-50 dark:border-zinc-800 dark:bg-neutral-900/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
         <AccessibleIcon label="Navigation Menu">
           <DragHandleDots2Icon className="origin-center scale-125 text-inherit" />
         </AccessibleIcon>
