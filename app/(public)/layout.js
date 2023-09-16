@@ -1,7 +1,7 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
-import MainFooter from "@/components/composed/Layout/MainFooter"
-import MainNavigation from "@/components/composed/Layout/MainNavigation"
-import { SecretRedirect } from "@/components/composed/Layout/SecretActions"
+import MainFooter from "@/components/composed/PublicLayout/MainFooter"
+import MainNavigation from "@/components/composed/PublicLayout/MainNavigation"
+import { SecretRedirect } from "@/components/composed/PublicLayout/SecretActions"
 import When from "@/components/helper/When"
 import { SignIn, SignOut } from "@/components/primitives/Auth"
 import { UserRole } from "@prisma/client"
@@ -29,9 +29,7 @@ export default async function Layout({ children }) {
           session ? (
             <div className="flex gap-4">
               <pre>{JSON.stringify(session)}</pre>
-              <When condition={session.user.role !== UserRole.ADMIN}>
-                <SignOut />
-              </When>
+              <SignOut />
             </div>
           ) : undefined
         }

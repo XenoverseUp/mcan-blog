@@ -1,5 +1,5 @@
 import { fetchSignatures } from "@/actions/guestbook.action"
-import Nav from "@/components/composed/Layout/Nav"
+import Nav from "@/components/composed/PublicLayout/Nav"
 import When from "@/components/helper/When"
 
 const MainNavigation = async ({ announce }) => {

@@ -1,6 +1,6 @@
 "use client"
 
-import Drawers from "@/components/composed/Layout/drawer/sheets/Drawer"
+import Drawers from "@/components/composed/PublicLayout/drawer/sheets/Drawer"
 import Container from "@/components/primitives/Container"
 import Logo from "@/components/primitives/Logo"
 import useScrollY from "@/hooks/useScrollPosition"
