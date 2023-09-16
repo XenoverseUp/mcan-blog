@@ -1,4 +1,4 @@
-import SessionProvider from "@/app/SessionProvider"
+import Provider from "@/app/Provider"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import {
   space_mono,
@@ -25,7 +25,7 @@ export default async function RootLayout({ children }) {
       <body
         className={`${space_mono.variable} ${staff.variable} ${staff_condensed.variable} ${staff_wide.variable} bg-background font-staff w-full text-t-primary`}
       >
-        <SessionProvider {...{ session }}>{children}</SessionProvider>
+        <Provider {...{ session }}>{children}</Provider>
       </body>
     </html>
   )
