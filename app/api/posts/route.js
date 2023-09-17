@@ -1,5 +1,8 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
+import { Resources } from "@/lib/db/prisma"
 import { createPost, getAllPosts } from "@/lib/post"
+import rbac from "@/lib/rbac"
+import { Forbidden, Unauthorized } from "@/lib/response"
 import { try_ } from "@/utils/try"
 import { UserRole } from "@prisma/client"
 import { getServerSession } from "next-auth"
@@ -34,10 +37,14 @@ export async function GET(request) {
  */
 export async function POST(request) {
   const session = await getServerSession(authOptions)
-  if (!session || session?.user?.role !== UserRole.ADMIN)
-    return new Response(JSON.stringify({ err: "Unauthorized" }), {
-      status: 401,
-    })
+
+  if (!session) return Unauthorized()
+
+  const permission = rbac
+    .can(session?.user?.role ?? UserRole.READER)
+    .create(Resources.POST)
+
+  if (!permission.granted) return Forbidden()
 
   const [parseErr, body] = await try_(request.json)
   if (parseErr) return new Response(parseErr, { status: 400 })
@@ -46,5 +53,5 @@ export async function POST(request) {
 
   if (err) return new Response(err, { status: err.errorCode ?? 500 })
 
-  return new Response(JSON.stringify(result), { status: 200 })
+  return new Response(JSON.stringify(result), { status: 201 })
 }

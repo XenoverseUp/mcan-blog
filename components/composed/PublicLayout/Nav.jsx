@@ -52,10 +52,8 @@ const Nav = ({ initialSignatures, user }) => {
           </div>
         </Link>
         <div className="flex items-center gap-3">
-          <When asChild condition={!!user}>
-            <SignOutButton className="text-xs px-3 h-7 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-              Sign Out
-            </SignOutButton>
+          <When asChild condition={user}>
+            <p className="text-xs text-t-secondary">{user?.name}</p>
           </When>
           <When asChild condition={user?.role === UserRole.ADMIN}>
             <Link
