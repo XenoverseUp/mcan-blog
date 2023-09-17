@@ -5,7 +5,7 @@ import { UserRole } from "@prisma/client"
 import { useSession } from "next-auth/react"
 import { usePathname, useRouter } from "next/navigation"
 
-export const SecretRedirect = () => {
+export const SecretActions = () => {
   const router = useRouter()
   const pathName = usePathname()
   const encoded = encodeURI(pathName)
@@ -20,7 +20,7 @@ export const SecretRedirect = () => {
       session?.user?.role === UserRole.ADMIN
     )
       router.push(`/dashboard`)
-  }, ["ArrowLeft", "ArrowRight"])
+  }, ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"])
 
   return <></>
 }

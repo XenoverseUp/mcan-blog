@@ -1,6 +1,6 @@
 import MainFooter from "@/components/composed/PublicLayout/MainFooter"
 import MainNavigation from "@/components/composed/PublicLayout/MainNavigation"
-import { SecretRedirect } from "@/components/composed/PublicLayout/SecretActions"
+import { SecretActions } from "@/components/composed/PublicLayout/SecretActions"
 
 /** @type {import("next").Metadata} */
 export const metadata = {
@@ -16,7 +16,7 @@ export default async function Layout({ children }) {
       scroll-container="true"
       className="h-[100dvh] w-full overflow-auto relative"
     >
-      <SecretRedirect />
+      <SecretActions />
       <MainNavigation />
       {children}
       <MainFooter />

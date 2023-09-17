@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Can Durmus | Login",
+  title: "Can Durmus | Sign In",
 }
 
 export default function LoginLayout({ children }) {

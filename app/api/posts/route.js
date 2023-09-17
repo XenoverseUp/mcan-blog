@@ -31,10 +31,7 @@ export async function GET(request) {
   return new Response(JSON.stringify(posts), { status: 200 })
 }
 
-/**
- *
- * @param {Request} req
- */
+/** @param {Request} req */
 export async function POST(request) {
   const session = await getServerSession(authOptions)
 
