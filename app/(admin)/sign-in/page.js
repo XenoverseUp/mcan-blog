@@ -1,6 +1,6 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
-import BackButton from "@/components/composed/Auth/BackButton"
-import SignInForm from "@/components/composed/Auth/SignInForm"
+import BackButton from "@/components/composed/auth/BackButton"
+import SignInForm from "@/components/composed/auth/SignInForm"
 import Logo from "@/components/primitives/Logo"
 import { UserRole } from "@prisma/client"
 import { getServerSession } from "next-auth"

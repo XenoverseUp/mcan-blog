@@ -1,6 +1,6 @@
 "use client"
 
-import SocialShareButtons from "@/components/composed/Post/SocialShareButtons"
+import SocialShareButtons from "@/components/composed/post/SocialShareButtons"
 import Button from "@/components/primitives/Button"
 import ShareController from "@/components/primitives/ShareController"
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard"

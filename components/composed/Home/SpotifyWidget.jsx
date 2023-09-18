@@ -1,4 +1,4 @@
-import Player from "@/components/composed/Home/Player"
+import Player from "@/components/composed/home/Player"
 import Button from "@/components/primitives/Button"
 import { getMockTrack, getTopTrack, getTrack } from "@/lib/spotify"
 import { DotFilledIcon, MoonIcon } from "@radix-ui/react-icons"

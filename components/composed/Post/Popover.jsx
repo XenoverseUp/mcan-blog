@@ -1,6 +1,6 @@
 "use client"
 
-import Share from "@/components/composed/Post/Share"
+import Share from "@/components/composed/post/Share"
 import Button from "@/components/primitives/Button"
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon"
 import {

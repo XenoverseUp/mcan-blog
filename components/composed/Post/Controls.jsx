@@ -1,11 +1,11 @@
 "use client"
 
-import Popover from "@/components/composed/Post/Popover"
+import Popover from "@/components/composed/post/Popover"
 import {
   NavigationType,
   navigationTypeAtom,
   postTitleAtom,
-} from "@/components/composed/PublicLayout/Nav"
+} from "@/components/composed/public-layout/Nav"
 import When from "@/components/helper/When"
 import Button from "@/components/primitives/Button"
 import { GitHubLogoIcon, GlobeIcon } from "@radix-ui/react-icons"

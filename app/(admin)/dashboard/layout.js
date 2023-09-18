@@ -1,6 +1,6 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
-import Sidebar from "@/components/composed/DashboardLayout/Sidebar"
-import StatusBar from "@/components/composed/DashboardLayout/StatusBar"
+import Sidebar from "@/components/composed/dashboard/layout/Sidebar"
+import StatusBar from "@/components/composed/dashboard/layout/StatusBar"
 import { getDashboardMeta } from "@/lib/dashboard"
 import { UserRole } from "@prisma/client"
 import { getServerSession } from "next-auth"

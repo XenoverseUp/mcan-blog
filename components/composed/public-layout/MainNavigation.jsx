@@ -1,6 +1,6 @@
 import { fetchSignatures } from "@/actions/guestbook.action"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
-import Nav from "@/components/composed/PublicLayout/Nav"
+import Nav from "@/components/composed/public-layout/Nav"
 import When from "@/components/helper/When"
 import { getServerSession } from "next-auth"
 

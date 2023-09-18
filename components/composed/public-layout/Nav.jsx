@@ -1,6 +1,6 @@
 "use client"
 
-import Drawers from "@/components/composed/PublicLayout/drawer/sheets/Drawer"
+import Drawers from "@/components/composed/public-layout/drawer/sheets/Drawer"
 import When from "@/components/helper/When"
 import { SignOutButton } from "@/components/primitives/Auth"
 import Container from "@/components/primitives/Container"

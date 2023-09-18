@@ -1,6 +1,6 @@
-import MainFooter from "@/components/composed/PublicLayout/MainFooter"
-import MainNavigation from "@/components/composed/PublicLayout/MainNavigation"
-import { SecretActions } from "@/components/composed/PublicLayout/SecretActions"
+import MainFooter from "@/components/composed/public-layout/MainFooter"
+import MainNavigation from "@/components/composed/public-layout/MainNavigation"
+import { SecretActions } from "@/components/composed/public-layout/SecretActions"
 
 /** @type {import("next").Metadata} */
 export const metadata = {
