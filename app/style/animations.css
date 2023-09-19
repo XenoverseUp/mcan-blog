@@ -1,0 +1,84 @@
+.main-enter {
+  transform: translateX(-100%) scale(0.9);
+  opacity: 0;
+}
+.main-enter-active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition:
+    opacity 400ms,
+    transform 400ms;
+}
+.main-exit {
+  opacity: 1;
+}
+.main-exit-active {
+  transform: translateX(-100%) scale(0.9);
+  transition:
+    opacity 400ms,
+    transform 400ms;
+  opacity: 0;
+}
+
+.main-enter header {
+  transform: translateX(50%) scale(0.9);
+  opacity: 0;
+}
+.main-enter-active header {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition:
+    opacity 400ms,
+    transform 400ms;
+}
+.main-exit header {
+  opacity: 1;
+}
+.main-exit-active header {
+  transform: translateX(50%) scale(0.9);
+  transition:
+    opacity 400ms,
+    transform 400ms;
+  opacity: 0;
+}
+
+.main-enter .component-button {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.main-enter-active .component-button {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity 400ms,
+    transform 400ms;
+  transition-delay: calc(0.02s * var(--i));
+}
+.main-exit .component-button {
+  opacity: 1;
+}
+.main-exit-active .component-button {
+  transition:
+    opacity 400ms,
+    transform 400ms;
+  transition-delay: calc(0.02s * var(--i));
+  opacity: 0;
+}
+
+.docs-enter {
+  transform: translateX(100%);
+}
+.docs-enter-active {
+  transform: translateX(0);
+  transition:
+    opacity 400ms,
+    transform 400ms;
+}
+.docs-exit {
+}
+.docs-exit-active {
+  transform: translateX(100%);
+  transition:
+    opacity 400ms,
+    transform 400ms;
+}

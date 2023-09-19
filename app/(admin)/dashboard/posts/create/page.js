@@ -15,7 +15,7 @@ export default async function Create() {
       </section>
       <ComponentBrowser
         {...{ components }}
-        className="w-72 border-l border-border bg-neutral-950"
+        className="w-72 flex-shrink-0 border-l border-border bg-neutral-950"
       />
     </main>
   )

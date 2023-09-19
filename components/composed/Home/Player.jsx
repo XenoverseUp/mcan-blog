@@ -6,6 +6,7 @@ import CircularProgress from "@/components/primitives/CircularProgress"
 import cx from "@/utils/cx"
 import { AccessibleIcon } from "@radix-ui/react-accessible-icon"
 import Image from "next/image"
+import { useEffect } from "react"
 
 const Player = ({ coverImagePlaceholder, coverImage, title, previewUrl }) => {
   return (
