@@ -1,3 +1,4 @@
+import cx from "@/utils/cx"
 import {
   ChatBubbleIcon,
   CodeIcon,
@@ -11,6 +12,17 @@ import {
   QuoteIcon,
 } from "@radix-ui/react-icons"
 
+const Pre = ({ children, className }) => (
+  <pre
+    className={cx(
+      className,
+      "[font-feature-settings:'liga'_0] [font-variant-ligatures:none] bg-neutral-900 px-3 -mx-1 py-[10px] text-xs rounded-lg text-violet-300",
+    )}
+  >
+    {children}
+  </pre>
+)
+
 /** @typedef {"Picture"|"Separator"|"Link"|"Quote"|"Note"|"Instruction Flow"|"Github Gist"|"Shell Command"|"File Structure"|"Fetch Request"} componentNames */
 
 /**
@@ -19,6 +31,8 @@ import {
  *  icon: import("react").ForwardRefExoticComponent<import("@radix-ui/react-icons/dist/types").IconProps & React.RefAttributes<SVGSVGElement>> | JSX.Element
  *  template: string
  *  description: string
+ *  anatomy: string
+ *  props: Array<{name: string, type: "string"|"number"|"boolean", description: string, optional: boolean}>
  * }} MarkdownComponent
  */
 
@@ -30,6 +44,7 @@ const components = [
     template: `<Picture src="{}" alt="{}" caption="{}" />`,
     description:
       "An optimized picture component to handle all kinds of images.",
+    anatomy: <Pre>{"<Picture />"}</Pre>,
     props: [
       {
         name: "src",
@@ -40,14 +55,14 @@ const components = [
       },
       {
         name: "alt",
-        type: "string",
+        type: "boolean",
         description:
           "Description of the image for screen readers. It improves accesibility and SEO.",
         optional: false,
       },
       {
         name: "caption",
-        type: "string",
+        type: "number",
         description: "Caption of the image to be displayed underneath.",
         optional: true,
       },
