@@ -46,12 +46,17 @@ const CreatePostForm = () => {
       subtitle: "",
       coverImage: "",
       content: "",
+      publication: undefined,
+      type: undefined,
     },
   })
 
   const title = watch("title")
   const subtitle = watch("subtitle")
   const content = watch("content")
+  const publication = watch("publication")
+  const type = watch("type")
+
   const coverImage = watch("coverImage")
   const previewUrl = watch("previewUrl")
   const repositoryUrl = watch("repositoryUrl")
@@ -60,8 +65,6 @@ const CreatePostForm = () => {
   const { ref: previewUrlRef, ...previewUrlRest } = register("previewUrl")
   const { ref: repositoryUrlRef, ...repositoryUrlRest } =
     register("repositoryUrl")
-
-  useEffect(() => console.log(content), [content])
 
   const onSubmit = data => {
     console.log(data)
@@ -97,7 +100,7 @@ const CreatePostForm = () => {
         aria-hidden
         className="border-dashed border-y border-border py-3 px-1 flex items-center justify-between"
       >
-        <PublicationSelect />
+        <PublicationSelect {...{ control, publication }} />
         <Dialog.Root>
           <Dialog.Trigger asChild>
             <Button variant="soft" className="aspect-square justify-center p-0">

@@ -12,7 +12,6 @@ import {
 import { cloneElement } from "react"
 
 /**
- *
  * @param {{component: import("@/components/composed/dashboard/posts/create/components").MarkdownComponent}} props
  * @returns
  */
@@ -56,7 +55,7 @@ const DocumentationContent = ({ component, setView }) => (
           </p>
         </div>
         {component?.elements?.map(([name, props]) => (
-          <div className="space-y-4 mt-2">
+          <div className="space-y-4 mt-2" key={`documentation-element-${name}`}>
             <h4 className="font-medium">{name}</h4>
             <div className="space-y-5">
               {props.map((item, i) => (
