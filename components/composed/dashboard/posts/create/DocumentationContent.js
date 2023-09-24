@@ -59,8 +59,8 @@ const DocumentationContent = ({ component, setView }) => (
           <div className="space-y-4 mt-2">
             <h4 className="font-medium">{name}</h4>
             <div className="space-y-5">
-              {props.map(item => (
-                <div className="space-y-2">
+              {props.map((item, i) => (
+                <div className="space-y-2" key={`prop-${component?.name}-${i}`}>
                   <div className="flex gap-2 items-center">
                     {{
                       string: <QuoteIcon className="w-3" />,

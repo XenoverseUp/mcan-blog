@@ -53,9 +53,9 @@ const Input = (
         <label
           htmlFor={id}
           className={cx(
-            "opacity-50 group-focus-within:text-xs group-focus-within:text-cool-lime-300 group-focus-within:opacity-100 transition-all cursor-pointer",
+            "opacity-50 group-focus-within:text-xs group-focus-within:text-cool-lime-300 group-focus-within:opacity-100 group-focus-within:[&_svg]:!w-3 transition-all cursor-pointer",
             {
-              "text-xs text-cool-lime-300 opacity-100": ![
+              "text-xs text-cool-lime-300 opacity-100 [&_svg]:!w-3": ![
                 "",
                 undefined,
                 null,

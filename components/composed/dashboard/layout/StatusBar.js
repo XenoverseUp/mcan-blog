@@ -35,7 +35,7 @@ const StatusBar = ({
               <ReactTimeago className="text-xs" date={date} minPeriod={4} />
             }
           >
-            <button className="opacity-50 hover:opacity-100 transition-opacity">
+            <button className="opacity-50 hover:opacity-100 focus-visible:opacity-100 transition-opacity focus-visible:ring-4 rounded-full">
               <AccessibleIcon>
                 <InfoCircledIcon />
               </AccessibleIcon>

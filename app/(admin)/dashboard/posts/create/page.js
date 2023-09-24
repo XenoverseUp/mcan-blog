@@ -1,17 +1,15 @@
 import ComponentBrowser from "@/components/composed/dashboard/posts/create/ComponentBrowser"
+import CreatePostForm from "@/components/composed/dashboard/posts/create/CreatePostForm"
 import components from "@/components/composed/dashboard/posts/create/components"
+import Button from "@/components/primitives/Button"
+import { ArrowLeftIcon, UploadIcon } from "@radix-ui/react-icons"
+import Link from "next/link"
 
 export default async function Create() {
   return (
     <main className="flex items-stretch h-full overflow-hidden">
-      <section className="p-8 flex-grow">
-        <header className="space-y-2">
-          <h1 className="text-2xl font-semibold">Create Blog Post</h1>
-          <p className="text-sm text-t-secondary max-w-sm leading-relaxed">
-            Fill out the form below to create a blog post or use an existing
-            markdown file to populate the fields.
-          </p>
-        </header>
+      <section className="p-8 flex-grow overflow-auto">
+        <CreatePostForm />
       </section>
       <ComponentBrowser
         {...{ components }}

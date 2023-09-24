@@ -3,6 +3,7 @@ import { compileMDX } from "next-mdx-remote/rsc"
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeSlug from "rehype-slug"
+import remarkEmoji from "remark-emoji"
 
 const Article = async ({ data }) => {
   const { content } = await compileMDX({
@@ -10,7 +11,9 @@ const Article = async ({ data }) => {
     options: {
       mdxOptions: {
         format: "mdx",
+        remarkPlugins: [remarkEmoji],
         rehypePlugins: [
+          rehypeAccessibleEmojis,
           rehypeSlug,
           () =>
             rehypeAutolinkHeadings({

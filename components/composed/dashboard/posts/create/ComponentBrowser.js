@@ -2,22 +2,8 @@
 
 import ComponentButton from "@/components/composed/dashboard/posts/create/ComponentButton"
 import DocumentationContent from "@/components/composed/dashboard/posts/create/DocumentationContent"
-import { Pre } from "@/components/composed/dashboard/posts/create/components"
-import When from "@/components/helper/When"
-import useLog from "@/hooks/useLog"
-import useUpdateEffect from "@/hooks/useUpdateEffect"
 import cx from "@/utils/cx"
-import { AccessibleIcon } from "@radix-ui/react-accessible-icon"
-import {
-  Component2Icon,
-  Cross2Icon,
-  FrameIcon,
-  PlusIcon,
-  QuoteIcon,
-  ResetIcon,
-  SwitchIcon,
-} from "@radix-ui/react-icons"
-import { cloneElement, useRef, useState } from "react"
+import { useState } from "react"
 import { CSSTransition } from "react-transition-group"
 
 export const View = {

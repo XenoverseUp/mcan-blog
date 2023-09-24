@@ -84,7 +84,9 @@ const Share = ({
               </button>
             </Dialog.Close>
             <header className="mb-8 text-center">
-              <h1 className="font-staff-wide text-lg">Share</h1>
+              <Dialog.Title className="font-staff-wide text-lg">
+                Share
+              </Dialog.Title>
               <p className="text-xs text-t-secondary">
                 Share this item with friends & family.
               </p>
