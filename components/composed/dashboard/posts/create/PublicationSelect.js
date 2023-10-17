@@ -5,9 +5,10 @@ import {
   SelectItem,
 } from "@/components/primitives/Select"
 import capitalize from "@/utils/capitalize"
-import { Publication } from "@prisma/client"
+import { PostType, Publication } from "@prisma/client"
 
 import { Controller } from "react-hook-form"
+import colors from "tailwindcss/colors"
 
 const PublicationSelect = ({ control, publication }) => (
   <div className="flex gap-3">
@@ -15,7 +16,11 @@ const PublicationSelect = ({ control, publication }) => (
       control={control}
       name="publication"
       render={({ field }) => (
-        <Select {...field} placeholder="Select a publication">
+        <Select
+          label="Publication"
+          {...field}
+          placeholder="Select a publication"
+        >
           <SelectGroup>
             <SelectGroupLabel>Publication</SelectGroupLabel>
             {Object.keys(Publication).map(key => (
@@ -29,7 +34,24 @@ const PublicationSelect = ({ control, publication }) => (
         </Select>
       )}
     />
-    <pre>{JSON.stringify(publication)}</pre>
+    <Controller
+      control={control}
+      name="type"
+      render={({ field }) => (
+        <Select label="Post Type" {...field} placeholder="Select a type">
+          <SelectGroup>
+            <SelectGroupLabel>Post Type</SelectGroupLabel>
+            {Object.keys(PostType).map(key => (
+              <SelectItem
+                value={key}
+                text={capitalize(key)}
+                key={`post-type-${key}`}
+              />
+            ))}
+          </SelectGroup>
+        </Select>
+      )}
+    />
   </div>
 )
 
